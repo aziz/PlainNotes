@@ -183,6 +183,22 @@
 
 		<!-- Link Reference -->
 		<dict>
+			<key>match</key>
+			<string>(?x:
+				\s*						# Leading whitespace
+				(\[)(.+?)(\])(:)		# Reference name
+				[ \t]*					# Optional whitespace
+				(&lt;?)(\S+?)(&gt;?)			# The url
+				[ \t]*					# Optional whitespace
+				(?:
+					  ((\().+?(\)))		# Match title in quotes…
+					| ((['"]).+?(['"]))		# or in parens.
+				)?						# Title is optional
+				[ \t]*						# Optional whitespace
+				$
+			)</string>
+			<key>name</key>
+			<string>meta.link.reference.def.markdown</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -251,22 +267,6 @@
 					<string>punctuation.definition.string.begin.markdown</string>
 				</dict>
 			</dict>
-			<key>match</key>
-			<string>(?x:
-				\s*						# Leading whitespace
-				(\[)(.+?)(\])(:)		# Reference name
-				[ \t]*					# Optional whitespace
-				(&lt;?)(\S+?)(&gt;?)			# The url
-				[ \t]*					# Optional whitespace
-				(?:
-					  ((\().+?(\)))		# Match title in quotes…
-					| ((").+?("))		# or in parens.
-				)?						# Title is optional
-				[ \t]*						# Optional whitespace
-				$
-			)</string>
-			<key>name</key>
-			<string>meta.link.reference.def.markdown</string>
 		</dict>
 
 		<!-- paragraph  -->
