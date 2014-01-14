@@ -4,26 +4,16 @@
 <dict>
 	<key>name</key>
 	<string>Note</string>
-	<key>keyEquivalent</key>
-	<string>^~N</string>
 	<key>fileTypes</key>
 	<array>
 		<string>note</string>
 	</array>
-	<key>foldingStartMarker</key>
-	<string>(?x)
-		(&lt;(?i:head|body|table|thead|tbody|tfoot|tr|div|select|fieldset|style|script|ul|ol|form|dl)\b.*?&gt;
-		|&lt;!--(?!.*--&gt;)
-		|\{\s*($|\?&gt;\s*$|//|/\*(.*\*/\s*$|(?!.*?\*/)))
-		)</string>
-	<key>foldingStopMarker</key>
-	<string>(?x)
-		(&lt;/(?i:head|body|table|thead|tbody|tfoot|tr|div|select|fieldset|style|script|ul|ol|form|dl)&gt;
-		|^\s*--&gt;
-		|(^|\s)\}
-		)</string>
+
+	<!-- PATTERNS ===== -->
 	<key>patterns</key>
 	<array>
+
+		<!-- Block Level Markdown -->
 		<dict>
 			<key>begin</key>
 			<string>(?x)^
@@ -67,6 +57,8 @@
 				</dict>
 			</array>
 		</dict>
+
+		<!-- List (Unordered List) -->
 		<dict>
 			<key>begin</key>
 			<string>^[ ]{0,3}([*+-])(?=\s)</string>
@@ -94,6 +86,8 @@
 				</dict>
 			</array>
 		</dict>
+
+		<!-- List (Numbered) -->
 		<dict>
 			<key>begin</key>
 			<string>^[ ]{0,3}([0-9]+)(\.)(?=\s)</string>
@@ -126,10 +120,14 @@
 				</dict>
 			</array>
 		</dict>
+
+		<!-- Fenced code blocks  -->
 		<dict>
 			<key>include</key>
 			<string>#fenced-code-blocks</string>
 		</dict>
+
+		<!-- BLOCK HTML TAGS -->
 		<dict>
 			<key>begin</key>
 			<string>^(?=&lt;(p|div|h[1-6]|blockquote|pre|table|dl|ol|ul|script|noscript|form|fieldset|iframe|math|ins|del)\b[^&gt;]*&gt;)(?!.*?&lt;/\1&gt;)</string>
@@ -153,6 +151,8 @@
 			<key>name</key>
 			<string>meta.disable-markdown</string>
 		</dict>
+
+		<!-- BLOCK HTML TAGS (One line) -->
 		<dict>
 			<key>begin</key>
 			<string>^(?=&lt;(p|div|h[1-6]|blockquote|pre|table|dl|ol|ul|script|noscript|form|fieldset|iframe|math|ins|del)\b[^&gt;]*&gt;)</string>
@@ -174,6 +174,8 @@
 			<key>name</key>
 			<string>meta.disable-markdown</string>
 		</dict>
+
+		<!-- Link Reference -->
 		<dict>
 			<key>captures</key>
 			<dict>
@@ -260,6 +262,8 @@
 			<key>name</key>
 			<string>meta.link.reference.def.markdown</string>
 		</dict>
+
+		<!-- paragraph  -->
 		<dict>
 			<key>begin</key>
 			<string>^(?=\S)(?![=-]{3,}(?=$))</string>
@@ -308,6 +312,8 @@
 			</array>
 		</dict>
 	</array>
+
+	<!-- REPO ========= -->
 	<key>repository</key>
 	<dict>
 		<key>ampersand</key>
@@ -869,76 +875,6 @@
 			<key>name</key>
 			<string>meta.image.reference.markdown</string>
 		</dict>
-		<key>inline</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>#escape</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#ampersand</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#bracket</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#raw</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#bold</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#italic</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#strikethrough</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#line-break</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#image-inline</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#link-inline</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#link-inet</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#link-email</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#image-ref</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#link-ref-literal</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#link-ref</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#tag-kbd</string>
-				</dict>
-			</array>
-		</dict>
 		<key>italic</key>
 		<dict>
 			<key>begin</key>
@@ -1362,6 +1298,61 @@
 			<key>name</key>
 			<string>meta.separator.markdown</string>
 		</dict>
+		<key>tag-kbd</key>
+		<dict>
+			<key>name</key>
+			<string>markup.kbd.markdown</string>
+			<key>match</key>
+			<string>((&lt;)(kbd)(&gt;))([^&lt;]+)((&lt;/)(kbd)(&gt;))</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>meta.tag.other.html</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.begin.html</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.other.html</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.end.html</string>
+				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>markup.kbd.content.markdown</string>
+				</dict>
+				<key>6</key>
+				<dict>
+					<key>name</key>
+					<string>meta.tag.other.html</string>
+				</dict>
+				<key>7</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.begin.html</string>
+				</dict>
+				<key>8</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.other.html</string>
+				</dict>
+				<key>9</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.end.html</string>
+				</dict>
+			</dict>
+		</dict>
 		<key>fenced-html</key>
 		<dict>
 		    <key>begin</key>
@@ -1691,6 +1682,8 @@
 		    <key>name</key>
 		    <string>markup.raw.block.markdown markup.raw.block.fenced.markdown</string>
 		</dict>
+
+		<!-- Fenced Code Blocks REPO -->
 		<key>fenced-code-blocks</key>
 		<dict>
 			<key>patterns</key>
@@ -1781,65 +1774,84 @@
 				</dict>
 			</array>
 		</dict>
-		<key>tag-kbd</key>
+
+		<!-- Inline Markup REPO -->
+		<key>inline</key>
 		<dict>
-			<key>name</key>
-			<string>markup.kbd.markdown</string>
-			<key>match</key>
-			<string>((&lt;)(kbd)(&gt;))([^&lt;]+)((&lt;/)(kbd)(&gt;))</string>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
+			<key>patterns</key>
+			<array>
 				<dict>
-					<key>name</key>
-					<string>meta.tag.other.html</string>
+					<key>include</key>
+					<string>#escape</string>
 				</dict>
-				<key>2</key>
 				<dict>
-					<key>name</key>
-					<string>punctuation.definition.tag.begin.html</string>
+					<key>include</key>
+					<string>#ampersand</string>
 				</dict>
-				<key>3</key>
 				<dict>
-					<key>name</key>
-					<string>entity.name.tag.other.html</string>
+					<key>include</key>
+					<string>#bracket</string>
 				</dict>
-				<key>4</key>
 				<dict>
-					<key>name</key>
-					<string>punctuation.definition.tag.end.html</string>
+					<key>include</key>
+					<string>#raw</string>
 				</dict>
-				<key>5</key>
 				<dict>
-					<key>name</key>
-					<string>markup.kbd.content.markdown</string>
+					<key>include</key>
+					<string>#bold</string>
 				</dict>
-				<key>6</key>
 				<dict>
-					<key>name</key>
-					<string>meta.tag.other.html</string>
+					<key>include</key>
+					<string>#italic</string>
 				</dict>
-				<key>7</key>
 				<dict>
-					<key>name</key>
-					<string>punctuation.definition.tag.begin.html</string>
+					<key>include</key>
+					<string>#strikethrough</string>
 				</dict>
-				<key>8</key>
 				<dict>
-					<key>name</key>
-					<string>entity.name.tag.other.html</string>
+					<key>include</key>
+					<string>#line-break</string>
 				</dict>
-				<key>9</key>
 				<dict>
-					<key>name</key>
-					<string>punctuation.definition.tag.end.html</string>
+					<key>include</key>
+					<string>#image-inline</string>
 				</dict>
-			</dict>
+				<dict>
+					<key>include</key>
+					<string>#link-inline</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#link-inet</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#link-email</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#image-ref</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#link-ref-literal</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#link-ref</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#tag-kbd</string>
+				</dict>
+			</array>
 		</dict>
+
 	</dict>
+
 	<key>scopeName</key>
-	<string>text.html.markdown.gfm</string>
+	<string>text.html.markdown.note</string>
 	<key>uuid</key>
-	<string>423378C0-3E42-11E3-AA6E-0800200C9A66</string>
+	<string>49ac9564-2ff8-4b9f-a3ab-cb8a33b8c5ec</string>
 </dict>
 </plist>
