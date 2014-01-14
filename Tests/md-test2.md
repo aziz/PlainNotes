@@ -122,8 +122,13 @@ Complex url https://github.com/SublimeText-Markdown/MarkdownEditing/issues?page=
 # Link References
 
 [foo]: http://example.com/
+
 [2]: http://example.com/  "Optional Title Here"
+
 [3]: http://example.com/  'Optional Title Here'
+
+[4]: http://example.com/  (Optional Title Here)
+
 [4]: http://example.com/  (Optional Title Here)
 
 # Headings
@@ -131,13 +136,18 @@ Complex url https://github.com/SublimeText-Markdown/MarkdownEditing/issues?page=
 heading 1
 =========
 
-
 heading 2
 ---------
+
+# heading 1
 
 ## heading 2
 
 ### heading 3
+
+#### heading 4
+
+##### heading 5
 
 ###### heading 6
 

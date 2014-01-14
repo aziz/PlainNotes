@@ -19,7 +19,12 @@
 			<string>(?x)^
 				(?=	[ ]{,3}&gt;
 				|	([ ]{4}|\t)(?!$)
-				|	[#]{1,6}\s*+
+				|	[#]{1}\s*+
+				|	[#]{2}\s*+
+				|	[#]{3}\s*+  # these seems a bit stupid, but it's the only
+				|	[#]{4}\s*+  # way I found to add heading number to the scope
+				|	[#]{5}\s*+
+				|	[#]{6}\s*+
 				|	[ ]{,3}(?&lt;marker&gt;[-*_])([ ]{,2}\k&lt;marker&gt;){2,}[ \t]*+$
 				| [ ]{,3}(([\|\+])([^\|\n]+)){2,}([\|\+])$
 				)</string>
@@ -51,7 +56,27 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#heading</string>
+					<string>#heading1</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#heading2</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#heading3</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#heading4</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#heading5</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#heading6</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -396,7 +421,27 @@
 						</dict>
 						<dict>
 							<key>include</key>
-							<string>#heading</string>
+							<string>#heading1</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#heading2</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#heading3</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#heading4</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#heading5</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#heading6</string>
 						</dict>
 						<dict>
 							<key>include</key>
@@ -716,24 +761,25 @@
 			<key>name</key>
 			<string>constant.character.escape.markdown</string>
 		</dict>
-		<key>heading</key>
+
+		<key>heading1</key>
 		<dict>
 			<key>begin</key>
-			<string>\G(#{1,6})(?!#)\s*(?=\S)</string>
+			<string>\G(#{1})(?!#)\s*(?=\S)</string>
+			<key>end</key>
+			<string>\s*(#*)$\n?</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.heading.markdown</string>
+					<string>punctuation.definition.heading.1.markdown</string>
 				</dict>
 			</dict>
 			<key>contentName</key>
 			<string>entity.name.section.markdown</string>
-			<key>end</key>
-			<string>\s*(#*)$\n?</string>
 			<key>name</key>
-			<string>markup.heading.markdown</string>
+			<string>markup.heading.1.markdown</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -742,6 +788,142 @@
 				</dict>
 			</array>
 		</dict>
+
+		<key>heading2</key>
+		<dict>
+			<key>begin</key>
+			<string>\G(#{2})(?!#)\s*(?=\S)</string>
+			<key>end</key>
+			<string>\s*(#*)$\n?</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.heading.2.markdown</string>
+				</dict>
+			</dict>
+			<key>contentName</key>
+			<string>entity.name.section.markdown</string>
+			<key>name</key>
+			<string>markup.heading.2.markdown</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#inline</string>
+				</dict>
+			</array>
+		</dict>
+
+		<key>heading3</key>
+		<dict>
+			<key>begin</key>
+			<string>\G(#{3})(?!#)\s*(?=\S)</string>
+			<key>end</key>
+			<string>\s*(#*)$\n?</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.heading.3.markdown</string>
+				</dict>
+			</dict>
+			<key>contentName</key>
+			<string>entity.name.section.markdown</string>
+			<key>name</key>
+			<string>markup.heading.3.markdown</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#inline</string>
+				</dict>
+			</array>
+		</dict>
+
+		<key>heading4</key>
+		<dict>
+			<key>begin</key>
+			<string>\G(#{4})(?!#)\s*(?=\S)</string>
+			<key>end</key>
+			<string>\s*(#*)$\n?</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.heading.4.markdown</string>
+				</dict>
+			</dict>
+			<key>contentName</key>
+			<string>entity.name.section.markdown</string>
+			<key>name</key>
+			<string>markup.heading.4.markdown</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#inline</string>
+				</dict>
+			</array>
+		</dict>
+
+		<key>heading5</key>
+		<dict>
+			<key>begin</key>
+			<string>\G(#{5})(?!#)\s*(?=\S)</string>
+			<key>end</key>
+			<string>\s*(#*)$\n?</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.heading.5.markdown</string>
+				</dict>
+			</dict>
+			<key>contentName</key>
+			<string>entity.name.section.markdown</string>
+			<key>name</key>
+			<string>markup.heading.5.markdown</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#inline</string>
+				</dict>
+			</array>
+		</dict>
+
+		<key>heading6</key>
+		<dict>
+			<key>begin</key>
+			<string>\G(#{6})(?!#)\s*(?=\S)</string>
+			<key>end</key>
+			<string>\s*(#*)$\n?</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.heading.6.markdown</string>
+				</dict>
+			</dict>
+			<key>contentName</key>
+			<string>entity.name.section.markdown</string>
+			<key>name</key>
+			<string>markup.heading.6.markdown</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#inline</string>
+				</dict>
+			</array>
+		</dict>
+
 		<key>image-inline</key>
 		<dict>
 			<key>captures</key>
