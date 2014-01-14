@@ -485,7 +485,7 @@
 		<dict>
 			<key>begin</key>
 			<string>(?x)
-						(?&lt;!\w)(\*\*|__)(?=\S)								# Open
+						(?&lt;![a-zA-Z0-9])(\*\*|__)(?=\S)								# Open
 						(?=
 							(
 							    &lt;[^&gt;]*+&gt;							# HTML tags
@@ -612,6 +612,139 @@
 				</dict>
 			</array>
 		</dict>
+		<key>italic</key>
+		<dict>
+			<key>begin</key>
+			<string>(?x)
+						(?&lt;![a-zA-Z0-9])(\*|_)(?=\S)								# Open
+						(?=
+							(
+							    &lt;[^&gt;]*+&gt;							# HTML tags
+							  | (?&lt;raw&gt;`+)([^`]|(?!(?&lt;!`)\k&lt;raw&gt;(?!`))`)*+\k&lt;raw&gt;
+																	# Raw
+							  | \\[\\`*_{}\[\]()#.!+\-&gt;]?+			# Escapes
+							  | \[
+								(
+								        (?&lt;square&gt;					# Named group
+											[^\[\]\\]				# Match most chars
+								          | \\.						# Escaped chars
+								          | \[ \g&lt;square&gt;*+ \]		# Nested brackets
+								        )*+
+									\]
+									(
+										(							# Reference Link
+											[ ]?					# Optional space
+											\[[^\]]*+\]				# Ref name
+										)
+									  | (							# Inline Link
+											\(						# Opening paren
+												[ \t]*+				# Optional whtiespace
+												&lt;?(.*?)&gt;?			# URL
+												[ \t]*+				# Optional whtiespace
+												(					# Optional Title
+													(?&lt;title&gt;['"])
+													(.*?)
+													\k&lt;title&gt;
+												)?
+											\)
+										)
+									)
+								)
+							  | \1\1								# Must be bold closer
+							  | (?!(?&lt;=\S)\1).						# Everything besides
+																	# style closer
+							)++
+							(?&lt;=\S)\1								# Close
+						)
+					</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.italic.markdown</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(?&lt;=\S)(\1)((?!\1)|(?=\1\1))</string>
+			<key>name</key>
+			<string>markup.italic.markdown</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>applyEndPatternLast</key>
+					<integer>1</integer>
+					<key>begin</key>
+					<string>(?=&lt;[^&gt;]*?&gt;)</string>
+					<key>end</key>
+					<string>(?&lt;=&gt;)</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#tag-kbd</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>text.html.basic</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#escape</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#ampersand</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#bracket</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#raw</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#bold</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#strikethrough</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#image-inline</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#link-inline</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#link-inet</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#link-email</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#image-ref</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#link-ref-literal</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#link-ref</string>
+				</dict>
+			</array>
+		</dict>
+
 		<key>strikethrough</key>
 		<dict>
 			<key>begin</key>
@@ -788,7 +921,6 @@
 				</dict>
 			</array>
 		</dict>
-
 		<key>heading2</key>
 		<dict>
 			<key>begin</key>
@@ -815,7 +947,6 @@
 				</dict>
 			</array>
 		</dict>
-
 		<key>heading3</key>
 		<dict>
 			<key>begin</key>
@@ -842,7 +973,6 @@
 				</dict>
 			</array>
 		</dict>
-
 		<key>heading4</key>
 		<dict>
 			<key>begin</key>
@@ -869,7 +999,6 @@
 				</dict>
 			</array>
 		</dict>
-
 		<key>heading5</key>
 		<dict>
 			<key>begin</key>
@@ -896,7 +1025,6 @@
 				</dict>
 			</array>
 		</dict>
-
 		<key>heading6</key>
 		<dict>
 			<key>begin</key>
@@ -1062,138 +1190,6 @@
 			<string>\!(\[)((?&lt;square&gt;[^\[\]\\]|\\.|\[\g&lt;square&gt;*+\])*+)(\])[ ]?(\[)(.*?)(\])</string>
 			<key>name</key>
 			<string>meta.image.reference.markdown</string>
-		</dict>
-		<key>italic</key>
-		<dict>
-			<key>begin</key>
-			<string>(?x)
-						(?&lt;!\w)(\*|_)(?=\S)								# Open
-						(?=
-							(
-							    &lt;[^&gt;]*+&gt;							# HTML tags
-							  | (?&lt;raw&gt;`+)([^`]|(?!(?&lt;!`)\k&lt;raw&gt;(?!`))`)*+\k&lt;raw&gt;
-																	# Raw
-							  | \\[\\`*_{}\[\]()#.!+\-&gt;]?+			# Escapes
-							  | \[
-								(
-								        (?&lt;square&gt;					# Named group
-											[^\[\]\\]				# Match most chars
-								          | \\.						# Escaped chars
-								          | \[ \g&lt;square&gt;*+ \]		# Nested brackets
-								        )*+
-									\]
-									(
-										(							# Reference Link
-											[ ]?					# Optional space
-											\[[^\]]*+\]				# Ref name
-										)
-									  | (							# Inline Link
-											\(						# Opening paren
-												[ \t]*+				# Optional whtiespace
-												&lt;?(.*?)&gt;?			# URL
-												[ \t]*+				# Optional whtiespace
-												(					# Optional Title
-													(?&lt;title&gt;['"])
-													(.*?)
-													\k&lt;title&gt;
-												)?
-											\)
-										)
-									)
-								)
-							  | \1\1								# Must be bold closer
-							  | (?!(?&lt;=\S)\1).						# Everything besides
-																	# style closer
-							)++
-							(?&lt;=\S)\1								# Close
-						)
-					</string>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.italic.markdown</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>(?&lt;=\S)(\1)((?!\1)|(?=\1\1))</string>
-			<key>name</key>
-			<string>markup.italic.markdown</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>applyEndPatternLast</key>
-					<integer>1</integer>
-					<key>begin</key>
-					<string>(?=&lt;[^&gt;]*?&gt;)</string>
-					<key>end</key>
-					<string>(?&lt;=&gt;)</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#tag-kbd</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>text.html.basic</string>
-						</dict>
-					</array>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#escape</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#ampersand</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#bracket</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#raw</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#bold</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#strikethrough</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#image-inline</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#link-inline</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#link-inet</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#link-email</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#image-ref</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#link-ref-literal</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#link-ref</string>
-				</dict>
-			</array>
 		</dict>
 		<key>line-break</key>
 		<dict>
