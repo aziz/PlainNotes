@@ -481,6 +481,7 @@
 			<key>name</key>
 			<string>markup.raw.block.markdown</string>
 		</dict>
+
 		<key>bold</key>
 		<dict>
 			<key>begin</key>
@@ -612,6 +613,7 @@
 				</dict>
 			</array>
 		</dict>
+
 		<key>italic</key>
 		<dict>
 			<key>begin</key>
@@ -1450,8 +1452,22 @@
 				</dict>
 			</array>
 		</dict>
+
 		<key>raw</key>
 		<dict>
+			<key>match</key>
+			<string>(?x)
+				(`+)
+				(
+					(?:
+						[^`]
+						| (?&lt;=\\)[`]
+						| (?!(?&lt;!`)\1(?!`))`)*+
+				)
+				(\1)
+			</string>
+			<key>name</key>
+			<string>markup.raw.inline.markdown</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -1470,11 +1486,8 @@
 					<string>punctuation.definition.raw.markdown</string>
 				</dict>
 			</dict>
-			<key>match</key>
-			<string>(`+)((?:[^`]|(?!(?&lt;!`)\1(?!`))`)*+)(\1)</string>
-			<key>name</key>
-			<string>markup.raw.inline.markdown</string>
 		</dict>
+
 		<key>separator</key>
 		<dict>
 			<key>match</key>
