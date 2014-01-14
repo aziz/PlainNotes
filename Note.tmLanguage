@@ -347,6 +347,7 @@
   <!-- REPO ========= -->
   <key>repository</key>
   <dict>
+
     <key>ampersand</key>
     <dict>
       <key>comment</key>
@@ -359,6 +360,7 @@
       <key>name</key>
       <string>meta.other.valid-ampersand.markdown</string>
     </dict>
+
     <key>block_quote</key>
     <dict>
       <key>begin</key>
@@ -474,6 +476,7 @@
         </dict>
       </array>
     </dict>
+
     <key>block_raw</key>
     <dict>
       <key>match</key>
@@ -877,6 +880,7 @@
         </dict>
       </array>
     </dict>
+
     <key>bracket</key>
     <dict>
       <key>comment</key>
@@ -889,6 +893,7 @@
       <key>name</key>
       <string>meta.other.valid-bracket.markdown</string>
     </dict>
+
     <key>escape</key>
     <dict>
       <key>match</key>
@@ -1153,6 +1158,7 @@
       <key>name</key>
       <string>meta.image.inline.markdown</string>
     </dict>
+
     <key>image-ref</key>
     <dict>
       <key>captures</key>
@@ -1193,6 +1199,7 @@
       <key>name</key>
       <string>meta.image.reference.markdown</string>
     </dict>
+
     <key>line-break</key>
     <dict>
       <key>match</key>
@@ -1200,6 +1207,7 @@
       <key>name</key>
       <string>meta.dummy.line-break</string>
     </dict>
+
     <key>link-email</key>
     <dict>
       <key>captures</key>
@@ -1225,6 +1233,7 @@
       <key>name</key>
       <string>meta.link.email.lt-gt.markdown</string>
     </dict>
+
     <key>link-inet</key>
     <dict>
       <key>captures</key>
@@ -1250,6 +1259,7 @@
       <key>name</key>
       <string>meta.link.inet.markdown</string>
     </dict>
+
     <key>link-inline</key>
     <dict>
       <key>captures</key>
@@ -1348,6 +1358,7 @@
       <key>name</key>
       <string>meta.link.inline.markdown</string>
     </dict>
+
     <key>link-ref</key>
     <dict>
       <key>captures</key>
@@ -1388,6 +1399,7 @@
       <key>name</key>
       <string>meta.link.reference.markdown</string>
     </dict>
+
     <key>link-ref-literal</key>
     <dict>
       <key>captures</key>
@@ -1423,6 +1435,7 @@
       <key>name</key>
       <string>meta.link.reference.literal.markdown</string>
     </dict>
+
     <key>list-paragraph</key>
     <dict>
       <key>patterns</key>
@@ -1653,6 +1666,7 @@
         </dict>
       </dict>
     </dict>
+
     <key>fenced-html</key>
     <dict>
         <key>begin</key>
