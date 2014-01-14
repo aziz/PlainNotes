@@ -1,0 +1,4 @@
+[
+{ "caption": "Notes: List…", "command": "notes_list"},
+{ "caption": "Notes: New…", "command": "notes_new"}
+]

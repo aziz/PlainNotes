@@ -1,0 +1,4 @@
+[
+{ "keys": ["f4"],  "command": "notes_list" },
+{ "keys": ["super+f4"],  "command": "notes_new" }
+]

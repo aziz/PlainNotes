@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Sticky-Green</string>
+	<key>author</key>
+	<string>Allen Bargi</string>
+	<key>settings</key>
+	<array>
+		<dict>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#acfd9c</string>
+				<key>foreground</key>
+				<string>#114F19</string>
+				<key>caret</key>
+				<string>#000000</string>
+				<key>gutterForeground</key>
+				<string>#114F1955</string>
+				<key>invisibles</key>
+				<string>#114F1955</string>
+				<key>lineHighlight</key>
+				<string>#00000022</string>
+				<key>selection</key>
+				<string>#114F1955</string>
+				<key>selectionBorder</key>
+				<string>#114F1955</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Heading</string>
+			<key>scope</key>
+			<string>markup.heading entity.name, markup.heading.2 punctuation.definition.heading, markup.heading.1 punctuation.definition.heading</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>bold</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Italic</string>
+			<key>scope</key>
+			<string>markup.italic</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Bold</string>
+			<key>scope</key>
+			<string>markup.bold</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string></string>
+				<key>fontStyle</key>
+				<string>bold</string>
+				<key>foreground</key>
+				<string></string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Underline</string>
+			<key>scope</key>
+			<string>markup.underline</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string></string>
+				<key>fontStyle</key>
+				<string>underline</string>
+				<key>foreground</key>
+				<string></string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Blockquote</string>
+			<key>scope</key>
+			<string>markup.quote</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Blockquote Punctuations</string>
+			<key>scope</key>
+			<string>markup.quote punctuation.definition.blockquote</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#114F1933</string>
+				<key>foreground</key>
+				<string>#114F1933</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Code</string>
+			<key>scope</key>
+			<string>markup.raw</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#114F1933</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Link</string>
+			<key>scope</key>
+			<string>meta.link, markup.underline.link</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>underline</string>
+				<key>foreground</key>
+				<string>#2483b3</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Link URL and References</string>
+			<key>scope</key>
+			<string>meta.link.inline markup.underline.link, meta.link.reference constant.other.reference.link</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>underline</string>
+				<key>foreground</key>
+				<string>#114F1966</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Link Punctuations</string>
+			<key>scope</key>
+			<string>meta.link punctuation.definition</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#114F1955</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Like Reference</string>
+			<key>scope</key>
+			<string>meta.link.reference.def</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#bdfeae</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Link Reference Title</string>
+			<key>scope</key>
+			<string>meta.link.reference.def string.other.link.description.title</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string></string>
+				<key>fontStyle</key>
+				<string></string>
+				<key>foreground</key>
+				<string>#114F19</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Link Reference Punctuation</string>
+			<key>scope</key>
+			<string>meta.link.reference.def punctuation.separator.key-value</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#114F1955</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Image</string>
+			<key>scope</key>
+			<string>meta.image</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#F0FF90</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Image Text (alt, title)</string>
+			<key>scope</key>
+			<string>meta.image string.other.link.description</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#F0FF90</string>
+				<key>fontStyle</key>
+				<string>bold</string>
+				<key>foreground</key>
+				<string>#3c4024</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Image Reference</string>
+			<key>scope</key>
+			<string>meta.image.reference</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#F0FF90</string>
+				<key>fontStyle</key>
+				<string></string>
+				<key>foreground</key>
+				<string>#3C402466</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Image Link</string>
+			<key>scope</key>
+			<string>meta.image markup.underline.link.image</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#F0FF90</string>
+				<key>fontStyle</key>
+				<string>underline</string>
+				<key>foreground</key>
+				<string>#3c402466</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Image Punctuations</string>
+			<key>scope</key>
+			<string>meta.image punctuation.definition</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#F0FF90</string>
+				<key>foreground</key>
+				<string>#3c402455</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Punctuations (heading, bold, italic, list-item, code-inline)</string>
+			<key>scope</key>
+			<string>punctuation.definition.heading, punctuation.definition.bold, punctuation.definition.italic, punctuation.definition.list_item, markup.raw.inline punctuation.definition.raw</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#114F1955</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Horizontal Rules</string>
+			<key>scope</key>
+			<string>meta.block-level meta.separator</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#114F1933</string>
+				<key>foreground</key>
+				<string>#114F1933</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Library class/type</string>
+			<key>scope</key>
+			<string>support.type, support.class</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
+				<key>foreground</key>
+				<string>#000000</string>
+			</dict>
+		</dict>
+	</array>
+	<key>uuid</key>
+	<string>07379361-ce49-4e6c-a03f-26378a7a2131</string>
+</dict>
+</plist>
+

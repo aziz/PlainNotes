@@ -1,0 +1,14 @@
+{
+  "color_scheme": "Packages/User/Color Schemes/Sticky-Orange.tmTheme",
+  "draw_indent_guides": false,
+  "enable_table_editor": true,
+  "extensions": ["note"],
+  "highlight_line": false,
+  "line_numbers": false,
+  "rulers": [],
+  "tab_size": 4,
+  "translate_tabs_to_spaces": true,
+  "trim_trailing_white_space_on_save": false,
+  "word_wrap": true,
+  "wrap_width": 0
+}

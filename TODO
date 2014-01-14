@@ -1,0 +1,55 @@
+TODO:
+ ☐ filter file in dir for notes
+ ☐ read plugin settings
+ ☐ Integrate todo
+ ☐ Internal links
+ ☐ new note: add name of the file capitalized as title
+
+ ☐ move
+   SublimeNotes notes
+   PlainTask notes
+   tmThemeEditor notes
+
+
+ ☐ Index buffer: for a list of all docs
+ ☐ convert to classic markdown command @low
+ ☐ New/open in new group @low
+ ☐ accpet more than one type as note (?)
+ ☐ save file specific settings to brain
+ ☐ sortlist by (last-edited)
+ ☐ multiple notebooks
+   ☐ show notebook on status bar
+
+
+Diversions from markdown:
+ ☐ task bullets
+ ☐ normal butten
+ ☐ hr
+
+Plugin Companions:
+ ☐ smartMarkdown
+ ☐ tableEditor
+
+Settings:
+ ☐ notes_directory
+ ☐ note_file_extension
+ ☐ open_notes_in_separate_group
+ ☐ new_note_on_file_list
+ ☐ new_note_label
+
+ST3 BUGS:
+ ☐ BUG: set focus?
+
+Ideas:
+ ☐ Archiving Notes
+ ☐ Diary mode
+ ☐ Tags
+ ☐ Navigating down and up in wiki mode (Notes that links here, go back)
+
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+Archive:
+ ✔ file list should be read on the list command run @done (14-01-14 04:14) @project(TODO)
+ ✔ listNotes command @done (14-01-13 09:11) @project(TODO)
+ ✔ openNote command @done (14-01-13 09:11) @project(TODO)
+ ✔ set syntax and color scheme @done (14-01-13 11:05) @project(TODO)
+ ✔ NewNote @done (14-01-14 03:33) @project(TODO)
