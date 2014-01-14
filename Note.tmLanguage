@@ -1437,6 +1437,29 @@
           <key>patterns</key>
           <array>
             <dict>
+              <key>match</key>
+              <string>([*+-])(?=\s)</string>
+              <key>name</key>
+              <string>punctuation.definition.list_item.markdown</string>
+            </dict>
+            <dict>
+              <key>match</key>
+              <string>([0-9]+)(\.)(?=\s)</string>
+              <key>captures</key>
+              <dict>
+                <key>1</key>
+                <dict>
+                  <key>name</key>
+                  <string>punctuation.definition.list_item.markdown punctuation.definition.list_item.number.markdown</string>
+                </dict>
+                <key>2</key>
+                <dict>
+                  <key>name</key>
+                  <string>punctuation.definition.list_item.markdown</string>
+                </dict>
+              </dict>
+            </dict>
+            <dict>
               <key>include</key>
               <string>#inline</string>
             </dict>

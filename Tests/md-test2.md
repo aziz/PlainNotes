@@ -165,6 +165,14 @@ heading 2
 
 1. This is a list item too
 2. This list is numbered
+    3. This is a list item too
+    4. This is a list item too
+        5. This is a list item too
+        6. This is a list item too
+    7. This is a list item too
+    8. This is a list item too
+9. This is a list item too
+10. This is a list item too
 
 ***
 
