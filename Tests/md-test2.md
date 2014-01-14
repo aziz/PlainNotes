@@ -322,12 +322,12 @@ That's some text with a footnote.[^1]
 # Tables
 
 # todo
-- style elements inside table cells
 
 | First Header | Second Header | Third Header |
 |--------------|---------------|--------------|
 | Content Cell | Content Cell  | Content Cell |
 | Content Cell | Content Cell  | Content Cell |
+|              |               |              |
 
 | First Header | Second Header | Third Header |
 | ------------ | ------------- | ------------ |
@@ -366,7 +366,7 @@ That's some text with a footnote.[^1]
 |-----------|-----|-----------|
 | Anna      |  32 | 123456789 |
 | Alexander |  28_| 987654321 |
-|           |     |           |
+
 
 |    Name   |   Phone   | Age |             Position             |
 |-----------|-----------|-----|----------------------------------|
@@ -374,7 +374,7 @@ That's some text with a footnote.[^1]
 |           |           |     | Engineer_                        |
 |-----------|-----------|-----|----------------------------------|
 | Alexander | 987654321 |  28 | Senior Software Testing Engineer |
-|           |           |     |                                  |
+
 
 | column 1 | column 2 | column 3 |
 | <<<<<<<< | >>>>>>>> | ######## |
@@ -382,6 +382,7 @@ That's some text with a footnote.[^1]
 | 1        |    row 1 |    c1    |
 | 2        |    row 2 |    c2    |
 | 3        |    row 3 |    c3    |
+|          |          |          |
 
 | Unordered  List |   Order List  |
 |-----------------|---------------|
@@ -389,14 +390,11 @@ That's some text with a footnote.[^1]
 |   - subitem 1   |   # subitem 1 |
 |   - subitem 2   | # item 2      |
 | - item 2        |   # subitem 2 |
-|                 |               |
 
-
-| *First Header* | **Second Header** | Third Header |
-|----------------|-------------------|--------------|
-| `Content Cell` | [Content Cell][2] | Content Cell |
-| Content Cell   | Content Cell      | Content Cell |
-
+|   *First Header*  | **Second Header** | ~~Third Header~~ |
+|-------------------|-------------------|------------------|
+| `Content Cell`    | [Content Cell][2] | ![Image][3]      |
+| http://google.com | <me@ssd.com>      | some text        |
 
 
 # Supported Syntaxes
@@ -449,31 +447,10 @@ Alignment:
 | Anna      |  20 |
 | Alexander |  27 |
 
-**Textile**
-
-Alignment:
-
-|_.   Name  |_. Age |_. Custom Alignment Demo |
-| Anna      |    20 |<. left                  |
-| Alexander |    27 |>.                 right |
-| Misha     |    42 |=.         center        |
-|           |       |                         |
 
 ---
 
 ## NOT SUPPORTED 
-
-### Wierd Tetile table format
-
-|\2. spans two cols   |
-| col 1    | col 2    |
-   
-|/3. spans 3 rows | a |
-| b               |
-| c               |
-
-|_\2.  spans two cols |
-|_<. col 1 |_>. col 2 |
 
 ### Tables with no pipe at the begining or end
 

@@ -1307,14 +1307,34 @@
 
 		<key>table</key>
 		<dict>
+			<key>begin</key>
+			<string>(^[\|\+])</string>
+			<key>end</key>
+			<string>([\|\+])$</string>
+			<key>name</key>
+			<string>markup.table.markdown</string>
+			<key>beginCaptures</key>
+			<dict>
+			  <key>1</key>
+			  <dict>
+			    <key>name</key>
+			    <string>punctuation.definition.table.vertical-line.markdown</string>
+			  </dict>
+			</dict>
+			<key>endCaptures</key>
+			<dict>
+			  <key>1</key>
+			  <dict>
+			    <key>name</key>
+			    <string>punctuation.definition.table.vertical-line.markdown</string>
+			  </dict>
+			</dict>
 			<key>patterns</key>
 			<array>
 
 				<dict>
 					<key>match</key>
-					<string>\G[ ]{,3}(\|(?!(?: )?[\-=:]{2,}))(?:[^\|\n]+)*</string>
-					<key>name</key>
-					<string>markup.table.markdown</string>
+					<string>(\|)</string>
 					<key>comment</key>
 					<string>
 						finding table rows for marking the vertical bars
@@ -1332,17 +1352,10 @@
 
 				<dict>
 					<key>match</key>
-					<string>\G[ ]{,3}([\|\+])([ \-=:]+)*</string>
-					<key>name</key>
-					<string>markup.table.markdown</string>
+					<string>([-=+:]+(?=(?:[ ]?)[\|\+]))</string>
 					<key>captures</key>
 					<dict>
 						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.table.vertical-line.markdown</string>
-						</dict>
-						<key>2</key>
 						<dict>
 							<key>name</key>
 							<string>punctuation.definition.table.horizontal-line.markdown</string>
@@ -1350,11 +1363,23 @@
 					</dict>
 				</dict>
 
-<!-- 				<dict>
+				<dict>
+					<key>match</key>
+					<string>([&gt;#&lt;]+(?=(?:[ ]?)[\|\+]))</string>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.table.alignments.markdown</string>
+						</dict>
+					</dict>
+				</dict>
+
+				<dict>
 					<key>include</key>
 					<string>#inline</string>
 				</dict>
- -->
 
 			</array>
 		</dict>
