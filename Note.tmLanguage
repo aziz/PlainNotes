@@ -21,6 +21,7 @@
 				|	([ ]{4}|\t)(?!$)
 				|	[#]{1,6}\s*+
 				|	[ ]{,3}(?&lt;marker&gt;[-*_])([ ]{,2}\k&lt;marker&gt;){2,}[ \t]*+$
+				| [ ]{,3}(([\|\+])([^\|\n]+)){2,}([\|\+])$
 				)</string>
 			<key>comment</key>
 			<string>
@@ -34,6 +35,7 @@
 				|	([ ]{4}|\t)
 				|	[#]{1,6}\s*+
 				|	[ ]{,3}(?&lt;marker&gt;[-*_])([ ]{,2}\k&lt;marker&gt;){2,}[ \t]*+$
+				| [ ]{,3}(([\|\+])([^\|\n]+)){2,}([\|\+])$
 				)</string>
 			<key>name</key>
 			<string>meta.block-level.markdown</string>
@@ -54,6 +56,10 @@
 				<dict>
 					<key>include</key>
 					<string>#separator</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#table</string>
 				</dict>
 			</array>
 		</dict>
@@ -1298,6 +1304,61 @@
 			<key>name</key>
 			<string>meta.separator.markdown</string>
 		</dict>
+
+		<key>table</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+
+				<dict>
+					<key>match</key>
+					<string>\G[ ]{,3}(\|(?!(?: )?[\-=:]{2,}))(?:[^\|\n]+)*</string>
+					<key>name</key>
+					<string>markup.table.markdown</string>
+					<key>comment</key>
+					<string>
+						finding table rows for marking the vertical bars
+						do not follow | if it has -= at least 2
+					</string>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.table.vertical-line.markdown</string>
+						</dict>
+					</dict>
+				</dict>
+
+				<dict>
+					<key>match</key>
+					<string>\G[ ]{,3}([\|\+])([ \-=:]+)*</string>
+					<key>name</key>
+					<string>markup.table.markdown</string>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.table.vertical-line.markdown</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.table.horizontal-line.markdown</string>
+						</dict>
+					</dict>
+				</dict>
+
+<!-- 				<dict>
+					<key>include</key>
+					<string>#inline</string>
+				</dict>
+ -->
+
+			</array>
+		</dict>
+
 		<key>tag-kbd</key>
 		<dict>
 			<key>name</key>
