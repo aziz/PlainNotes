@@ -2,40 +2,24 @@
 # Italic and Bold
 
 _italic_
-
 _italic one_ not italic _italic two_
-
 _italic\__
-
 _italic \__
-
-
 *italic__*
-
 _all _ italic_
-
 \\\\_italic\\_
-
 \\\\_italic\\\_\\\\_
-
 \\\\_italic\\_
 
 ***
 
 stuff * not italic*
-
 \_ not italic _
-
 _not italic _
-
 \\\\_not italic\_
-
 _not italic \_
-
 \\\_not italic\\_
-
 _not italic
-
 not end italic_
 
 ***
@@ -89,9 +73,6 @@ _There may be ~~strikethroughed text~~ inside italic text._
 ~~Strikethrough can be applied to
 multiple lines. Just keep in mind
 not to put any space in the beginning or end.~~
-
-
-***
 
 # Code Inline
 
@@ -210,8 +191,27 @@ This quote continues on.  Line breaking is OK in markdown
 > - list items
 > - inside block
 > - quote
+> 
+> 1. numbered list 
+> 2. numbered list another
 >
-> `sadsd` **sads** *sdsad*
+> ✔ done todo
+> ✘ cancelled todo
+> ☐ pending todoa
+>
+> `code` **bold** *italic* [Link]() [[internal link]] :tag:
+>
+> > This is nested blockquote.
+>
+>     return shell_exec("echo $input | $markdown_script");
+>
+
+> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+
+> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+id sem consectetuer libero luctus adipiscing.
 
 # Horizontal lines
 
@@ -229,10 +229,9 @@ __ __ __
 
 # Fenced Code Blocks
 
-## In / Near List Items
+## In/Near List Items
 
 Below fenced code blocks _should_ be highlighted.
-
 
 * List item
 
@@ -301,6 +300,19 @@ for (var i = 0; i < 10; i++) {
 }
 ```
 
+~~~js
+for (var i = 0; i < 10; i++) {
+    console.log(i);
+}
+~~~
+
+~~~~~~~~~~~~~~~~~js
+for (var i = 0; i < 10; i++) {
+    console.log(i);
+}
+~~~~~~~~~~~~~~~~~
+
+
 ***
 
 Below is not any type of code block. It _should not_ be highlighted.
@@ -311,7 +323,6 @@ Paragraph
         console.log(i);
     }
     ```
-
 
 # kbd tag
 
@@ -652,12 +663,14 @@ connected on right :tag:_should_not_work
 *a :tag: inside a italic text*
 ~~a :tag: inside a Strikethrough text~~
 
-*should not work* but it works and it's not a big deal, very hard and close to impossible to fix: 
+*should not work* but it works and it's not a big deal, very hard to fix: 
 
 conected_to_a_word_:tag:
 conected_to_a_word:tag:
 
 # Math
+
+### Multi Markdown Latex based formulas
 
 An example of math within a paragraph --- \\({e}^{i\pi }+1=0\\)
 --- easy enough.
@@ -665,10 +678,6 @@ An example of math within a paragraph --- \\({e}^{i\pi }+1=0\\)
 And an equation on it's own:
     
 \\[ {x}_{1,2}=\frac{-b\pm \sqrt{{b}^{2}-4ac}}{2a} \\]
-
-# Cross-references
-
-Clicking [here][section-preview] will lead you to the **Preview** section.
 
 # Footnotes
 
@@ -678,6 +687,8 @@ Footnotes[^1] have a label[^label] and a definition[^!DEF].
 [^1]: This is a footnote
 [^label]: A footnote on "label"
 [^!DEF]: The definition of a footnote.
+
+### Multi-line footnote
 
 [^1]: The first paragraph of the definition.
         Paragraph two of the definition.
