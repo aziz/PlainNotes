@@ -1546,21 +1546,21 @@
 
             <dict>
               <key>match</key>
-              <string>([☐])(?=\s)</string>
+              <string>\G(?:[ \-]+)?([☐])(?=\s)</string>
               <key>name</key>
               <string>punctuation.definition.list_item.todo.pending.markdown</string>
             </dict>
 
             <dict>
               <key>match</key>
-              <string>([✔])(?=\s)</string>
+              <string>\G(?:[ \-]+)?([✔])(?=\s)</string>
               <key>name</key>
               <string>punctuation.definition.list_item.todo.done.markdown</string>
             </dict>
 
             <dict>
               <key>match</key>
-              <string>([✘])(?=\s)</string>
+              <string>\G(?:[ \-]+)?([✘])(?=\s)</string>
               <key>name</key>
               <string>punctuation.definition.list_item.todo.cancelled.markdown</string>
             </dict>

@@ -551,3 +551,19 @@ Clicking [here][section-preview] will lead you to the **Preview** section.
     ☐ pending todoa
     ✔ done todo
 ✘ cancelled todo
+
+**Should** highlight at the beginning of normal list
+
+- ✔ done inside normal tag
+- ✘ cancelled todo
+- ☐ pending todo
+
+**Should not** highlight
+
+- done ✔ inside normal tag
+- cancelled  ✘ todo
+- pending ☐ todo
+
+done ✔ inside normal tag
+cancelled  ✘ todo
+pending ☐ todo
