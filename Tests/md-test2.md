@@ -576,6 +576,7 @@ pending ☐ todo
 # Internal links
 
 [[internal link]]
+[[internal link]][[internal link]]
 empty internal link [[]]
 
 an [[internal link]] inside a paragraph
@@ -593,11 +594,23 @@ an [[internal link]] inside a paragraph
 
 ---
 
-*Should not* with spaces after [[ and before ]]
+*Should not* work with spaces after [[ and before ]]
 [[space after ]]
 [[ space before]]
 [[ space around ]]
 [[    a lof of space   ]]
+
+inside_a_word_[[internal_link]]should_not_work
+inside_a_word[[internal_link]]should_not_work
+inside_a_word[[internal_link]]_should_not_work
+inside_a_word_[[internal_link]]_should_not_work
+
+conected_to_a_word_[[internal_link]]
+conected_to_a_word[[internal_link]]
+
+connected on right [[internal_link]]should_not_work
+connected on right [[internal_link]]_should_not_work
+
 
 *Should not* work inside code blocks
 `an [[internal link]] inside a inline code block`
