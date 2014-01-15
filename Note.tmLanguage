@@ -701,6 +701,10 @@
           <key>include</key>
           <string>#link-ref</string>
         </dict>
+        <dict>
+          <key>include</key>
+          <string>#link-internal</string>
+        </dict>
       </array>
     </dict>
 
@@ -834,6 +838,10 @@
           <key>include</key>
           <string>#link-ref</string>
         </dict>
+        <dict>
+          <key>include</key>
+          <string>#link-internal</string>
+        </dict>
       </array>
     </dict>
 
@@ -964,6 +972,10 @@
         <dict>
           <key>include</key>
           <string>#link-ref</string>
+        </dict>
+        <dict>
+          <key>include</key>
+          <string>#link-internal</string>
         </dict>
       </array>
     </dict>
@@ -1521,6 +1533,32 @@
       <string>(\[)((?&lt;square&gt;[^\[\]\\]|\\.|\[\g&lt;square&gt;*+\])*+)(\])[ ]?(\[)(\])</string>
       <key>name</key>
       <string>meta.link.reference.literal.markdown</string>
+    </dict>
+
+    <key>link-internal</key>
+    <dict>
+      <key>captures</key>
+      <dict>
+        <key>1</key>
+        <dict>
+          <key>name</key>
+          <string>punctuation.definition.link.internal.begin.markdown.note</string>
+        </dict>
+        <key>2</key>
+        <dict>
+          <key>name</key>
+          <string>string.other.link.internal.title.markdown.note</string>
+        </dict>
+        <key>3</key>
+        <dict>
+          <key>name</key>
+          <string>punctuation.definition.link.internal.end.markdown.note</string>
+        </dict>
+      </dict>
+      <key>match</key>
+      <string>(\[\[)(?![\s])(.*?)?((?&lt;![\s])\]\])</string>
+      <key>name</key>
+      <string>meta.link.internal.markdown.note</string>
     </dict>
 
     <key>list-paragraph</key>
@@ -2250,6 +2288,10 @@
         <dict>
           <key>include</key>
           <string>#link-email</string>
+        </dict>
+        <dict>
+          <key>include</key>
+          <string>#link-internal</string>
         </dict>
         <dict>
           <key>include</key>

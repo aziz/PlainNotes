@@ -573,3 +573,37 @@ done ✔ inside normal tag
 cancelled  ✘ todo
 pending ☐ todo
 
+# Internal links
+
+[[internal link]]
+empty internal link [[]]
+
+an [[internal link]] inside a paragraph
+### an [[internal link]] inside a heading
+✔ an [[internal link]] inside a done todo
+✘ an [[internal link]] inside a cancelled todo
+☐ an [[internal link]] inside a pending todo
+- inside a list [[internal link]] 
+
+> in block qoute [[internal link]] 
+
+**an [[internal link]] inside a bold text**
+*an [[internal link]] inside a italic text*
+~~an [[internal link]] inside a Strikethrough text~~
+
+---
+
+*Should not* with spaces after [[ and before ]]
+[[space after ]]
+[[ space before]]
+[[ space around ]]
+[[    a lof of space   ]]
+
+*Should not* work inside code blocks
+`an [[internal link]] inside a inline code block`
+
+```
+an [[internal link]] inside a fenced block of code 
+```
+
+    an [[internal link]] inside a normal block of code 
