@@ -176,7 +176,7 @@
       </array>
     </dict>
 
-    <!-- TODO List Done -->
+    <!-- TODO List Cancelled -->
     <dict>
       <key>begin</key>
       <string>^[ ]{0,3}(✘)(?=\s)</string>
@@ -204,7 +204,6 @@
         </dict>
       </array>
     </dict>
-
 
     <!-- List (Numbered) -->
     <dict>

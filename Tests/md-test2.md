@@ -567,3 +567,4 @@ Clicking [here][section-preview] will lead you to the **Preview** section.
 done ✔ inside normal tag
 cancelled  ✘ todo
 pending ☐ todo
+
