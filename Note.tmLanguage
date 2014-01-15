@@ -1561,6 +1561,38 @@
       <string>meta.link.internal.markdown.note</string>
     </dict>
 
+    <key>note-tag</key>
+    <dict>
+      <key>captures</key>
+      <dict>
+        <key>1</key>
+        <dict>
+          <key>name</key>
+          <string>string.other.note-tag.title.markdown.note</string>
+        </dict>
+        <key>2</key>
+        <dict>
+          <key>name</key>
+          <string>punctuation.definition.note-tag.markdown.note</string>
+        </dict>
+      </dict>
+      <key>match</key>
+      <string>(?x)
+        ((?&lt;=:)\w[^: ]*)  # tag text should have : before it
+        (:(?=([^: ]+:)*\s))   # the end dot
+      </string>
+      <key>name</key>
+      <string>meta.note-tag.markdown.note</string>
+    </dict>
+
+    <key>note-tag-begin</key>
+    <dict>
+      <key>match</key>
+      <string>:(?=(\w[^: ]*:){1,}\s)</string>
+      <key>name</key>
+      <string>punctuation.definition.note-tag.markdown.note</string>
+    </dict>
+
     <key>list-paragraph</key>
     <dict>
       <key>patterns</key>
@@ -2309,6 +2341,15 @@
           <key>include</key>
           <string>#tag-kbd</string>
         </dict>
+        <dict>
+          <key>include</key>
+          <string>#note-tag</string>
+        </dict>
+        <dict>
+          <key>include</key>
+          <string>#note-tag-begin</string>
+        </dict>
+
       </array>
     </dict>
 

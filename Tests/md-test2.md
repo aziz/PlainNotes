@@ -586,6 +586,77 @@ an [[internal link]] inside a fenced block of code
 
     an [[internal link]] inside a normal block of code 
 
+# Tags
+
+**should work**
+
+:tag:
+:multiple:tags:after:eachother:
+at the end of sentense :tag:
+in the middle :tag: of sentense
+
+### a inside a heading :tag:
+
+✔ a inside a done todo :tag:
+✘ a inside a cancelled todo :tag:
+☐ a inside a pending todo :tag:
+- inside a list :tag:
+
+### a inside a heading :multiple:tags:after:eachother:
+✔ a inside a done todo :multiple:tags:after:eachother:
+✘ a inside a cancelled todo :multiple:tags:after:eachother:
+☐ a inside a pending todo :multiple:tags:after:eachother:
+- inside a list :multiple:tags:after:eachother:
+
+> in block qoute :tag:
+
+### a :tag: inside a heading
+✔ a :tag: inside a done todo
+✘ a :tag: inside a cancelled todo
+☐ a :tag: inside a pending todo
+- inside a list :tag: in the middle 
+
+> in block qoute :tag: in the middle
+
+### a :multiple:tags:after:eachother: inside a heading
+✔ a :multiple:tags:after:eachother: inside a done todo
+✘ a :multiple:tags:after:eachother: inside a cancelled todo
+☐ a :multiple:tags:after:eachother: inside a pending todo
+- inside a list :multiple:tags:after:eachother: in the middle 
+
+> in block qoute :multiple:tags:after:eachother: in the middle
+
+:tag_with_underscore:
+
+:tag-with-dash:
+
+:a: :b: :c: 
+
+---
+
+*should not work*
+
+::tag::
+:space middle:
+:space_after :
+: space_before:
+: space_around :
+:    a_lof_of_space   :
+inside_a_word_:tag:should_not_work
+inside_a_word:tag:should_not_work
+inside_a_word:tag:_should_not_work
+inside_a_word_:tag:_should_not_work
+connected on right :tag:should_not_work
+connected on right :tag:_should_not_work
+**a :tag: inside a bold text**
+*a :tag: inside a italic text*
+~~a :tag: inside a Strikethrough text~~
+
+*should not work* but it works and it's not a big deal, very hard and close to impossible to fix: 
+
+conected_to_a_word_:tag:
+conected_to_a_word:tag:
+
 # Math
 
 An example of math within a paragraph --- \\({e}^{i\pi }+1=0\\)
