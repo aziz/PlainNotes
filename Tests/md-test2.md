@@ -1,5 +1,5 @@
 
-# Inline styles
+# Italic and Bold
 
 _italic_
 
@@ -93,20 +93,29 @@ not to put any space in the beginning or end.~~
 
 ***
 
+# Code Inline
+
 `raw more`
 
 ``dobule ` raw``
 
 `raw \` more`
 
-# URL Highlight
+# Code block
+
+    This is code.
+    Isn't it pretty!
+
+    single line
+
+# URLs
 
 An email <example@example.com> link.
 Simple inline link <http://chenluois.com>
 Normal plain link http://example.com/
 Complex url https://github.com/SublimeText-Markdown/MarkdownEditing/issues?page=1&state=closed
 
-# Test: Image Links
+# Image Links
 
 ![Mou icon](http://mouapp.com/Mou_128.png)
 ![Alt text](/path/to/img.jpg "Optional title")
@@ -139,8 +148,6 @@ heading 1
 heading 2
 ---------
 
-# heading 1
-
 ## heading 2
 
 ### heading 3
@@ -152,7 +159,6 @@ heading 2
 ###### heading 6
 
 # Lists
-
 
  * This *is a list!*
  * This is another list item.
@@ -190,12 +196,6 @@ heading 2
     * another
 
 1986\. This shouldn't be a list.
-
-# Code block
-
-    asdfsdafasdf
-    This is code.
-    Isn't it pretty!
 
 # Quotes
 
@@ -270,7 +270,7 @@ for (var i = 0; i < 10; i++) {
 }
 ```
 
-## In / Near Paragraphs
+### In/Near Paragraphs
 
 Below is _not_ a _fenced_ code block, just a normal code block.
 
@@ -313,7 +313,7 @@ Paragraph
     ```
 
 
-# Keyboard Shortcuts
+# kbd tag
 
 A keyboard shortcut <kbd>Enter</kbd> can be in paragraph.
 
@@ -330,28 +330,7 @@ __A keyboard shortcut <kbd>Enter</kbd> can be in bold.__
     A keyboard shortcut <kbd>Enter</kbd> can be in block level tags.
 </div>
 
-# Footnotes
-
-That's some text with a footnote.[^1]
-Footnotes[^1] have a label[^label] and a definition[^!DEF].
-
-[^1]: This is a footnote
-[^label]: A footnote on "label"
-[^!DEF]: The definition of a footnote.
-
-[^1]: The first paragraph of the definition.
-        Paragraph two of the definition.
-
-        > A blockquote with
-        > multiple lines.
-
-            a code block
-
-        A final paragraph. of footnote
-
 # Tables
-
-# todo
 
 | First Header | Second Header | Third Header |
 |--------------|---------------|--------------|
@@ -433,7 +412,7 @@ Footnotes[^1] have a label[^label] and a definition[^!DEF].
 |                 |            |
 
 
-# Supported Syntaxes
+### Supported Syntaxes
 
 **Simple**
 
@@ -506,8 +485,6 @@ Alignment:
 | And more      |            And more         ||
 [Prototype table][]
 
----
-
 ## NOT SUPPORTED 
 
 ### Tables with no pipe at the begining or end
@@ -521,20 +498,6 @@ First Header | Second Header | Third Header
 :----------- | :-----------: | -----------:
 Left         | Center        | Right
 Left         | Center        | Right
-
-
-# Math
-
-An example of math within a paragraph --- \\({e}^{i\pi }+1=0\\)
---- easy enough.
-    
-And an equation on it's own:
-    
-\\[ {x}_{1,2}=\frac{-b\pm \sqrt{{b}^{2}-4ac}}{2a} \\]
-
-# Cross-references
-
-Clicking [here][section-preview] will lead you to the **Preview** section.
 
 # TODO list items
 
@@ -563,7 +526,9 @@ Clicking [here][section-preview] will lead you to the **Preview** section.
 - ✘ cancelled todo
 - ☐ pending todo
 
-**Should not** highlight
+---
+
+*Should not* highlight
 
 - done ✔ inside normal tag
 - cancelled  ✘ todo
@@ -620,3 +585,35 @@ an [[internal link]] inside a fenced block of code
 ```
 
     an [[internal link]] inside a normal block of code 
+
+# Math
+
+An example of math within a paragraph --- \\({e}^{i\pi }+1=0\\)
+--- easy enough.
+    
+And an equation on it's own:
+    
+\\[ {x}_{1,2}=\frac{-b\pm \sqrt{{b}^{2}-4ac}}{2a} \\]
+
+# Cross-references
+
+Clicking [here][section-preview] will lead you to the **Preview** section.
+
+# Footnotes
+
+That's some text with a footnote.[^1]
+Footnotes[^1] have a label[^label] and a definition[^!DEF].
+
+[^1]: This is a footnote
+[^label]: A footnote on "label"
+[^!DEF]: The definition of a footnote.
+
+[^1]: The first paragraph of the definition.
+        Paragraph two of the definition.
+
+        > A blockquote with
+        > multiple lines.
+
+            a code block
+
+        A final paragraph. of footnote
