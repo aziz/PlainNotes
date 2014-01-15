@@ -426,6 +426,11 @@ Footnotes[^1] have a label[^label] and a definition[^!DEF].
 | `Content Cell`    | [Content Cell][2] | ![Image][3]      |
 | http://google.com | <me@ssd.com>      | some text        |
 
+| Unordered  List | Order List |
+|-----------------|------------|
+| C++             | D--        |
+| E::             | X==        |
+|                 |            |
 
 
 # Supported Syntaxes
@@ -478,12 +483,8 @@ Alignment:
 | Anna      |  20 |
 | Alexander |  27 |
 
-
----
-
-## NOT SUPPORTED 
-
 ### Column spanning in multimarkdown tables
+
 | First Header  | Second Header | Third Header         |
 | :------------ | :-----------: | -------------------: |
 | First row     | Data          | Very long data entry |
@@ -503,7 +504,11 @@ Alignment:
 |               |               |              |
 | New section   |     More      |         Data |
 | And more      |            And more         ||
-[Prototype table]
+[Prototype table][]
+
+---
+
+## NOT SUPPORTED 
 
 ### Tables with no pipe at the begining or end
 
