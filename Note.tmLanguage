@@ -118,6 +118,94 @@
       </array>
     </dict>
 
+    <!-- TODO List Pending -->
+    <dict>
+      <key>begin</key>
+      <string>^[ ]{0,3}(☐)(?=\s)</string>
+      <key>captures</key>
+      <dict>
+        <key>1</key>
+        <dict>
+          <key>name</key>
+          <string>punctuation.definition.list_item.todo.pending.markdown</string>
+        </dict>
+      </dict>
+      <key>end</key>
+      <string>^(?=\S)</string>
+      <key>name</key>
+      <string>markup.list.unnumbered.todo.markdown</string>
+      <key>patterns</key>
+      <array>
+        <dict>
+          <key>include</key>
+          <string>#fenced-code-blocks</string>
+        </dict>
+        <dict>
+          <key>include</key>
+          <string>#list-paragraph</string>
+        </dict>
+      </array>
+    </dict>
+
+    <!-- TODO List Done -->
+    <dict>
+      <key>begin</key>
+      <string>^[ ]{0,3}(✔)(?=\s)</string>
+      <key>captures</key>
+      <dict>
+        <key>1</key>
+        <dict>
+          <key>name</key>
+          <string>punctuation.definition.list_item.todo.done.markdown</string>
+        </dict>
+      </dict>
+      <key>end</key>
+      <string>^(?=\S)</string>
+      <key>name</key>
+      <string>markup.list.unnumbered.todo.markdown</string>
+      <key>patterns</key>
+      <array>
+        <dict>
+          <key>include</key>
+          <string>#fenced-code-blocks</string>
+        </dict>
+        <dict>
+          <key>include</key>
+          <string>#list-paragraph</string>
+        </dict>
+      </array>
+    </dict>
+
+    <!-- TODO List Done -->
+    <dict>
+      <key>begin</key>
+      <string>^[ ]{0,3}(✘)(?=\s)</string>
+      <key>captures</key>
+      <dict>
+        <key>1</key>
+        <dict>
+          <key>name</key>
+          <string>punctuation.definition.list_item.todo.cancelled.markdown</string>
+        </dict>
+      </dict>
+      <key>end</key>
+      <string>^(?=\S)</string>
+      <key>name</key>
+      <string>markup.list.unnumbered.todo.markdown</string>
+      <key>patterns</key>
+      <array>
+        <dict>
+          <key>include</key>
+          <string>#fenced-code-blocks</string>
+        </dict>
+        <dict>
+          <key>include</key>
+          <string>#list-paragraph</string>
+        </dict>
+      </array>
+    </dict>
+
+
     <!-- List (Numbered) -->
     <dict>
       <key>begin</key>
@@ -1455,6 +1543,28 @@
               <key>name</key>
               <string>punctuation.definition.list_item.markdown</string>
             </dict>
+
+            <dict>
+              <key>match</key>
+              <string>([☐])(?=\s)</string>
+              <key>name</key>
+              <string>punctuation.definition.list_item.todo.pending.markdown</string>
+            </dict>
+
+            <dict>
+              <key>match</key>
+              <string>([✔])(?=\s)</string>
+              <key>name</key>
+              <string>punctuation.definition.list_item.todo.done.markdown</string>
+            </dict>
+
+            <dict>
+              <key>match</key>
+              <string>([✘])(?=\s)</string>
+              <key>name</key>
+              <string>punctuation.definition.list_item.todo.cancelled.markdown</string>
+            </dict>
+
             <dict>
               <key>match</key>
               <string>([0-9]+)(\.)(?=\s)</string>

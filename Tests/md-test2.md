@@ -333,9 +333,21 @@ __A keyboard shortcut <kbd>Enter</kbd> can be in bold.__
 # Footnotes
 
 That's some text with a footnote.[^1]
+Footnotes[^1] have a label[^label] and a definition[^!DEF].
 
-[^1]: And that's the footnote.
+[^1]: This is a footnote
+[^label]: A footnote on "label"
+[^!DEF]: The definition of a footnote.
 
+[^1]: The first paragraph of the definition.
+        Paragraph two of the definition.
+
+        > A blockquote with
+        > multiple lines.
+
+            a code block
+
+        A final paragraph. of footnote
 
 # Tables
 
@@ -415,6 +427,7 @@ That's some text with a footnote.[^1]
 | http://google.com | <me@ssd.com>      | some text        |
 
 
+
 # Supported Syntaxes
 
 **Simple**
@@ -470,6 +483,28 @@ Alignment:
 
 ## NOT SUPPORTED 
 
+### Column spanning in multimarkdown tables
+| First Header  | Second Header | Third Header         |
+| :------------ | :-----------: | -------------------: |
+| First row     | Data          | Very long data entry |
+| Second row    | **Cell**      | *Cell*               |
+| Third row     | Cell that spans across two columns  ||
+[Table caption, works as a reference][section-mmd-tables-table1] 
+
+| Column 1 | Column 2 | Column 3 | Column 4 |
+| -------- | :------: | -------- | -------- |
+| No span  | Span across three columns    |||
+
+|               |          Grouping           ||
+| First Header  | Second Header | Third Header |
+| ------------  | :-----------: | -----------: |
+| Content       |          *Long Cell*        ||
+| Content       |   **Cell**    |         Cell |
+|               |               |              |
+| New section   |     More      |         Data |
+| And more      |            And more         ||
+[Prototype table]
+
 ### Tables with no pipe at the begining or end
 
 First Header | Second Header | Third Header
@@ -482,13 +517,37 @@ First Header | Second Header | Third Header
 Left         | Center        | Right
 Left         | Center        | Right
 
-### Complex pandoc format:
 
-|              |           Grouping          ||
-| First Header | Second Header | Third Header |
-| ------------ | :-----------: | -----------: |
-| Content      |         *Long Cell*         ||
-| Content      |    **Cell**   |         Cell |
-| New section  |      More     |         Data |
-| And more     |    And more   |              |
-| :---------------------------------------: |||
+# Math
+
+An example of math within a paragraph --- \\({e}^{i\pi }+1=0\\)
+--- easy enough.
+    
+And an equation on it's own:
+    
+\\[ {x}_{1,2}=\frac{-b\pm \sqrt{{b}^{2}-4ac}}{2a} \\]
+
+# Cross-references
+
+Clicking [here][section-preview] will lead you to the **Preview** section.
+
+# TODO list items
+
+- normal list
+☐ pending todo
+✔ done todo
+✘ cancelled todo
+
+☐ pending todo
+☐ pending todo
+✔ done todo
+- normal list
+- normal list
+☐ pending todo
+✘ cancelled todo
+    ☐ pending todoa
+    ✔ done todo
+    ✘ cancelled todo
+    ☐ pending todoa
+    ✔ done todo
+✘ cancelled todo
