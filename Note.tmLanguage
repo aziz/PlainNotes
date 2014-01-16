@@ -109,12 +109,21 @@
       <array>
         <dict>
           <key>include</key>
+          <string>#block_quote</string>
+        </dict>
+        <dict>
+          <key>include</key>
+          <string>#block_raw</string>
+        </dict>
+        <dict>
+          <key>include</key>
           <string>#fenced-code-blocks</string>
         </dict>
         <dict>
           <key>include</key>
           <string>#list-paragraph</string>
         </dict>
+
       </array>
     </dict>
 
@@ -373,14 +382,7 @@
       </dict>
     </dict>
 
-    <dict>
-  	  <key>match</key>
-  	  <string>^\s*$</string>
-  	  <key>name</key>
-  	  <string>meta.empty_line.markdown</string>
-    </dict>
-
-    <!-- paragraph  -->
+    <!-- Paragraph  -->
     <dict>
       <key>begin</key>
       <string>^(?=\S|[\s]{,3})(?![=-]{3,}(?=$))</string>
@@ -427,6 +429,14 @@
           <string>markup.heading.2.markdown</string>
         </dict>
       </array>
+    </dict>
+
+    <!-- Empty lines: Experimental  -->
+    <dict>
+  	  <key>match</key>
+  	  <string>^\s*$</string>
+  	  <key>name</key>
+  	  <string>meta.empty_line.markdown</string>
     </dict>
 
   </array>
@@ -2839,6 +2849,7 @@
         </dict>
       </array>
     </dict>
+
     <!-- Inline Markup REPO -->
     <key>inline</key>
     <dict>
