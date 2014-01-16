@@ -207,8 +207,9 @@ This quote continues on.  Line breaking is OK in markdown
 > Here it is again
 > Lah-di-dah
 > I should really match headings in here too:
-> ## This is a heading in a block quote
 >
+> ## This is a heading in a block quote
+> 
 > - list items
 > - inside block
 > - quote
@@ -219,12 +220,20 @@ This quote continues on.  Line breaking is OK in markdown
 > ✔ done todo
 > ✘ cancelled todo
 > ☐ pending todoa
+> 
+> ---
 >
 > `code` **bold** *italic* [Link]() [[internal link]] :tag:
 >
 > > This is nested blockquote.
 >
 >     return shell_exec("echo $input | $markdown_script");
+>
+
+>
+>   >  
+>   >   > # very deeply nested 
+>   >  
 >
 
 > This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
