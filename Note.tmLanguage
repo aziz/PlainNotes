@@ -2010,98 +2010,6 @@
         </array>
     </dict>
 
-    <!-- BUGGY -->
-    <key>fenced-c</key>
-    <dict>
-        <key>begin</key>
-        <string>^(\s*[`~]{3,})\s*(c)\s*$</string>
-        <key>end</key>
-        <string>^(\1)[ \t]*(\n|$)</string>
-        <key>name</key>
-        <string>markup.raw.block.markdown markup.raw.block.fenced.markdown meta.language.c</string>
-        <key>captures</key>
-        <dict>
-          <key>1</key>
-          <dict>
-            <key>name</key>
-            <string>punctuation.definition.raw.block.fenced.markdown</string>
-          </dict>
-          <key>2</key>
-          <dict>
-            <key>name</key>
-            <string>meta.definition.language.raw.block.fenced.markdown</string>
-          </dict>
-        </dict>
-        <key>patterns</key>
-        <array>
-            <dict>
-                <key>include</key>
-                <string>source.c</string>
-            </dict>
-        </array>
-    </dict>
-
-    <!-- BUGGY -->
-    <key>fenced-c++</key>
-    <dict>
-        <key>begin</key>
-        <string>^(\s*[`~]{3,})\s*(c\+\+|cpp)\s*$</string>
-        <key>end</key>
-        <string>^(\1)[ \t]*(\n|$)</string>
-        <key>name</key>
-        <string>markup.raw.block.markdown markup.raw.block.fenced.markdown meta.language.c++</string>
-        <key>captures</key>
-        <dict>
-          <key>1</key>
-          <dict>
-            <key>name</key>
-            <string>punctuation.definition.raw.block.fenced.markdown</string>
-          </dict>
-          <key>2</key>
-          <dict>
-            <key>name</key>
-            <string>meta.definition.language.raw.block.fenced.markdown</string>
-          </dict>
-        </dict>
-        <key>patterns</key>
-        <array>
-            <dict>
-                <key>include</key>
-                <string>source.c++</string>
-            </dict>
-        </array>
-    </dict>
-
-    <key>fenced-yaml</key>
-    <dict>
-        <key>begin</key>
-        <string>^(\s*[`~]{3,})\s*(yaml)\s*$</string>
-        <key>end</key>
-        <string>^(\1)[ \t]*(\n|$)</string>
-        <key>name</key>
-        <string>markup.raw.block.markdown markup.raw.block.fenced.markdown meta.language.yaml</string>
-        <key>captures</key>
-        <dict>
-          <key>1</key>
-          <dict>
-            <key>name</key>
-            <string>punctuation.definition.raw.block.fenced.markdown</string>
-          </dict>
-          <key>2</key>
-          <dict>
-            <key>name</key>
-            <string>meta.definition.language.raw.block.fenced.markdown</string>
-          </dict>
-        </dict>
-        <key>patterns</key>
-        <array>
-            <dict>
-                <key>include</key>
-                <string>source.yaml</string>
-            </dict>
-        </array>
-    </dict>
-
     <key>fenced-sql</key>
     <dict>
         <key>begin</key>
@@ -2248,37 +2156,6 @@
             <dict>
                 <key>include</key>
                 <string>source.scala</string>
-            </dict>
-        </array>
-    </dict>
-
-    <!-- BUGGY -->
-    <key>fenced-obj-c</key>
-    <dict>
-        <key>begin</key>
-        <string>^(\s*[`~]{3,})\s*(objective-c|objc)\s*$</string>
-        <key>end</key>
-        <string>^(\1)[ \t]*(\n|$)</string>
-        <key>name</key>
-        <string>markup.raw.block.markdown markup.raw.block.fenced.markdown meta.language.objc</string>
-        <key>captures</key>
-        <dict>
-          <key>1</key>
-          <dict>
-            <key>name</key>
-            <string>punctuation.definition.raw.block.fenced.markdown</string>
-          </dict>
-          <key>2</key>
-          <dict>
-            <key>name</key>
-            <string>meta.definition.language.raw.block.fenced.markdown</string>
-          </dict>
-        </dict>
-        <key>patterns</key>
-        <array>
-            <dict>
-                <key>include</key>
-                <string>source.objc</string>
             </dict>
         </array>
     </dict>
@@ -2463,36 +2340,6 @@
         </array>
     </dict>
 
-    <key>fenced-lisp</key>
-    <dict>
-        <key>begin</key>
-        <string>^(\s*[`~]{3,})\s*(lisp)\s*$</string>
-        <key>end</key>
-        <string>^(\1)[ \t]*(\n|$)</string>
-        <key>name</key>
-        <string>markup.raw.block.markdown markup.raw.block.fenced.markdown meta.language.lisp</string>
-        <key>captures</key>
-        <dict>
-          <key>1</key>
-          <dict>
-            <key>name</key>
-            <string>punctuation.definition.raw.block.fenced.markdown</string>
-          </dict>
-          <key>2</key>
-          <dict>
-            <key>name</key>
-            <string>meta.definition.language.raw.block.fenced.markdown</string>
-          </dict>
-        </dict>
-        <key>patterns</key>
-        <array>
-            <dict>
-                <key>include</key>
-                <string>source.lisp</string>
-            </dict>
-        </array>
-    </dict>
-
     <key>fenced-matlab</key>
     <dict>
         <key>begin</key>
@@ -2579,6 +2426,165 @@
             <dict>
                 <key>include</key>
                 <string>source.regexp</string>
+            </dict>
+        </array>
+    </dict>
+
+    <!-- BUGGY -->
+    <key>fenced-lisp</key>
+    <dict>
+        <key>begin</key>
+        <string>^(\s*[`~]{3,})\s*(lisp)\s*$</string>
+        <key>end</key>
+        <string>^(\1)[ \t]*(\n|$)</string>
+        <key>name</key>
+        <string>markup.raw.block.markdown markup.raw.block.fenced.markdown meta.language.lisp</string>
+        <key>captures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.raw.block.fenced.markdown</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>meta.definition.language.raw.block.fenced.markdown</string>
+          </dict>
+        </dict>
+        <key>patterns</key>
+        <array>
+            <dict>
+                <key>include</key>
+                <string>source.lisp</string>
+            </dict>
+        </array>
+    </dict>
+
+    <!-- BUGGY -->
+    <key>fenced-c</key>
+    <dict>
+        <key>begin</key>
+        <string>^(\s*[`~]{3,})\s*(c)\s*$</string>
+        <key>end</key>
+        <string>^(\1)[ \t]*(\n|$)</string>
+        <key>name</key>
+        <string>markup.raw.block.markdown markup.raw.block.fenced.markdown meta.language.c</string>
+        <key>captures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.raw.block.fenced.markdown</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>meta.definition.language.raw.block.fenced.markdown</string>
+          </dict>
+        </dict>
+        <key>patterns</key>
+        <array>
+            <dict>
+                <key>include</key>
+                <string>source.c</string>
+            </dict>
+        </array>
+    </dict>
+
+    <!-- BUGGY -->
+    <key>fenced-c++</key>
+    <dict>
+        <key>begin</key>
+        <string>^(\s*[`~]{3,})\s*(c\+\+|cpp)\s*$</string>
+        <key>end</key>
+        <string>^(\1)[ \t]*(\n|$)</string>
+        <key>name</key>
+        <string>markup.raw.block.markdown markup.raw.block.fenced.markdown meta.language.c++</string>
+        <key>captures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.raw.block.fenced.markdown</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>meta.definition.language.raw.block.fenced.markdown</string>
+          </dict>
+        </dict>
+        <key>patterns</key>
+        <array>
+        		<dict>
+        		    <key>include</key>
+        		    <string>source.c</string>
+        		</dict>
+            <dict>
+                <key>include</key>
+                <string>source.c++</string>
+            </dict>
+        </array>
+    </dict>
+
+    <!-- BUGGY -->
+    <key>fenced-obj-c</key>
+    <dict>
+        <key>begin</key>
+        <string>^(\s*[`~]{3,})\s*(objective-c|objc)\s*$</string>
+        <key>end</key>
+        <string>^(\1)[ \t]*(\n|$)</string>
+        <key>name</key>
+        <string>markup.raw.block.markdown markup.raw.block.fenced.markdown meta.language.objc</string>
+        <key>captures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.raw.block.fenced.markdown</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>meta.definition.language.raw.block.fenced.markdown</string>
+          </dict>
+        </dict>
+        <key>patterns</key>
+        <array>
+            <dict>
+                <key>include</key>
+                <string>source.objc</string>
+            </dict>
+        </array>
+    </dict>
+
+    <!-- BUGGY -->
+    <key>fenced-yaml</key>
+    <dict>
+        <key>begin</key>
+        <string>^(\s*[`~]{3,})\s*(yaml)\s*$</string>
+        <key>end</key>
+        <string>^(\1)[ \t]*(\n|$)</string>
+        <key>name</key>
+        <string>markup.raw.block.markdown markup.raw.block.fenced.markdown meta.language.yaml</string>
+        <key>captures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.raw.block.fenced.markdown</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>meta.definition.language.raw.block.fenced.markdown</string>
+          </dict>
+        </dict>
+        <key>patterns</key>
+        <array>
+            <dict>
+                <key>include</key>
+                <string>source.yaml</string>
             </dict>
         </array>
     </dict>

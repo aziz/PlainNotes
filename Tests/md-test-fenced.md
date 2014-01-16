@@ -886,19 +886,6 @@ hExcel = actxserver('excel.application')
 ^(([a-zA-Z]:)|(\\{2}\w+)\$?)(\\(\w[\w].*))(.jpg|.JPG|.gif|.GIF|.doc|.DOC|.pdf|.PDF)$
 ```  
 
-```
-# Heading 1
-- list item 1
-- list item 2
-
-paragraph *italic* **bold** [link][1] ![image][2] `code`
-
-> block qoute
-
-    block code here
-```
-
-
 ---
 
 # Bug
@@ -949,8 +936,6 @@ struct TNode  {
 status_t CameraClient::setPreviewWindow
 ```
 
-
- 
 # bug 
 
 ``` latex
