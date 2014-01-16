@@ -323,24 +323,6 @@ Paragraph
         console.log(i);
     }
     ```
-
-# kbd tag
-
-A keyboard shortcut <kbd>Enter</kbd> can be in paragraph.
-
-* A keyboard shortcut <kbd>Enter</kbd> can be in list.
-
-_A keyboard shortcut <kbd>Enter</kbd> can be in italic._
-__A keyboard shortcut <kbd>Enter</kbd> can be in bold.__
-
-~~A keyboard shortcut <kbd>Enter</kbd> can be in deleted text.~~
-
-<p>A keyboard shortcut <kbd>Enter</kbd> can be in HTML.</p>
-
-<div>
-    A keyboard shortcut <kbd>Enter</kbd> can be in block level tags.
-</div>
-
 # Tables
 
 | First Header | Second Header | Third Header |
@@ -699,3 +681,5 @@ Footnotes[^1] have a label[^label] and a definition[^!DEF].
             a code block
 
         A final paragraph. of footnote
+
+
