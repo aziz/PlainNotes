@@ -588,14 +588,14 @@ an [[internal link]] inside a fenced block of code
 at the end of sentense :tag:
 in the middle :tag: of sentense
 
-### a inside a heading :tag:
+### inside a heading :tag:
 
 ✔ a inside a done todo :tag:
 ✘ a inside a cancelled todo :tag:
 ☐ a inside a pending todo :tag:
 - inside a list :tag:
 
-### a inside a heading :multiple:tags:after:eachother:
+### inside a heading :multiple:tags:after:eachother:
 ✔ a inside a done todo :multiple:tags:after:eachother:
 ✘ a inside a cancelled todo :multiple:tags:after:eachother:
 ☐ a inside a pending todo :multiple:tags:after:eachother:
