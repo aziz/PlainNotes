@@ -178,6 +178,27 @@ heading 2
 
 1986\. This shouldn't be a list.
 
+### Testing list immediately after paragraph
+this is a paragraph
+- and this
+- is a list
+
+### Testing blockquote and code blocks inside a list
+* this is a list
+
+   > This is a blockquote.
+
+ this is still part of the 
+ list item.
+
+* Lorem ipsum
+
+        This is a code block  
+* list continues
+* list continues
+
+
+
 # Quotes
 
 
