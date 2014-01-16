@@ -20,10 +20,10 @@
         (?= [ ]{,3}&gt;
         | ([ ]{4}|\t)(?!$)
         | [#]{1}\s*+
-        | [#]{2}\s*+
-        | [#]{3}\s*+  # these seems a bit stupid, but it's the only
-        | [#]{4}\s*+  # way I found to add heading number to the scope
-        | [#]{5}\s*+
+        | [#]{2}\s*+   # these seems a bit stupid, but it's the only
+        | [#]{3}\s*+   # way I found to add heading number to the scope
+        | [#]{4}\s*+   # sublime does not support dynamic scope names
+        | [#]{5}\s*+   # like textmate does! it's a bummer!
         | [#]{6}\s*+
         | [ ]{,3}(?&lt;marker&gt;[-*_])([ ]{,2}\k&lt;marker&gt;){2,}[ \t]*+$
         | [ ]{,3}(([\|\+])([^\|\n]+)){2,}([\|\+]+)$  # table
@@ -373,10 +373,17 @@
       </dict>
     </dict>
 
+    <dict>
+  	  <key>match</key>
+  	  <string>^\s*$</string>
+  	  <key>name</key>
+  	  <string>meta.empty_line.markdown</string>
+    </dict>
+
     <!-- paragraph  -->
     <dict>
       <key>begin</key>
-      <string>^(?=\S)(?![=-]{3,}(?=$))</string>
+      <string>^(?=\S|[\s]{,3})(?![=-]{3,}(?=$))</string>
       <key>end</key>
       <string>^(?:\s*$|(?=[ ]{,3}&gt;)|(?=```|~~~))|(?=[ \t]*\n)(?&lt;=^===|^====|=====|^---|^----|-----)[ \t]*\n|(?=^#)</string>
       <key>name</key>
@@ -421,6 +428,7 @@
         </dict>
       </array>
     </dict>
+
   </array>
 
   <!-- REPO ========= -->

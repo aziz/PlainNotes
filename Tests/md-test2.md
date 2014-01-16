@@ -148,7 +148,7 @@ heading 2
  * This one is tricky
  * *This is a list*
 
-   Because this should still be a list item.
+  Because this should still be a list item.
 
 1. This is a list item too
 2. This list is numbered
@@ -248,8 +248,6 @@ for (var i = 0; i < 10; i++) {
     console.log(i);
 }
 ```
-
-
 
 Below are not valid fenced code blocks according to the [GFM docs][GFM].
 It says there must be a blank line before the code block. However, GitHub highlights them. So, they _should_ be highlighted.
