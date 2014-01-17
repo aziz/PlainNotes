@@ -1729,35 +1729,47 @@
           <array>
             <dict>
               <key>match</key>
-              <string>([*+-])(?=\s)</string>
+              <string>^(?:[ \t]+)?([*+-])(?=\s)</string>
               <key>name</key>
               <string>punctuation.definition.list_item.markdown</string>
             </dict>
 
             <dict>
               <key>match</key>
-              <string>\G(?:[ \-]+)?([☐])(?=\s)</string>
+              <string>(?x:
+                (?&lt;=[\+\-\*]{1,1})[ ][☐](?=\s)                          # after an unordered list
+                | (?&lt;=^\d\.|^\d\d\.|^\d\d\d\.|^\d\d\d\d.)[ ][☐](?=\s)   # after an ordered list
+                | \G(?:[ \t]+)?([☐])(?=\s)                                 # as the bullet
+              )</string>
               <key>name</key>
               <string>punctuation.definition.list_item.todo.pending.markdown</string>
             </dict>
 
             <dict>
               <key>match</key>
-              <string>\G(?:[ \-]+)?([✔])(?=\s)</string>
+              <string>(?x:
+                (?&lt;=[\+\-\*]{1,1})[ ][✔](?=\s)                          # after an unordered list
+                | (?&lt;=^\d\.|^\d\d\.|^\d\d\d\.|^\d\d\d\d.)[ ][✔](?=\s)   # after an ordered list
+                | \G(?:[ \t]+)?([✔])(?=\s)                                 # as the bullet
+              )</string>
               <key>name</key>
               <string>punctuation.definition.list_item.todo.done.markdown</string>
             </dict>
 
             <dict>
               <key>match</key>
-              <string>\G(?:[ \-]+)?([✘])(?=\s)</string>
+              <string>(?x:
+                (?&lt;=[\+\-\*]{1,1})[ ][✘](?=\s)                          # after an unordered list
+                | (?&lt;=^\d\.|^\d\d\.|^\d\d\d\.|^\d\d\d\d.)[ ][✘](?=\s)   # after an ordered list
+                | \G(?:[ \t]+)?([✘])(?=\s)                                 # as the bullet
+              )</string>
               <key>name</key>
               <string>punctuation.definition.list_item.todo.cancelled.markdown</string>
             </dict>
 
             <dict>
               <key>match</key>
-              <string>([0-9]+)(\.)(?=\s)</string>
+              <string>^(?:[ \t]+)?([0-9]+)(\.)(?=\s)</string>
               <key>captures</key>
               <dict>
                 <key>1</key>

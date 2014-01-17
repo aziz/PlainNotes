@@ -197,7 +197,34 @@ this is a paragraph
 * list continues
 * list continues
 
+### More Testing for nested
 
+ + ✔ sadsad
+
+0. normal list
+1. ✔ Orange
+2. ✘ Yellow
+3. ☐ Green
+4. Green Light
+5. Blue * + - 1. dfsdf
+    * dsfsdfdsf
+        * ✔ Orange
+        + ✘ Yellow
+        - ☐ Yellow 
+    * sdf * + - 1. ✔ ✘ ☐
+    * sdfsdf
+    11. sdsa
+    12. asdsad
+✔ Orange
+    ✔ Orange
+    ✔ Orange
+    ✔ Orange
+✘ Yellow
+    ✔ Orange
+        ✔ Orange
+        ☐ Green
+        ☐ Green
+☐ Green
 
 # Quotes
 
