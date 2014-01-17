@@ -695,6 +695,49 @@ connected on right :tag:_should_not_work
 conected_to_a_word_:tag:
 conected_to_a_word:tag:
 
+# HTML
+
+<!-- Here is HTML Comment -->
+
+<!--
+multi line html comment
+can go here
+-->
+
+<span class="inline">test inside **span**  [link][]</span>
+
+<span class="inline">
+test inside **span**  [link][]
+</span>
+
+<div class="block">test inside **block**  [link][]</div>
+
+<div class="block">
+test inside **block**  [link][]
+</div>
+
+<ul id="ProjectSubmenu">
+    <li><a href="#2" title="Markdown Project">Main</a></li>
+    <li><a href="#1" title="Markdown Basics">Basics</a></li>
+</ul>
+
+``` html
+<span class="inline">test inside **span**  [link][]</span>
+```
+
+``` html
+<div class="block">
+test inside **block**  [link][]
+</div>
+```
+
+``` html
+<ul id="ProjectSubmenu">
+    <li><a href="#2" title="Markdown Project">Main</a></li>
+    <li><a href="#1" title="Markdown Basics">Basics</a></li>
+</ul>
+```
+
 # Math
 
 ### Multi Markdown Latex based formulas

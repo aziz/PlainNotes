@@ -26,7 +26,7 @@
 				<key>selection</key>
 				<string>#4f371155</string>
 				<key>selectionBorder</key>
-				<string>#4f371155</string>
+				<string>#4f3711AA</string>
 				<key>selectionForeground</key>
 				<string>#4f3711</string>
 			</dict>
@@ -359,9 +359,9 @@
 			<key>settings</key>
 			<dict>
 				<key>background</key>
-				<string>#4f371133</string>
+				<string>#4f371166</string>
 				<key>foreground</key>
-				<string>#4f371133</string>
+				<string>#4f371166</string>
 			</dict>
 		</dict>
 
@@ -478,6 +478,132 @@
 				<string>#fecb78</string>
 				<key>background</key>
 				<string>#fdb350CC</string>
+			</dict>
+		</dict>
+
+<!-- HTML ======================= -->
+
+		<dict>
+			<key>name</key>
+			<string>Comment</string>
+			<key>scope</key>
+			<string>comment.block  - markup.raw.block.fenced</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>normal</string>
+				<key>foreground</key>
+				<string>#4f471155</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>HTML Tag Inline</string>
+			<key>scope</key>
+			<string>meta.tag.inline - markup.raw.block.fenced</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>normal</string>
+				<key>foreground</key>
+				<string>#4f471166</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>HTML Tag Block</string>
+			<key>scope</key>
+			<string>meta.tag.block - markup.raw.block.fenced</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>normal</string>
+				<key>foreground</key>
+				<string>#4f4711AA</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>HTML Tag Inline Punctuations</string>
+			<key>scope</key>
+			<string>meta.tag.inline punctuation.definition - markup.raw.block.fenced</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>normal</string>
+				<key>foreground</key>
+				<string>#4f471166</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>HTML Tag Block Punctuations</string>
+			<key>scope</key>
+			<string>meta.disable-markdown meta.tag.inline punctuation.definition  - markup.raw.block.fenced, meta.disable-markdown meta.tag.block punctuation.definition  - markup.raw.block.fenced</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>normal</string>
+				<key>foreground</key>
+				<string>#4f4711AA</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>HTML Tag Name</string>
+			<key>scope</key>
+			<string>meta.tag  entity.name.tag  - markup.raw.block.fenced</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>normal</string>
+				<key>foreground</key>
+				<string>#F92672</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>HTML Tag Attribute</string>
+			<key>scope</key>
+			<string>meta.tag entity.other.attribute-name  - markup.raw.block.fenced</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>normal</string>
+				<key>foreground</key>
+				<string>#F9267299</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>HTML Tag Attribute Values</string>
+			<key>scope</key>
+			<string>meta.tag string - markup.raw.block.fenced</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>normal</string>
+				<key>foreground</key>
+				<string>#4f4711</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Disabled Markdown</string>
+			<key>scope</key>
+			<string>meta.disable-markdown - markup.raw.block.fenced</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#4f471133</string>
 			</dict>
 		</dict>
 

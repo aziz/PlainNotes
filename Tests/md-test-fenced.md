@@ -347,6 +347,141 @@ function git_pub() {
 }
 ```  
 
+``` java
+import java.util.Scanner;
+import java.io.File;
+import java.io.IOException;
+
+public class ReadAndPrintScores
+{
+    public static void main(String[] args)
+    {   try
+    {   Scanner s = new Scanner( new File("scores.dat") );
+        while( s.hasNextInt() )
+        {   System.out.println( s.nextInt() );
+        }
+    }
+    catch(IOException e)
+    {   System.out.println( e );
+    }
+    }
+}
+``` 
+
+```  less
+@base: #f938ab;
+.box-shadow(@style, @c) when (iscolor(@c)) {
+  -webkit-box-shadow: @style @c;
+  -moz-box-shadow:    @style @c;
+  box-shadow:         @style @c;
+}
+.box-shadow(@style, @alpha: 50%) when (isnumber(@alpha)) {
+  .box-shadow(@style, rgba(0, 0, 0, @alpha));
+}
+.box {
+  color: saturate(@base, 5%);
+  border-color: lighten(@base, 30%);
+  div { .box-shadow(0 0 5px, 30%) }
+}
+```  
+
+```  css
+h2 {
+    font-size: 1.5em;
+    background-color: #ccc;
+    margin: 20px;
+    padding: 40px;
+}
+```  
+
+```  php
+<?php
+class Programmer {
+        // Class Properties
+        var $name;         // Programmer's name
+        var $experience;   // How long has been programming
+        var $lang;         // Favorite Language
+        var $education;    // Highest degree earned
+        // Class Constructor - function same name as the class
+        function Programmer($name, $experience, $lang, $education) {
+             $this->name=$name;
+             $this->experience=$experience;
+             $this->lang=$lang;
+             $this->education=$education;
+        }
+        // Getter/Setter functions for all properties in the class
+        function get_name() {
+             return $this->name;
+        }
+        function set_name($newname) {
+             $this->name = $newname;
+        }
+        function get_experience() {
+             return $this->experience;
+        }
+        function set_experience($newexperience) {
+             $this->experience = $newexperience;
+        }
+        function get_lang() {
+             return $this->lang;
+        }
+        function set_lang($newlang) {
+             $this->lang = $newlang;
+        }
+        function get_education() {
+             return $this->education;
+        }
+        function set_education($neweducation) {
+             $this->education = $neweducation;
+        }
+        // Utility data dump function
+        function output() {
+             echo "Programmer Name: ".$this->name."<br>";
+             echo $this->name." has ".$this->experience." years of programming experience.<br>";
+             echo $this->lang." is ".$this->name."'s favorite programming language.<br>";
+             echo $this->name." holds the degree: ".$this->education."<br><br>";
+        }
+   }
+   // Instantiating a programmer
+   $paul = new Programmer('Paul Conrad',12,'C++','Bachelor of Science in Computer Science');
+   $paul->output();
+   // Oops, Paul has programmed alot longer than 12 year, really is 22 years
+   $paul->set_experience(22);
+   $paul->output();
+?>
+```  
+
+```  xml
+<dict>
+  <key>name</key>
+  <string>comment</string>
+  <key>scope</key>
+  <string>markup.raw.block.fenced comment, markup.raw.block.fenced comment punctuation</string>
+  <key>settings</key>
+  <dict>
+    <key>foreground</key>
+    <string>#999999</string>
+  </dict>
+</dict>
+<dict>
+```  
+
+```  html
+<!DOCTYPE html>
+<html>
+<body>
+<p>
+    My Bonnie lies over the ocean.
+    My Bonnie lies over the sea.
+    My Bonnie lies over the ocean.
+    Oh, bring back my Bonnie to me.
+</p>
+<p>Note that your browser ignores the layout!</p>
+</body>
+</html>
+```  
+
+
 ```  sql
 -- cr_spatial_index.sql
 --
@@ -498,139 +633,6 @@ template< class T > bool Stack<T>::push(T x)
 }
 ```
 
-``` java
-import java.util.Scanner;
-import java.io.File;
-import java.io.IOException;
-
-public class ReadAndPrintScores
-{
-    public static void main(String[] args)
-    {   try
-    {   Scanner s = new Scanner( new File("scores.dat") );
-        while( s.hasNextInt() )
-        {   System.out.println( s.nextInt() );
-        }
-    }
-    catch(IOException e)
-    {   System.out.println( e );
-    }
-    }
-}
-``` 
-
-```  less
-@base: #f938ab;
-.box-shadow(@style, @c) when (iscolor(@c)) {
-  -webkit-box-shadow: @style @c;
-  -moz-box-shadow:    @style @c;
-  box-shadow:         @style @c;
-}
-.box-shadow(@style, @alpha: 50%) when (isnumber(@alpha)) {
-  .box-shadow(@style, rgba(0, 0, 0, @alpha));
-}
-.box {
-  color: saturate(@base, 5%);
-  border-color: lighten(@base, 30%);
-  div { .box-shadow(0 0 5px, 30%) }
-}
-```  
-
-```  css
-h2 {
-    font-size: 1.5em;
-    background-color: #ccc;
-    margin: 20px;
-    padding: 40px;
-}
-```  
-
-```  php
-<?php
-class Programmer {
-        // Class Properties
-        var $name;         // Programmer's name
-        var $experience;   // How long has been programming
-        var $lang;         // Favorite Language
-        var $education;    // Highest degree earned
-        // Class Constructor - function same name as the class
-        function Programmer($name, $experience, $lang, $education) {
-             $this->name=$name;
-             $this->experience=$experience;
-             $this->lang=$lang;
-             $this->education=$education;
-        }
-        // Getter/Setter functions for all properties in the class
-        function get_name() {
-             return $this->name;
-        }
-        function set_name($newname) {
-             $this->name = $newname;
-        }
-        function get_experience() {
-             return $this->experience;
-        }
-        function set_experience($newexperience) {
-             $this->experience = $newexperience;
-        }
-        function get_lang() {
-             return $this->lang;
-        }
-        function set_lang($newlang) {
-             $this->lang = $newlang;
-        }
-        function get_education() {
-             return $this->education;
-        }
-        function set_education($neweducation) {
-             $this->education = $neweducation;
-        }
-        // Utility data dump function
-        function output() {
-             echo "Programmer Name: ".$this->name."<br>";
-             echo $this->name." has ".$this->experience." years of programming experience.<br>";
-             echo $this->lang." is ".$this->name."'s favorite programming language.<br>";
-             echo $this->name." holds the degree: ".$this->education."<br><br>";
-        }
-   }
-   // Instantiating a programmer
-   $paul = new Programmer('Paul Conrad',12,'C++','Bachelor of Science in Computer Science');
-   $paul->output();
-   // Oops, Paul has programmed alot longer than 12 year, really is 22 years
-   $paul->set_experience(22);
-   $paul->output();
-?>
-```  
-
-```  xml
-<dict>
-  <key>name</key>
-  <string>comment</string>
-  <key>scope</key>
-  <string>markup.raw.block.fenced comment, markup.raw.block.fenced comment punctuation</string>
-  <key>settings</key>
-  <dict>
-    <key>foreground</key>
-    <string>#999999</string>
-  </dict>
-</dict>
-<dict>
-```  
-
-```  html
-<!DOCTYPE html>
-<html>
-<body>
-<p>
-    My Bonnie lies over the ocean.
-    My Bonnie lies over the sea.
-    My Bonnie lies over the ocean.
-    Oh, bring back my Bonnie to me.
-</p>
-<p>Note that your browser ignores the layout!</p>
-</body>
-</html>
-```  
 
 ```  erlang
 -module(bowling).
