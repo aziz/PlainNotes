@@ -95,13 +95,13 @@ to add extra (unwanted) `<p>` tags around HTML block-level tags.
 For example, to add an HTML table to a Markdown article:
 
     This is a regular paragraph.
-
+    
     <table>
         <tr>
             <td>Foo</td>
         </tr>
     </table>
-
+    
     This is another regular paragraph.
 
 Note that Markdown formatting syntax is not processed within block-level

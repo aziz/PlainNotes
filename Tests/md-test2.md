@@ -63,7 +63,7 @@ __perform__complicated__task
 
 ~~There may be __bold__ or _italic_ text inside strikethroughed text.~~
 
-~~There may be a keyboard shortcut like <kbd>Enter</kbd> inside strikethroughed text.~~
+~~There may be ![Mou icon](mo.com) a keyboard `complicated` shortcut like [GFM][GFM] inside strikethroughed text.~~
 
 __There may be ~~strikethroughed text~~ inside bold text.__
 _There may be ~~strikethroughed text~~ inside italic text._
@@ -124,7 +124,7 @@ Complex url https://github.com/SublimeText-Markdown/MarkdownEditing/issues?page=
 # Headings
 
 heading 1
-=========
+=========       
 
 heading 2
 ---------
@@ -505,6 +505,23 @@ Alignment:
 | New section   |     More      |         Data |
 | And more      |            And more         ||
 [Prototype table][]
+
+### table with spacing before and after
+*before*
+
+  | Name | Phone |
+  | Name | Phone |
+  | _    |       |
+
+*after*
+
+| Name | Phone |   
+| Name | Phone |   
+| _    |       |   
+
+  | Name | Phone |   
+  | Name | Phone |   
+  | _    |       |  
 
 ## NOT SUPPORTED 
 

@@ -26,7 +26,7 @@
         | [#]{5}\s*+   # like textmate does! it's a bummer!
         | [#]{6}\s*+
         | [ ]{,3}(?&lt;marker&gt;[-*_])([ ]{,2}\k&lt;marker&gt;){2,}[ \t]*+$
-        | [ ]{,3}(([\|\+])([^\|\n]+)){2,}([\|\+]+)$  # table
+        | [ ]{,3}(([\|\+])([^\|\n]+)){2,}([\|\+]+)[ \t]*$  # table
         )</string>
       <key>comment</key>
       <string>
@@ -40,7 +40,7 @@
         | ([ ]{4}|\t)
         | [#]{1,6}\s*+
         | [ ]{,3}(?&lt;marker&gt;[-*_])([ ]{,2}\k&lt;marker&gt;){2,}[ \t]*+$
-        | [ ]{,3}(([\|\+])([^\|\n]+)){2,}([\|\+]+)$ # table
+        | [ ]{,3}(([\|\+])([^\|\n]+)){2,}([\|\+]+)[ \t]*$ # table
         )</string>
       <key>name</key>
       <string>meta.block-level.markdown</string>
@@ -1835,9 +1835,9 @@
     <key>table</key>
     <dict>
       <key>begin</key>
-      <string>(^[\|\+])</string>
+      <string>(?&lt;=^|^ |^  |^   )([\|\+])</string>
       <key>end</key>
-      <string>([\|\+])$</string>
+      <string>([\|\+])(?=[ \t]*$)</string>
       <key>name</key>
       <string>markup.table.markdown</string>
       <key>beginCaptures</key>
