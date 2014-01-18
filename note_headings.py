@@ -115,7 +115,7 @@ class NoteSmartFoldingCommand(sublime_plugin.TextCommand):
                                                               skip_headline_at_point=True)
 
 
-class NoteGlobalFoldingCommand(SmartFoldingCommand):
+class NoteGlobalFoldingCommand(NoteSmartFoldingCommand):
     """Global folding / unfolding headlines at any point.
 
     Unfold only when top-level headlines are totally folded.

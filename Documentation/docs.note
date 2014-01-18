@@ -2,6 +2,8 @@
 # List All Notes
 # Create a new Note
 
+# Change Note Color
+
 # Headings
 - ✔ folding/unfolding headings local and global tab/shift+tab
 - ✔ moving between heading (command+R)
