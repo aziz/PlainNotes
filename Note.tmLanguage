@@ -444,7 +444,7 @@
           <key>match</key>
           <string>^(={3,})(?=[ \t]*$)</string>
           <key>name</key>
-          <string>markup.heading.1.markdown</string>
+          <string>markup.heading.1.markdown.note</string>
         </dict>
         <dict>
           <key>captures</key>
@@ -458,7 +458,7 @@
           <key>match</key>
           <string>^(-{3,})(?=[ \t]*$)</string>
           <key>name</key>
-          <string>markup.heading.2.markdown</string>
+          <string>markup.heading.2.markdown.note</string>
         </dict>
       </array>
     </dict>
@@ -1140,7 +1140,7 @@
       <key>contentName</key>
       <string>entity.name.section.markdown</string>
       <key>name</key>
-      <string>markup.heading.1.markdown</string>
+      <string>markup.heading.1.markdown.note</string>
       <key>patterns</key>
       <array>
         <dict>
@@ -1166,7 +1166,7 @@
       <key>contentName</key>
       <string>entity.name.section.markdown</string>
       <key>name</key>
-      <string>markup.heading.2.markdown</string>
+      <string>markup.heading.2.markdown.note</string>
       <key>patterns</key>
       <array>
         <dict>
@@ -1192,7 +1192,7 @@
       <key>contentName</key>
       <string>entity.name.section.markdown</string>
       <key>name</key>
-      <string>markup.heading.3.markdown</string>
+      <string>markup.heading.3.markdown.note</string>
       <key>patterns</key>
       <array>
         <dict>
@@ -1218,7 +1218,7 @@
       <key>contentName</key>
       <string>entity.name.section.markdown</string>
       <key>name</key>
-      <string>markup.heading.4.markdown</string>
+      <string>markup.heading.4.markdown.note</string>
       <key>patterns</key>
       <array>
         <dict>
@@ -1244,7 +1244,7 @@
       <key>contentName</key>
       <string>entity.name.section.markdown</string>
       <key>name</key>
-      <string>markup.heading.5.markdown</string>
+      <string>markup.heading.5.markdown.note</string>
       <key>patterns</key>
       <array>
         <dict>
@@ -1270,7 +1270,7 @@
       <key>contentName</key>
       <string>entity.name.section.markdown</string>
       <key>name</key>
-      <string>markup.heading.6.markdown</string>
+      <string>markup.heading.6.markdown.note</string>
       <key>patterns</key>
       <array>
         <dict>
