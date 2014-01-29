@@ -12,6 +12,8 @@
     <integer>0</integer>
     <key>showInIndexedSymbolList</key>
     <integer>0</integer>
+    <key>spellChecking</key>
+    <string>0</string>
   </dict>
   <key>uuid</key>
   <string>626899F0-53C2-11E3-8F96-0800200C9A66</string>
