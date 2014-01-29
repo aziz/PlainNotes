@@ -2,7 +2,6 @@
   "color_scheme": "Packages/SublimeNotes/Color Schemes/Sticky-GreenLight.tmTheme",
   "draw_indent_guides": false,
   "enable_table_editor": true,
-  "extensions": ["note"],
   "highlight_line": false,
   "line_numbers": false,
   "rulers": [],

@@ -23,7 +23,12 @@ class NotesListCommand(sublime_plugin.ApplicationCommand):
             for name in files:
                 for ext in settings().get("note_file_extensions"):
                     if fnmatch.fnmatch(name, "*." + ext):
-                        note_files.append( [re.sub('\.' + ext + '$', '', name), os.path.join(path, name)] )
+                        note_files.append( ( re.sub('\.' + ext + '$', '', name),
+                                             os.path.join(path, name),
+                                             os.path.getmtime(os.path.join(path, name))
+                                            )
+                                          )
+        note_files.sort(key=lambda item: item[2], reverse=True)
         return note_files
 
     def open_note(self, index):
