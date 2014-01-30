@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>name</key>
+    <string>Notes Index</string>
+    <key>scopeName</key>
+    <string>text.notes_buffer</string>
+    <key>uuid</key>
+    <string>45b2c9db-4c25-4709-aebf-cd9bf9e6c0ba</string>
+    <key>patterns</key>
+    <array>
+    </array>
+</dict>
+</plist>

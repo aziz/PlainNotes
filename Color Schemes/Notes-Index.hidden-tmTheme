@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Notes Index</string>
+	<key>settings</key>
+	<array>
+		<dict>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#e6ccac</string>
+				<key>foreground</key>
+				<string>#8e694d</string>
+				<key>caret</key>
+				<string>#8e694d</string>
+				<key>gutter</key>
+				<string>#e6ccac</string>
+
+				<key>invisibles</key>
+				<string>#8e694d33</string>
+				<key>lineHighlight</key>
+				<string>#cb975888</string>
+
+				<key>selection</key>
+				<string>#22222233</string>
+				<key>selectionBorder</key>
+				<string>#22222233</string>
+				<key>inactiveSelection</key>
+				<string>#22222219</string>
+			</dict>
+		</dict>
+
+	</array>
+	<key>uuid</key>
+	<string>a340eb2b-aaf3-4f2e-95ca-bc34b2d217d0</string>
+</dict>
+</plist>
+

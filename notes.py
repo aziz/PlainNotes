@@ -9,6 +9,9 @@ ST3 = int(sublime.version()) >= 3000
 def settings():
     return sublime.load_settings('Notes.sublime-settings')
 
+def file_id(path):
+    return os.path.relpath(path, root)
+
 class NotesListCommand(sublime_plugin.ApplicationCommand):
 
     def run(self):
@@ -122,10 +125,6 @@ class NoteChangeColorCommand(sublime_plugin.WindowCommand):
         return self.window.active_view().settings().get("syntax").endswith("Note.tmLanguage")
 
 
-
-def file_id(path):
-    return os.path.relpath(path, root)
-
 def save_to_brain():
     print("SAVING TO DISK-----------------")
     print(db)
@@ -133,11 +132,10 @@ def save_to_brain():
     dump(db, gz, -1)
     gz.close()
 
-
 def plugin_loaded():
     global db, root, db_file
     # creating root if it does not exist
-    root = os.path.expanduser(settings().get("root"))
+    root = os.path.normpath(os.path.expanduser(settings().get("root")))
     if not os.path.exists(root):
         os.makedirs(root)
     # open db

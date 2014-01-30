@@ -1,5 +1,6 @@
 [
 { "keys": ["f4"],  "command": "notes_list" },
+{ "keys": ["f3"],  "command": "notes_buffer" },
 { "keys": ["super+f4"],  "command": "notes_new" },
 
 { "keys": ["tab"], "command": "note_smart_folding", "context":
