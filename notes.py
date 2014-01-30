@@ -40,6 +40,7 @@ class NotesListCommand(sublime_plugin.ApplicationCommand):
         f_id = file_id(file_path)
         if db.get(f_id) and db[f_id]["color_scheme"]:
             view.settings().set("color_scheme", db[f_id]["color_scheme"])
+            view.settings().set("is_note", True)
 
 
 class NotesNewCommand(sublime_plugin.ApplicationCommand):
@@ -72,6 +73,17 @@ class NotesNewCommand(sublime_plugin.ApplicationCommand):
             view.run_command("note_insert_title", {"title": title})
 
 
+class NotesEvents(sublime_plugin.EventListener):
+    def on_load_async(self, view):
+        if view.settings().get("is_note") or not view.file_name():
+            return
+        if os.path.realpath(view.file_name()).startswith(root):
+            f_id = file_id(view.file_name())
+            if db.get(f_id) and db[f_id]["color_scheme"]:
+                view.settings().set("color_scheme", db[f_id]["color_scheme"])
+                view.settings().set("is_note", True)
+
+
 class NoteInsertTitleCommand(sublime_plugin.TextCommand):
     def run(self, edit, **kwargs):
         header = "# " + kwargs["title"].capitalize() + "\n"
@@ -80,8 +92,13 @@ class NoteInsertTitleCommand(sublime_plugin.TextCommand):
 
 class NoteChangeColorCommand(sublime_plugin.WindowCommand):
 
-    def __init__(self, view):
+    def run(self):
         self.colors = ["Orange", "Yellow", "Green", "GreenLight", "Blue", "BlueLight", "Purple", "Pink", "Gray", "White"]
+        self.window = sublime.active_window()
+        self.original_cs = self.window.active_view().settings().get("color_scheme")
+        current_color = os.path.basename(self.original_cs).replace("Sticky-","").replace(".tmTheme", "")
+        # show_quick_panel(items, on_done, <flags>, <selected_index>, <on_highlighted>)
+        self.window.show_quick_panel(self.colors, self.on_select, 0, self.colors.index(current_color), self.on_highlight)
 
     def on_select(self, index):
         global db
@@ -101,14 +118,10 @@ class NoteChangeColorCommand(sublime_plugin.WindowCommand):
         path = os.path.join("Packages" , "SublimeNotes", "Color Schemes", "Sticky-" + self.colors[index] + ".tmTheme")
         self.window.active_view().settings().set("color_scheme", path)
 
-    def run(self):
-        self.window = sublime.active_window()
-        self.original_cs = self.window.active_view().settings().get("color_scheme")
-        current_color = os.path.basename(self.original_cs).replace("Sticky-","").replace(".tmTheme", "")
-        # show_quick_panel(items, on_done, <flags>, <selected_index>, <on_highlighted>)
-        self.window.show_quick_panel(self.colors, self.on_select, 0, self.colors.index(current_color), self.on_highlight)
+    def is_enabled(self):
+        return self.window.active_view().settings().get("syntax").endswith("Note.tmLanguage")
 
-    # TODO activated
+
 
 def file_id(path):
     return os.path.relpath(path, root)
