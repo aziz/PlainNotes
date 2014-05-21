@@ -1,9 +1,9 @@
 {
   "line_numbers": false,
-  "margin": 0,
+  "margin": 20,
   "word_wrap": true,
-  "wrap_width": 0,
-  "draw_centered": true,
+  "wrap_width": 100,
+  //"draw_centered": true,
   "rulers": [],
   "spell_check": false,
   "highlight_line": true,

@@ -38,12 +38,15 @@ class NotesListCommand(sublime_plugin.ApplicationCommand):
         if index == -1:
             return
         file_path = self.file_list[index][1]
-        # self.window.run_command("new_pane",{"move": True})
-        view = sublime.active_window().open_file(file_path)
-        f_id = file_id(file_path)
-        if db.get(f_id) and db[f_id]["color_scheme"]:
-            view.settings().set("color_scheme", db[f_id]["color_scheme"])
-            view.settings().set("is_note", True)
+
+        def open_and_activate():
+            view = sublime.active_window().open_file(file_path, sublime.ENCODED_POSITION)
+            f_id = file_id(file_path)
+            if db.get(f_id) and db[f_id]["color_scheme"]:
+                view.settings().set("color_scheme", db[f_id]["color_scheme"])
+                view.settings().set("is_note", True)
+
+        sublime.set_timeout(open_and_activate, 0)
 
 
 class NotesNewCommand(sublime_plugin.ApplicationCommand):
@@ -108,7 +111,7 @@ class NoteChangeColorCommand(sublime_plugin.WindowCommand):
         if index == -1:
             self.window.active_view().settings().set("color_scheme", self.original_cs)
         else:
-            path = os.path.join("Packages" , "SublimeNotes", "Color Schemes", "Sticky-" + self.colors[index] + ".tmTheme")
+            path = os.path.join("Packages" , "PlainNotes", "Color Schemes", "Sticky-" + self.colors[index] + ".tmTheme")
             view = self.window.active_view()
             view.settings().set("color_scheme", path)
             f_id = file_id(view.file_name())
@@ -118,7 +121,7 @@ class NoteChangeColorCommand(sublime_plugin.WindowCommand):
             save_to_brain()
 
     def on_highlight(self, index):
-        path = os.path.join("Packages" , "SublimeNotes", "Color Schemes", "Sticky-" + self.colors[index] + ".tmTheme")
+        path = os.path.join("Packages" , "PlainNotes", "Color Schemes", "Sticky-" + self.colors[index] + ".tmTheme")
         self.window.active_view().settings().set("color_scheme", path)
 
     def is_enabled(self):
