@@ -1,6 +1,9 @@
 import sublime, sublime_plugin
 import os, fnmatch, re
 
+TAB_SIZE = 2
+COL_WIDTH = 30
+
 def settings():
     return sublime.load_settings('Notes.sublime-settings')
 
@@ -15,6 +18,7 @@ class NotesBufferCommand(sublime_plugin.WindowCommand):
         view.run_command('notes_buffer_refresh')
 
 class NotesBufferRefreshCommand(sublime_plugin.TextCommand):
+
     def run(self, edit):
         v = self.view
         v.set_read_only(False)
@@ -22,19 +26,29 @@ class NotesBufferRefreshCommand(sublime_plugin.TextCommand):
 
         root = os.path.normpath(os.path.expanduser(settings().get("root")))
         lines = self.list_files(root)
-        v.insert(edit, 0, "\n"+"\n".join(lines))
+        v.insert(edit, 0, "\n".join([f[0] + (COL_WIDTH-len(f[0]))*" " + f[1] for f in lines]))
         v.set_read_only(True)
 
     def list_files(self, path):
         lines = []
         for root, dirs, files in os.walk(path, topdown=False):
             level = root.replace(path, '').count(os.sep) - 1
-            indent = ' ' * 4 * (level)
+            indent = ' ' * TAB_SIZE * (level)
             relpath = os.path.relpath(root, path)
             if  not (relpath == "." or relpath == ".brain"):
-                lines.append('{0}▣ {1}'.format(indent, os.path.relpath(root, path)))
+                line_str = '{0}▣ {1}'.format(indent, os.path.relpath(root, path))
+                lines.append( (line_str, root) )
             if  not (relpath == ".brain"):
-                subindent = ' ' * 4 * (level + 1)
+                subindent = ' ' * TAB_SIZE * (level + 1)
                 for f in files:
-                    lines.append('{0}≡ {1}'.format(subindent, re.sub('\.note$', '', f)))
+                    line_str = '{0}≡ {1}'.format(subindent, re.sub('\.note$', '', f))
+                    line_path = os.path.normpath(os.path.join(root, f))
+                    lines.append( (line_str, line_path)  )
         return lines
+
+
+class NotesBufferOpenCommand(sublime_plugin.TextCommand):
+    def run(self, edit):
+        for sel in self.view.sel():
+            file_index = self.view.rowcol(sel.a)[0]
+            print(file_index)
