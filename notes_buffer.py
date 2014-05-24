@@ -23,10 +23,12 @@ class NotesBufferRefreshCommand(sublime_plugin.TextCommand):
         v = self.view
         v.set_read_only(False)
         v.erase(edit, sublime.Region(0, self.view.size()))
-
         root = os.path.normpath(os.path.expanduser(settings().get("root")))
         lines = self.list_files(root)
-        v.insert(edit, 0, "\n".join([f[0] + (COL_WIDTH-len(f[0]))*" " + f[1] for f in lines]))
+
+        v.settings().set('notes_buffer_files', lines)
+
+        v.insert(edit, 0, "\n".join([f[0] for f in lines]))
         v.set_read_only(True)
 
     def list_files(self, path):
@@ -35,10 +37,10 @@ class NotesBufferRefreshCommand(sublime_plugin.TextCommand):
             level = root.replace(path, '').count(os.sep) - 1
             indent = ' ' * TAB_SIZE * (level)
             relpath = os.path.relpath(root, path)
-            if  not (relpath == "." or relpath == ".brain"):
+            if  not (relpath == "." or relpath == ".brain" or relpath == ".archive"):
                 line_str = '{0}▣ {1}'.format(indent, os.path.relpath(root, path))
                 lines.append( (line_str, root) )
-            if  not (relpath == ".brain"):
+            if  not (relpath == ".brain" or relpath == ".archive"):
                 subindent = ' ' * TAB_SIZE * (level + 1)
                 for f in files:
                     line_str = '{0}≡ {1}'.format(subindent, re.sub('\.note$', '', f))
@@ -49,6 +51,17 @@ class NotesBufferRefreshCommand(sublime_plugin.TextCommand):
 
 class NotesBufferOpenCommand(sublime_plugin.TextCommand):
     def run(self, edit):
-        for sel in self.view.sel():
-            file_index = self.view.rowcol(sel.a)[0]
-            print(file_index)
+        v = self.view
+        for sel in v.sel():
+            file_index = v.rowcol(sel.a)[0]
+            files = v.settings().get('notes_buffer_files')
+            file_path = files[file_index][1]
+
+            def open_and_activate():
+              view = sublime.active_window().open_file(file_path, sublime.ENCODED_POSITION)
+              f_id = file_id(file_path)
+              if db.get(f_id) and db[f_id]["color_scheme"]:
+                view.settings().set("color_scheme", db[f_id]["color_scheme"])
+                view.settings().set("is_note", True)
+
+            sublime.set_timeout(open_and_activate, 0)
