@@ -7,7 +7,7 @@ With PlainNotes you can:
 - Maintain todo-lists
 - Write documents
 
-PlainNotes stores and organizes all your notes in a folder and make them assecible with a single shortcut or mouse click.
+PlainNotes stores and organizes all your notes in a folder and make them accessible with a single shortcut or mouse click.
 It also provides you with an enhanced version of Markdown markup and some good looking color schemes for note taking.
 It's been designed with these ground rules in mind:
 - Plain text is the holy grail
@@ -15,7 +15,7 @@ It's been designed with these ground rules in mind:
 - Simple and Sexy is Sublime
 
 <p align="center">
-<img src="http://cl.ly/image/1b2H1a1c1A1c/plainNotes-ss.png" width="665"> 
+<img src="http://cl.ly/image/1b2H1a1c1A1c/plainNotes-ss.png" width="600" height="948"> 
 </p>
 
 ## Usage
@@ -33,7 +33,7 @@ Pressing <kbd>F3</kbd> or selecting `Notes: Index` from the command palette will
 Pressing <kbd>Enter</kbd> on any note will open it in a new tab.
 
 <p align="center">
-<img src="http://cl.ly/image/1u0o1x0a2J3c/plainnotes-index.png" width="515" height="437"> 
+<img src="http://cl.ly/image/1u0o1x0a2J3c/plainnotes-index.png" width="515" height="437">
 </p>
 
  
