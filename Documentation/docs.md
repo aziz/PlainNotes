@@ -1,11 +1,16 @@
 
+# Notes Management
 ## Settings and Customizations
 #### Notes file extension
 #### Notes root folder
 #### Keyboard Shortcuts
 #### Customizing default color for Note files
 
+# Note Writing
+
+
 ---
+
 #### Deleting notes
 #### Renaming notes
 #### Archiving notes

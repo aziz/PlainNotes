@@ -25,10 +25,9 @@ class NotesListCommand(sublime_plugin.ApplicationCommand):
      note_files = []
      for path, subdirs, files in os.walk(self.notes_dir, topdown=False):
        relpath = os.path.relpath(path, root)
-       # print(relpath)
        for name in files:
          for ext in settings().get("note_file_extensions"):
-           if (relpath != ".archive" and relpath != ".brain") and fnmatch.fnmatch(name, "*." + ext):
+           if (not relpath.startswith(".brain")) and fnmatch.fnmatch(name, "*." + ext):
              note_files.append((re.sub('\.' + ext + '$', '', name),
                         os.path.join(path, name),
                         os.path.getmtime(os.path.join(path, name))
@@ -134,6 +133,21 @@ class NoteChangeColorCommand(sublime_plugin.WindowCommand):
   def is_enabled(self):
     return self.window.active_view().settings().get("syntax").endswith("Note.tmLanguage")
 
+
+class NoteArchiveCommand(sublime_plugin.WindowCommand):
+
+  def run(self):
+    pass
+
+class NoteRemoveCommand(sublime_plugin.WindowCommand):
+
+  def run(self):
+    pass
+
+class NoteRenameCommand(sublime_plugin.WindowCommand):
+
+  def run(self):
+    pass
 
 def save_to_brain():
   print("SAVING TO DISK-----------------")

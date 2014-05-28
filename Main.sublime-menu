@@ -72,6 +72,9 @@
         { "caption": "Index", "command": "notes_buffer"},
         { "caption": "-" , "id": "note" },
         { "caption": "Change Color…", "command": "note_change_color"},
+        { "caption": "Archive…", "command": "note_archive"},
+        { "caption": "Delete…", "command": "note_remove"},
+        { "caption": "Rename…", "command": "note_rename"},
         { "caption": "-" , "id": "end" }
     ]
 }

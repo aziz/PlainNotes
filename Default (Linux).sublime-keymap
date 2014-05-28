@@ -33,7 +33,7 @@
   [{ "key": "selector", "operator": "equal", "operand": "markup.list.unnumbered.todo.markdown" }]
 },
 
-{ "keys": ["f1"],  "command": "note_change_color", "context":
-  [{ "key": "selector", "operator": "equal", "operand": "text.html.markdown.note" }]
-}
+// { "keys": ["f1"],  "command": "note_change_color", "context":
+//   [{ "key": "selector", "operator": "equal", "operand": "text.html.markdown.note" }]
+// }
 ]

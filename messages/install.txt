@@ -1,0 +1,11 @@
+Welcome to:
+ ____  _       _       _   _       _
+|  _ \| | __ _(_)_ __ | \ | | ___ | |_ ___  ___
+| |_) | |/ _` | | '_ \|  \| |/ _ \| __/ _ \/ __|
+|  __/| | (_| | | | | | |\  | (_) | ||  __/\__ \
+|_|   |_|\__,_|_|_| |_|_| \_|\___/ \__\___||___/
+................................................
+github.com/aziz/PlainNotes
+
+  ✎ How to use PlainNotes [http://git.io/80Hb8w]
+  ✎ Feature requests and bug reports [http://git.io/9mnAWQ]

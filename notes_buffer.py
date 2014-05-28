@@ -37,10 +37,10 @@ class NotesBufferRefreshCommand(sublime_plugin.TextCommand):
             level = root.replace(path, '').count(os.sep) - 1
             indent = ' ' * TAB_SIZE * (level)
             relpath = os.path.relpath(root, path)
-            if  not (relpath == "." or relpath == ".brain" or relpath == ".archive"):
+            if  not (relpath.startswith(".")):
                 line_str = '{0}▣ {1}'.format(indent, os.path.relpath(root, path))
                 lines.append( (line_str, root) )
-            if  not (relpath == ".brain" or relpath == ".archive"):
+            if  not (relpath.startswith(".brain")):
                 subindent = ' ' * TAB_SIZE * (level + 1)
                 for f in files:
                     line_str = '{0}≡ {1}'.format(subindent, re.sub('\.note$', '', f))
