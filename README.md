@@ -42,3 +42,8 @@ Pressing <kbd>Enter</kbd> on any note will open it in a new tab.
 #### Change note color
 Open command palette and search for `Note: Change Color…`. it will give you a list of 10 different colors that is shown in the above image. Pressing up and down will give you a preview.  
 Color of the note is remembered by PlainNotes and whenever you open that file, PlainNotes will set the color-scheme automatically.
+
+## License
+
+Copyright 2014 [Allen Bargi](https://twitter.com/aziz). Licensed under the MIT License
+
