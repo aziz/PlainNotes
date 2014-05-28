@@ -1,6 +1,6 @@
 [
 { "keys": ["f4"],  "command": "notes_list" },
-{ "keys": ["f3"],  "command": "notes_buffer" },
+{ "keys": ["ctrl+f4"],  "command": "notes_buffer" },
 { "keys": ["super+f4"],  "command": "notes_new" },
 
 { "keys": ["enter"], "command": "notes_buffer_open", "context":

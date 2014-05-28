@@ -1,64 +1,79 @@
 [
-    {
-        "caption": "Preferences",
-        "mnemonic": "n",
-        "id": "preferences",
-        "children":
-        [
-            {
-                "caption": "Package Settings",
-                "id": "package-settings",
-                "children":
-                [
-                    {
-                        "caption": "PlainNotes",
-                        "children":
-                        [
-                            {
-                                "command": "open_file",
-                                "args": {"file": "${packages}/PlainNotes/Notes.sublime-settings", },
-                                "caption": "Settings – Default"
+{
+    "caption": "Preferences",
+    "mnemonic": "n",
+    "id": "preferences",
+    "children":
+    [
+        {
+            "caption": "Package Settings",
+            "id": "package-settings",
+            "children":
+            [
+                {
+                    "caption": "PlainNotes",
+                    "children":
+                    [
+                        {
+                            "command": "open_file",
+                            "args": {"file": "${packages}/PlainNotes/Notes.sublime-settings", },
+                            "caption": "Settings – Default"
+                        },
+                        {
+                            "command": "open_file",
+                            "args": {"file": "${packages}/User/Notes.sublime-settings"},
+                            "caption": "Settings – User"
+                        },
+                        { "caption": "-" },
+                        {
+                            "command": "open_file",
+                            "args": {
+                                "file": "${packages}/PlainNotes/Default (OSX).sublime-keymap",
+                                "platform": "OSX"
                             },
-                            {
-                                "command": "open_file",
-                                "args": {"file": "${packages}/User/Notes.sublime-settings"},
-                                "caption": "Settings – User"
+                            "caption": "Key Bindings – Default"
+                        },
+                        {
+                            "command": "open_file",
+                            "args": {
+                                "file": "${packages}/PlainNotes/Default (Linux).sublime-keymap",
+                                "platform": "Linux"
                             },
-                            { "caption": "-" },
-                            {
-                                "command": "open_file",
-                                "args": {
-                                    "file": "${packages}/PlainNotes/Default (OSX).sublime-keymap",
-                                    "platform": "OSX"
-                                },
-                                "caption": "Key Bindings – Default"
+                            "caption": "Key Bindings – Default"
+                        },
+                        {
+                            "command": "open_file",
+                            "args": {
+                                "file": "${packages}/PlainNotes/Default (Windows).sublime-keymap",
+                                "platform": "Windows"
                             },
-                            {
-                                "command": "open_file",
-                                "args": {
-                                    "file": "${packages}/PlainNotes/Default (Linux).sublime-keymap",
-                                    "platform": "Linux"
-                                },
-                                "caption": "Key Bindings – Default"
-                            },
-                            {
-                                "command": "open_file",
-                                "args": {
-                                    "file": "${packages}/PlainNotes/Default (Windows).sublime-keymap",
-                                    "platform": "Windows"
-                                },
-                                "caption": "Key Bindings – Default"
-                            },
-                            {
-                                "command": "open_file",
-                                "args": {"file": "${packages}/User/Default.sublime-keymap", },
-                                "caption": "Key Bindings – User"
-                            },
-                            { "caption": "-" }
-                        ]
-                    }
-                ]
-            }
-        ]
-    }
+                            "caption": "Key Bindings – Default"
+                        },
+                        {
+                            "command": "open_file",
+                            "args": {"file": "${packages}/User/Default.sublime-keymap", },
+                            "caption": "Key Bindings – User"
+                        },
+                        { "caption": "-" }
+                    ]
+                }
+            ]
+        }
+    ]
+},
+{
+    "caption": "Notes",
+    "mnemonic": "n",
+    "id": "notes",
+    "children": [
+        { "caption": "-" , "id": "open" },
+        { "caption": "New…", "command": "notes_new"},
+        { "caption": "Recent notes…", "command": "notes_list"},
+        { "caption": "Index", "command": "notes_buffer"},
+        { "caption": "-" , "id": "note" },
+        { "caption": "Change Color…", "command": "note_change_color"},
+        { "caption": "-" , "id": "end" }
+    ]
+}
+
 ]

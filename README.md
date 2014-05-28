@@ -19,9 +19,11 @@ It's been designed with these ground rules in mind:
 </p>
 
 ## Usage
+Most of PlainNotes commands are accessible from the SublimeText main menu. You should have a menu item called `Notes` right after `Help`. Although, there are faster and easier ways of running those commnads that are mentioned below.
+
 #### Starting a new note (`super+F4`)
 - **Command palette**: Open command palette and search for `Notes: new` command (typing `nn` will probably find it for you).
-- **Shortcut**: By default pressing <kbd>super+F4</kbd> will create a new note. For customizing the shortcut see [Keyboard Shortcuts]() section.
+- **Shortcut**: By default pressing <kbd>super+F4</kbd> will create a new note. For customizing the shortcut see [Keyboard Shortcuts]() section.  
 
 #### Opening an existing note (`F4`)
 - **Command palette**: Open command palette and search for `Notes: List…` command (typing `nl` will probably find it for you), the command will show the *Latest Notes quick panel* from which you can select or search for your file.   
