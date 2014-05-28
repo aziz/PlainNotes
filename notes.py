@@ -15,40 +15,45 @@ def file_id(path):
 class NotesListCommand(sublime_plugin.ApplicationCommand):
 
   def run(self):
-    root = os.path.normpath(os.path.expanduser(settings().get("root")))
-    window = sublime.active_window()
-    self.notes_dir = os.path.expanduser(root)
-    self.file_list = self.find_notes(root)
-    window.show_quick_panel([f[0] for f in self.file_list], self.open_note)
+     root = os.path.normpath(os.path.expanduser(settings().get("root")))
+     window = sublime.active_window()
+     self.notes_dir = os.path.expanduser(root)
+     self.file_list = self.find_notes(root)
+     window.show_quick_panel([f[0] for f in self.file_list], self.open_note)
 
   def find_notes(self, root):
-    note_files = []
-    for path, subdirs, files in os.walk(self.notes_dir, topdown=False):
-      relpath = os.path.relpath(path, root)
-      print(relpath)
-      for name in files:
-        for ext in settings().get("note_file_extensions"):
-          if (relpath != ".archive" and relpath != ".brain") and fnmatch.fnmatch(name, "*." + ext):
-            note_files.append((re.sub('\.' + ext + '$', '', name),
-                       os.path.join(path, name),
-                       os.path.getmtime(os.path.join(path, name))
-                      ))
-    note_files.sort(key=lambda item: item[2], reverse=True)
-    return note_files
+     note_files = []
+     for path, subdirs, files in os.walk(self.notes_dir, topdown=False):
+       relpath = os.path.relpath(path, root)
+       # print(relpath)
+       for name in files:
+         for ext in settings().get("note_file_extensions"):
+           if (relpath != ".archive" and relpath != ".brain") and fnmatch.fnmatch(name, "*." + ext):
+             note_files.append((re.sub('\.' + ext + '$', '', name),
+                        os.path.join(path, name),
+                        os.path.getmtime(os.path.join(path, name))
+                       ))
+     note_files.sort(key=lambda item: item[2], reverse=True)
+     return note_files
 
   def open_note(self, index):
-    if index == -1:
-      return
-    file_path = self.file_list[index][1]
+     if index == -1:
+       return
+     file_path = self.file_list[index][1]
+     sublime.run_command("notes_open", {"file_path": file_path})
 
-    def open_and_activate():
-      view = sublime.active_window().open_file(file_path, sublime.ENCODED_POSITION)
-      f_id = file_id(file_path)
-      if db.get(f_id) and db[f_id]["color_scheme"]:
-        view.settings().set("color_scheme", db[f_id]["color_scheme"])
-        view.settings().set("is_note", True)
 
-    sublime.set_timeout(open_and_activate, 0)
+class NotesOpenCommand(sublime_plugin.ApplicationCommand):
+
+  def run(self, file_path):
+    sublime.set_timeout(lambda: self.async_open(file_path) , 0)
+
+  def async_open(self, file_path):
+    view = sublime.active_window().open_file(file_path, sublime.ENCODED_POSITION)
+    f_id = file_id(file_path)
+    if db.get(f_id) and db[f_id]["color_scheme"]:
+      view.settings().set("color_scheme", db[f_id]["color_scheme"])
+      view.settings().set("is_note", True)
 
 
 class NotesNewCommand(sublime_plugin.ApplicationCommand):

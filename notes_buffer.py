@@ -56,12 +56,4 @@ class NotesBufferOpenCommand(sublime_plugin.TextCommand):
             file_index = v.rowcol(sel.a)[0]
             files = v.settings().get('notes_buffer_files')
             file_path = files[file_index][1]
-
-            def open_and_activate():
-              view = sublime.active_window().open_file(file_path, sublime.ENCODED_POSITION)
-              f_id = file_id(file_path)
-              if db.get(f_id) and db[f_id]["color_scheme"]:
-                view.settings().set("color_scheme", db[f_id]["color_scheme"])
-                view.settings().set("is_note", True)
-
-            sublime.set_timeout(open_and_activate, 0)
+            sublime.run_command("notes_open", {"file_path": file_path})
