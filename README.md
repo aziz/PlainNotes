@@ -1,6 +1,6 @@
 
 # PlainNotes
-Simple, efficient and pleasant note taking for SublimeText.
+Simple and pleasant note taking for SublimeText.
 
 With PlainNotes you can:
 - Organize notes and thoughts
@@ -28,8 +28,8 @@ It's been designed with these ground rules in mind:
 The *Latest Notes quick panel* is sorting files based on their last-edit time, so the note that you have been working on recently should be on top of the list. 
 - **Shortcut**: By default pressing <kbd>F4</kbd> will open the *Latest Notes quick panel*. For customizing the shortcut see [Keyboard Shortcuts]() section.
 
-#### Notes Index Card (`F3`)
-Pressing <kbd>F3</kbd> or selecting `Notes: Index` from the command palette will give you the *Notes Index Card* with the list of all notes sorted alphabetically.  
+#### Notes Index Card (`ctrl+F4`)
+Pressing <kbd>ctrl+F4</kbd> or selecting `Notes: Index` from the command palette will give you the *Notes Index Card* with the list of all notes sorted alphabetically.  
 Pressing <kbd>Enter</kbd> on any note will open it in a new tab.
 
 <p align="center">

@@ -1,0 +1,39 @@
+[
+{ "keys": ["f4"],  "command": "notes_list" },
+{ "keys": ["ctrl+f4"],  "command": "notes_buffer" },
+{ "keys": ["super+f4"],  "command": "notes_new" },
+
+{ "keys": ["enter"], "command": "notes_buffer_open", "context":
+  [{ "key": "selector", "operator": "equal", "operand": "text.notes_buffer" }]
+},
+
+
+
+{ "keys": ["tab"], "command": "note_smart_folding", "context":
+  [{ "key": "selector", "operator": "equal", "operand": "(markup.heading.1.markdown.note | markup.heading.2.markdown.note | markup.heading.3.markdown.note| markup.heading.4.markdown.note| markup.heading.5.markdown.note| markup.heading.6.markdown.note)" }]
+},
+
+{ "keys": ["shift+tab"], "command": "note_global_folding", "context":
+  [{ "key": "selector", "operator": "equal", "operand": "text.html.markdown.note" } ]
+},
+
+{ "keys": ["ctrl+enter"], "command": "note_smart_new_line", "context":
+  [{ "key": "selector", "operator": "equal", "operand": "(markup.heading.1.markdown.note | markup.heading.2.markdown.note | markup.heading.3.markdown.note| markup.heading.4.markdown.note| markup.heading.5.markdown.note| markup.heading.6.markdown.note)" } ]
+},
+
+{ "keys": ["super+enter"],  "command": "note_todo_pending", "context":
+  [{ "key": "selector", "operator": "equal", "operand": "text.html.markdown.note" }]
+},
+
+{ "keys": ["super+d"],  "command": "note_todo_done", "context":
+  [{ "key": "selector", "operator": "equal", "operand": "markup.list.unnumbered.todo.markdown" }]
+},
+
+{ "keys": ["control+c"],  "command": "note_todo_cancel", "context":
+  [{ "key": "selector", "operator": "equal", "operand": "markup.list.unnumbered.todo.markdown" }]
+},
+
+{ "keys": ["f1"],  "command": "note_change_color", "context":
+  [{ "key": "selector", "operator": "equal", "operand": "text.html.markdown.note" }]
+}
+]
