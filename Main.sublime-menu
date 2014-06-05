@@ -16,7 +16,7 @@
                     [
                         {
                             "command": "open_file",
-                            "args": {"file": "${packages}/PlainNotes/Notes.sublime-settings", },
+                            "args": {"file": "${packages}/PlainNotes/Notes.sublime-settings" },
                             "caption": "Settings – Default"
                         },
                         {
