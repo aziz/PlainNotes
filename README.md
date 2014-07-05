@@ -1,5 +1,5 @@
 
-# PlainNotes
+# [PlainNotes](https://github.com/aziz/PlainNotes)
 Simple and pleasant note taking for SublimeText.
 
 With PlainNotes you can:
@@ -15,7 +15,7 @@ It's been designed with these ground rules in mind:
 - Simple and Sexy is Sublime
 
 <p align="center">
-<img src="http://cl.ly/image/1b2H1a1c1A1c/plainNotes-ss.png" width="600" height="948"> 
+<img src="http://cl.ly/image/21143i2m3e0n/ss2.png" width="727" height="416"> 
 </p>
 
 ## Usage
