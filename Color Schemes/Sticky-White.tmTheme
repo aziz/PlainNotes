@@ -425,6 +425,332 @@
 			</dict>
 		</dict>
 
+
+
+		<!-- Beginning of Admonition -->
+		<dict>
+			<key>name</key>
+			<string>Admonition</string>
+			<key>scope</key>
+			<string>markup.admonition.markdown</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#33333333</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Admonition Header</string>
+			<key>scope</key>
+			<string>markup.admonition.markdown markup.admonition.header.markdown</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#33333355</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Admonition Punctuation</string>
+			<key>scope</key>
+			<string>markup.admonition.markdown punctuation.definition.admonition.markdown</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#33333366</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Admonition Section Type</string>
+			<key>scope</key>
+			<string>markup.admonition.markdown entity.name.section.markdown</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#FFFFFF</string>
+				<key>fontStyle</key>
+				<string>bold</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Admonition Section Title</string>
+			<key>scope</key>
+			<string>markup.admonition.markdown string.other.admonition.title.markdown</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#333333</string>
+				<key>fontStyle</key>
+				<string>bold</string>
+			</dict>
+		</dict>
+		<!-- HINT -->
+		<dict>
+			<key>name</key>
+			<string>Admonition (Hint)</string>
+			<key>scope</key>
+			<string>markup.admonition.markdown.hint</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#BDE5F8AA</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Admonition Header (Hint)</string>
+			<key>scope</key>
+			<string>markup.admonition.markdown.hint markup.admonition.header.markdown</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#BDE5F8</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Admonition Punctuation (Hint)</string>
+			<key>scope</key>
+			<string>markup.admonition.markdown.hint punctuation.definition.admonition.markdown</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#00529B66</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Admonition Section Type (Hint)</string>
+			<key>scope</key>
+			<string>markup.admonition.markdown.hint entity.name.section.markdown</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#00529B</string>
+				<key>fontStyle</key>
+				<string>bold</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Admonition Section Title (Hint)</string>
+			<key>scope</key>
+			<string>markup.admonition.markdown.hint string.other.admonition.title.markdown</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#333333</string>
+				<key>fontStyle</key>
+				<string>bold</string>
+			</dict>
+		</dict>
+		<!-- WARNING -->
+		<dict>
+			<key>name</key>
+			<string>Admonition (Warning)</string>
+			<key>scope</key>
+			<string>markup.admonition.markdown.warning</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#FEEFB399</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Admonition Header (Warning)</string>
+			<key>scope</key>
+			<string>markup.admonition.markdown.warning markup.admonition.header.markdown</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#FEEFB3</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Admonition Punctuation (Warning)</string>
+			<key>scope</key>
+			<string>markup.admonition.markdown.warning punctuation.definition.admonition.markdown</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#9F600066</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Admonition Section Type (Warning)</string>
+			<key>scope</key>
+			<string>markup.admonition.markdown.warning entity.name.section.markdown</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#9F6000</string>
+				<key>fontStyle</key>
+				<string>bold</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Admonition Section Title (Warning)</string>
+			<key>scope</key>
+			<string>markup.admonition.markdown.warning string.other.admonition.title.markdown</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#333333</string>
+				<key>fontStyle</key>
+				<string>bold</string>
+			</dict>
+		</dict>
+
+		<!-- DANGER -->
+		<dict>
+			<key>name</key>
+			<string>Admonition (Danger)</string>
+			<key>scope</key>
+			<string>markup.admonition.markdown.danger</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#FFBABAAA</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Admonition Header (Danger)</string>
+			<key>scope</key>
+			<string>markup.admonition.markdown.danger markup.admonition.header.markdown</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#FFBABA</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Admonition Punctuation (Danger)</string>
+			<key>scope</key>
+			<string>markup.admonition.markdown.danger punctuation.definition.admonition.markdown</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#D8000C66</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Admonition Section Type (Danger)</string>
+			<key>scope</key>
+			<string>markup.admonition.markdown.danger entity.name.section.markdown</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#D8000C</string>
+				<key>fontStyle</key>
+				<string>bold</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Admonition Section Title (Danger)</string>
+			<key>scope</key>
+			<string>markup.admonition.markdown.danger string.other.admonition.title.markdown</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#333333</string>
+				<key>fontStyle</key>
+				<string>bold</string>
+			</dict>
+		</dict>
+
+		<!-- ATTENTION -->
+		<dict>
+			<key>name</key>
+			<string>Admonition (Attention)</string>
+			<key>scope</key>
+			<string>markup.admonition.markdown.attention</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#DFF2BF99</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Admonition Header (Attention)</string>
+			<key>scope</key>
+			<string>markup.admonition.markdown.attention markup.admonition.header.markdown</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#DFF2BF</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Admonition Punctuation (Attention)</string>
+			<key>scope</key>
+			<string>markup.admonition.markdown.attention punctuation.definition.admonition.markdown</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#4F8A1066</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Admonition Section Type (Attention)</string>
+			<key>scope</key>
+			<string>markup.admonition.markdown.attention entity.name.section.markdown</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#4F8A10</string>
+				<key>fontStyle</key>
+				<string>bold</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Admonition Section Title (Attention)</string>
+			<key>scope</key>
+			<string>markup.admonition.markdown.attention string.other.admonition.title.markdown</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#333333</string>
+				<key>fontStyle</key>
+				<string>bold</string>
+			</dict>
+		</dict>
+
+		<!-- End of Admonition -->
 		<dict>
 			<key>name</key>
 			<string>Link (Internal)</string>

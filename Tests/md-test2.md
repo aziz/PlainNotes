@@ -765,6 +765,101 @@ test inside **block**  [link][]
 </ul>
 ```
 
+# Admonition
+TODO:
+☐ block code
+☐ Header
+☐ lists
+☐ quotes
+☐ hr
+☐ fenced code
+
+!!! note "note GREY"
+    Any number of other indented markdown elements.
+
+!!! important  "important GREY"  
+    Any number of other indented markdown elements.
+
+!!! hint "hint BLUE"
+    Any number of other indented markdown elements.
+
+!!! tip "tip BLUE"
+    Any number of other indented markdown elements.
+
+!!! caution "caution YELLOW"
+    Any number of other indented markdown elements.
+
+!!! warning "warning YELLOW"
+    Any number of other indented markdown elements.
+
+!!! danger "danger RED"
+    Any number of other indented markdown elements.
+
+!!! error "error RED"
+    Any number of other indented markdown elements.
+
+!!! attention "attention GREEN"
+    Any number of other indented markdown elements.
+
+!!! ATTENTION
+    Any number of other indented markdown elements.
+
+
+!!! note "optional explicit title within double quotes"
+        This is code.
+        Isn't it pretty!
+    # Headers
+    ----------------
+    ```js
+    for (var i = 0; i < 10; i++) {
+        console.log(i);
+    }
+    ```
+    | Unordered  List | Order List |
+    |-----------------|------------|
+    | C++             | D--        |
+    | E::             | X==        |
+    * This *is a list!*
+    * This is another list item.
+      But this one spans *two* lines.
+    * Another list item with __inline__ formatting
+    * This one is tricky
+    1. This is a list item too
+    2. This list is numbered
+        3. This is a list item too
+        4. This is a list item too
+            5. This is a list item too
+            6. This is a list item too
+        7. This is a list item too
+        8. This is a list item too
+    9. This is a list item too
+    10. This is a list item too
+    > Here it is again
+    > Lah-di-dah
+    > I should really match headings in here too:
+    <span class="inline">test inside **span**  [link][]</span>
+    <span class="inline">
+    test inside **span**  [link][]
+    </span>
+    <div class="block">test inside **block**  [link][]</div>
+    [[internal link]]
+    :tag:
+    :multiple:tags:after:eachother:
+    at the end of sentense :tag:
+    _italic_ **bold** ~~strikethrough~~ `code`
+    An email <example@example.com> link.
+    Simple inline link <http://chenluois.com>
+    Normal plain link http://example.com/
+    Complex url https://github.com/SublimeText-Markdown/MarkdownEditing/issues?page=1&state=closed
+    ![Mou icon](http://mouapp.com/Mou_128.png)
+    ![Alt text](/path/to/img.jpg "Optional title")
+    [empty link][]
+    [Smaller](http://smallerapp.com)
+    [Resize](http://resizesafari.com "a Safari extension")
+    [reference style][id]
+    [test][1]
+    asdads
+
 # Math
 
 ### Multi Markdown Latex based formulas
