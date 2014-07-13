@@ -456,7 +456,7 @@
 			<key>name</key>
 			<string>Admonition Punctuation</string>
 			<key>scope</key>
-			<string>markup.admonition.markdown punctuation.definition.admonition.markdown, markup.admonition.markdown punctuation.definition.heading</string>
+			<string>markup.admonition.markdown punctuation.definition.admonition.markdown, markup.admonition.markdown punctuation.definition.heading,markup.admonition.markdown punctuation.definition.table.vertical-line, markup.admonition.markdown punctuation.definition.table.horizontal-line, markup.admonition.markdown punctuation.definition.table.alignments, markup.admonition.markdown punctuation.definition.heading, markup.admonition.markdown punctuation.definition.bold, markup.admonition.markdown punctuation.definition.italic, markup.admonition.markdown punctuation.definition.list_item, markup.admonition.markdown punctuation.definition.raw, markup.admonition.markdown markup.checkbox.markdown, markup.admonition.markdown punctuation.definition.list_item.todo.pending, markup.admonition.markdown meta.link punctuation.definition</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -489,6 +489,32 @@
 				<string>#333333</string>
 				<key>fontStyle</key>
 				<string>bold</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Admonition Header1,2 and Table BG</string>
+			<key>scope</key>
+			<string>markup.admonition.markdown markup.heading.1, markup.admonition.markdown markup.heading.2, markup.admonition.markdown markup.table</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#E0BEF866</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Admonition Blockquote</string>
+			<key>scope</key>
+			<string>markup.admonition.markdown punctuation.definition.blockquote.markdown</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#E0BEF8</string>
+				<key>foreground</key>
+				<string>#E0BEF8</string>
 			</dict>
 		</dict>
 
@@ -1311,6 +1337,18 @@
 				<string>#E6DB74</string>
 			</dict>
 		</dict>
+
+<!-- 		<dict>
+			<key>name</key>
+			<string>DEBUG: list</string>
+			<key>scope</key>
+			<string>markup.list</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#FFFF0011</string>
+			</dict>
+		</dict> -->
 
 	</array>
 	<key>uuid</key>

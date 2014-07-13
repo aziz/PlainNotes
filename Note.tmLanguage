@@ -670,6 +670,11 @@
       <key>patterns</key>
       <array>
         <dict>
+          <key>include</key>
+          <string>#fenced-code-blocks</string>
+        </dict>
+        <dict>
+          <!-- Items inside admonition -->
           <key>applyEndPatternLast</key>
           <integer>1</integer>
           <key>begin</key>
@@ -680,6 +685,36 @@
           <string>markup.admonition.body.markdown</string>
           <key>patterns</key>
           <array>
+
+            <!-- block qoutes -->
+<!--             <dict>
+              <key>begin</key>
+              <string>\G[ ]{0,3}(&gt;)[ ]?</string>
+              <key>beginCaptures</key>
+              <dict>
+                <key>1</key>
+                <dict>
+                  <key>name</key>
+                  <string>punctuation.definition.blockquote.markdown</string>
+                </dict>
+              </dict>
+              <key>end</key>
+              <string>(?x)^([ ]{4,}|t)
+                (?= \s*$
+                | [ ]{,3}(?&lt;marker&gt;[-*_])([ ]{,2}\k&lt;marker&gt;){2,}[ \t]*+$
+                | [ ]{,3}&gt;
+                )</string>
+              <key>name</key>
+              <string>markup.quote.markdown</string>
+              <key>patterns</key>
+              <array>
+                <dict>
+                  <key>include</key>
+                  <string>#block_quote</string>
+                </dict>
+              </array>
+            </dict> -->
+
             <!-- finding lists and todo items -->
             <dict>
               <key>begin</key>
@@ -689,7 +724,7 @@
                 \G[ ]{0,3}(?:(✘)|(✔)|(☐)){1}(?=\s)
               </string>
               <key>end</key>
-              <string>^([ ]{4,}|t)?(?=\S)</string>
+              <string>^([ ]{4,}|t)?$</string>
               <key>name</key>
               <string>markup.list</string>
               <key>captures</key>
@@ -753,16 +788,11 @@
                 </dict>
               </array>
             </dict>
+
             <dict>
               <key>include</key>
               <string>#block_raw</string>
             </dict>
-            <!--
-            <dict>
-              <key>include</key>
-              <string>#block_quote</string>
-            </dict>
-            -->
             <dict>
               <key>include</key>
               <string>#table</string>
@@ -774,10 +804,6 @@
             <dict>
               <key>include</key>
               <string>#separator</string>
-            </dict>
-            <dict>
-              <key>include</key>
-              <string>#fenced-code-blocks</string>
             </dict>
             <dict>
               <key>include</key>

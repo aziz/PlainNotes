@@ -75,21 +75,6 @@ _There may be ~~strikethroughed text~~ inside italic text._
 multiple lines. Just keep in mind
 not to put any space in the beginning or end.~~
 
-# Code Inline
-
-`raw more`
-
-``dobule ` raw``
-
-`raw \` more`
-
-# Code block
-
-    This is code.
-    Isn't it pretty!
-
-    single line
-
 # URLs
 
 An email <example@example.com> link.
@@ -121,6 +106,21 @@ Complex url https://github.com/SublimeText-Markdown/MarkdownEditing/issues?page=
 [4]: http://example.com/  (Optional Title Here)
 
 [4]: http://example.com/  (Optional Title Here)
+
+# Code Inline
+
+`raw more`
+
+``dobule ` raw``
+
+`raw \` more`
+
+# Code block
+
+    This is code.
+    Isn't it pretty!
+
+    single line
 
 # Headings
 
@@ -834,14 +834,6 @@ Footnotes[^1] have a label[^label] and a definition[^!DEF].
 [^!DEF]: The definition of a footnote.
 
 # Admonition
-TODO:
-☐ Header
-☐ lists
-☐ quotes
-☐ hr
-☐ tables
-☐ fenced code
-☐ block code
 
 !!! note "note GREY"
     Any number of other indented markdown elements.
@@ -873,8 +865,33 @@ TODO:
 !!! ATTENTION
     Any number of other indented markdown elements.
 
+> do adsadasd
+>
+> sdadasd
+> sadasdas
 
 !!! note "optional explicit title within double quotes"
+    
+    > do adsadasd
+    > 
+    > sdadasd
+    > sadasdas
+    
+    >
+    > > ddddd  
+    > > > # very deeply nested 
+    > >  
+    >
+    
+    
+    >
+    > `code` **bold** *italic* [Link]() [[internal link]] :tag:
+    >
+    > > This is nested blockquote.
+    >
+    >     return shell_exec("echo $input | $markdown_script");
+    >
+    
     # Headers
     ## Headers
     ### Headers
@@ -886,6 +903,7 @@ TODO:
     
         This is code.
         Isn't it pretty!
+    
     
     normal text  
     
@@ -943,8 +961,16 @@ TODO:
         ☐ Green
         ☐ Green
     ☐ Green
+
+    ddsf
     
     ``` js
+    for (var i = 0; i < 10; i++) {
+        console.log(i);
+    }
+    ```
+    
+    ```
     for (var i = 0; i < 10; i++) {
         console.log(i);
     }
