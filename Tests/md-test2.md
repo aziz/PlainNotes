@@ -620,12 +620,18 @@ pending ☐ todo
 
 - [x] complete with x
 - [X] complete with X
+    - [X] complete with X
+    - [X] complete with X
+    - [ ] incompleted
 - [✔] complete with special character
 - [ ] incompleted
 - [ ] last element
 
 1. [ ] a task list item
 2. [ ] list syntax required
+    1. [X] a task list item
+    1. [X] a task list item
+    1. [X] a task list item
 3. [ ] normal **formatting**, @mentions, #1234 refs
 3. [ ] incomplete
 3. [x] completed
@@ -889,10 +895,10 @@ TODO:
     | E::             | X==        |
     
     * This *is a list!*
-      dsfdsf
     * This is another list item. But this one spans *two* lines.
     * Another list item with __inline__ formatting
     * This one is tricky
+    
     1. This is a list item too
     2. This list is numbered
     3. This is a list item too
@@ -903,11 +909,40 @@ TODO:
     8. This is a list item too
     9. This is a list item too
     10. This is a list item too
+    
     - [x] complete with x
     - [X] complete with X
     - [✔] complete with special character
     - [ ] incompleted
     - [ ] last element
+
+    1. [x] complete with x
+    2. [X] complete with X
+    3. [✔] complete with special character
+    1. [ ] incompleted
+    1. [ ] last element
+    
+    * dsfsdfdsf
+        * ✔ Orange
+        + ✘ Yellow
+        - ☐ Yellow 
+    
+    ✔ Orange
+        ✔ Orange
+        ✔ Orange
+        ✔ Orange
+    
+    ✘ Yellow
+        ✔ Orange
+            ✔ Orange
+            ☐ Green
+            ☐ Green
+    
+    ☐ Green
+        ☐ Green
+        ☐ Green
+        ☐ Green
+    ☐ Green
     
     ``` js
     for (var i = 0; i < 10; i++) {

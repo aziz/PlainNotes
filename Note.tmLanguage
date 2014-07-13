@@ -56,27 +56,7 @@
         </dict>
         <dict>
           <key>include</key>
-          <string>#heading1</string>
-        </dict>
-        <dict>
-          <key>include</key>
-          <string>#heading2</string>
-        </dict>
-        <dict>
-          <key>include</key>
-          <string>#heading3</string>
-        </dict>
-        <dict>
-          <key>include</key>
-          <string>#heading4</string>
-        </dict>
-        <dict>
-          <key>include</key>
-          <string>#heading5</string>
-        </dict>
-        <dict>
-          <key>include</key>
-          <string>#heading6</string>
+          <string>#headings</string>
         </dict>
         <dict>
           <key>include</key>
@@ -700,47 +680,96 @@
           <string>markup.admonition.body.markdown</string>
           <key>patterns</key>
           <array>
+            <!-- finding lists and todo items -->
+            <dict>
+              <key>begin</key>
+              <string>(?x)
+                \G[ ]{0,3}([*+-])([ ]\[([ xX✘✔])\])?(?=\s) |
+                \G[ ]{0,3}([0-9]+)(\.)([ ]\[([ xX✘✔])\])?(?=\s) |
+                \G[ ]{0,3}(?:(✘)|(✔)|(☐)){1}(?=\s)
+              </string>
+              <key>end</key>
+              <string>^([ ]{4,}|t)?(?=\S)</string>
+              <key>name</key>
+              <string>markup.list</string>
+              <key>captures</key>
+              <dict>
+                <key>1</key>
+                <dict>
+                  <key>name</key>
+                  <string>punctuation.definition.list_item.markdown</string>
+                </dict>
+                <key>2</key>
+                <dict>
+                  <key>name</key>
+                  <string>markup.checkbox.markdown</string>
+                </dict>
+                <key>3</key>
+                <dict>
+                  <key>name</key>
+                  <string>markup.checkbox.checked_symbol.markdown</string>
+                </dict>
+                <key>4</key>
+                <dict>
+                  <key>name</key>
+                  <string>punctuation.definition.list_item.markdown punctuation.definition.list_item.number.markdown</string>
+                </dict>
+                <key>5</key>
+                <dict>
+                  <key>name</key>
+                  <string>punctuation.definition.list_item.markdown</string>
+                </dict>
+                <key>6</key>
+                <dict>
+                  <key>name</key>
+                  <string>markup.checkbox.markdown</string>
+                </dict>
+                <key>7</key>
+                <dict>
+                  <key>name</key>
+                  <string>markup.checkbox.checked_symbol.markdown</string>
+                </dict>
+                <key>8</key>
+                <dict>
+                  <key>name</key>
+                  <string>punctuation.definition.list_item.todo.cancelled.markdown</string>
+                </dic>
+                <key>9</key>
+                <dict>
+                  <key>name</key>
+                  <string>punctuation.definition.list_item.todo.done.markdown</string>
+                </dict>
+                <key>10</key>
+                <dict>
+                  <key>name</key>
+                  <string>punctuation.definition.list_item.todo.pending.markdown</string>
+                </dict>
+              </dict>
+              <key>patterns</key>
+              <array>
+                <dict>
+                  <key>include</key>
+                  <string>#list-paragraph</string>
+                </dict>
+              </array>
+            </dict>
             <dict>
               <key>include</key>
               <string>#block_raw</string>
             </dict>
-<!--
-            <dict>
-              <key>include</key>
-              <string>#list-paragraph</string>
-            </dict>
+            <!--
             <dict>
               <key>include</key>
               <string>#block_quote</string>
             </dict>
--->
+            -->
             <dict>
               <key>include</key>
               <string>#table</string>
             </dict>
             <dict>
               <key>include</key>
-              <string>#heading1</string>
-            </dict>
-            <dict>
-              <key>include</key>
-              <string>#heading2</string>
-            </dict>
-            <dict>
-              <key>include</key>
-              <string>#heading3</string>
-            </dict>
-            <dict>
-              <key>include</key>
-              <string>#heading4</string>
-            </dict>
-            <dict>
-              <key>include</key>
-              <string>#heading5</string>
-            </dict>
-            <dict>
-              <key>include</key>
-              <string>#heading6</string>
+              <string>#headings</string>
             </dict>
             <dict>
               <key>include</key>
@@ -903,27 +932,7 @@
             </dict>
             <dict>
               <key>include</key>
-              <string>#heading1</string>
-            </dict>
-            <dict>
-              <key>include</key>
-              <string>#heading2</string>
-            </dict>
-            <dict>
-              <key>include</key>
-              <string>#heading3</string>
-            </dict>
-            <dict>
-              <key>include</key>
-              <string>#heading4</string>
-            </dict>
-            <dict>
-              <key>include</key>
-              <string>#heading5</string>
-            </dict>
-            <dict>
-              <key>include</key>
-              <string>#heading6</string>
+              <string>#headings</string>
             </dict>
             <dict>
               <key>include</key>
@@ -2088,8 +2097,8 @@
             <dict>
               <key>match</key>
               <string>(?x:
-                (?&lt;=[\+\-\*]{1,1})[ ]\[([ xX✘✔])\](?=\s)                             # after an unordered list
-                | (?&lt;=^\d\.|^\d\d\.|^\d\d\d\.|^\d\d\d\d.)[ \t]+\[([ xX✘✔])\](?=\s)   # after an ordered list
+                (?&lt;=[\+\-\*]{1})[ ]\[([ xX✘✔])\](?=\s)                             # after an unordered list
+                | (?&lt;=\d\.|\d\d\.|\d\d\d\.|\d\d\d\d.)[ \t]+\[([ xX✘✔])\](?=\s)     # after an ordered list
               )</string>
               <key>name</key>
               <string>markup.checkbox.markdown</string>
@@ -2112,7 +2121,7 @@
               <key>match</key>
               <string>(?x:
                 (?&lt;=[\+\-\*]{1,1})[ ][☐](?=\s)                             # after an unordered list
-                | (?&lt;=^\d\.|^\d\d\.|^\d\d\d\.|^\d\d\d\d.)[ \t]+[☐](?=\s)   # after an ordered list
+                | (?&lt;=\d\.|\d\d\.|\d\d\d\.|\d\d\d\d.)[ \t]+[☐](?=\s)   # after an ordered list
                 | \G(?:[ \t]+)?([☐])(?=\s)                                    # as the bullet
               )</string>
               <key>name</key>
@@ -2123,7 +2132,7 @@
               <key>match</key>
               <string>(?x:
                 (?&lt;=[\+\-\*]{1,1})[ ][✔](?=\s)                             # after an unordered list
-                | (?&lt;=^\d\.|^\d\d\.|^\d\d\d\.|^\d\d\d\d.)[ \t]+[✔](?=\s)   # after an ordered list
+                | (?&lt;=\d\.|\d\d\.|\d\d\d\.|\d\d\d\d.)[ \t]+[✔](?=\s)   # after an ordered list
                 | \G(?:[ \t]+)?([✔])(?=\s)                                    # as the bullet
               )</string>
               <key>name</key>
@@ -2134,7 +2143,7 @@
               <key>match</key>
               <string>(?x:
                 (?&lt;=[\+\-\*]{1,1})[ ][✘](?=\s)                             # after an unordered list
-                | (?&lt;=^\d\.|^\d\d\.|^\d\d\d\.|^\d\d\d\d.)[ \t]+[✘](?=\s)   # after an ordered list
+                | (?&lt;=\d\.|\d\d\.|\d\d\d\.|\d\d\d\d.)[ \t]+[✘](?=\s)   # after an ordered list
                 | \G(?:[ \t]+)?([✘])(?=\s)                                    # as the bullet
               )</string>
               <key>name</key>
@@ -3355,6 +3364,38 @@
         <dict>
           <key>include</key>
           <string>#fenced-undefined</string>
+        </dict>
+      </array>
+    </dict>
+
+    <!-- Headings Repo -->
+    <key>headings</key>
+    <dict>
+      <key>patterns</key>
+      <array>
+        <dict>
+          <key>include</key>
+          <string>#heading1</string>
+        </dict>
+        <dict>
+          <key>include</key>
+          <string>#heading2</string>
+        </dict>
+        <dict>
+          <key>include</key>
+          <string>#heading3</string>
+        </dict>
+        <dict>
+          <key>include</key>
+          <string>#heading4</string>
+        </dict>
+        <dict>
+          <key>include</key>
+          <string>#heading5</string>
+        </dict>
+        <dict>
+          <key>include</key>
+          <string>#heading6</string>
         </dict>
       </array>
     </dict>
