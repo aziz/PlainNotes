@@ -1,3 +1,4 @@
+[TOC]
 
 # Italic and Bold
 
@@ -603,6 +604,36 @@ done ✔ inside normal tag
 cancelled  ✘ todo
 pending ☐ todo
 
+# Tasklists Github Style 
+
+- [x] complete with x
+- [X] complete with X
+- [✔] complete with special character
+- [ ] incompleted
+- [ ] last element
+
+1. [ ] a task list item
+2. [ ] list syntax required
+3. [ ] normal **formatting**, @mentions, #1234 refs
+3. [ ] incomplete
+3. [x] completed
+
+1. [X] a task list item
+2. [ ] list syntax required
+3. [✔] normal **formatting**, @mentions, #1234 refs
+3. [ ] incomplete
+3. [x] completed
+
+* [X] a task list item
+* [x] list syntax required
+* [X] normal **formatting**, @mentions, #1234 refs
+* [✘] incomplete
+* [x] completed
+
+- [] invalid
+- invalid in [ ] between
+- invalid at end [ ]
+
 # Internal links
 
 [[internal link]]
@@ -858,7 +889,6 @@ TODO:
     [Resize](http://resizesafari.com "a Safari extension")
     [reference style][id]
     [test][1]
-    asdads
 
 # Math
 

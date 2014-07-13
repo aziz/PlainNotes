@@ -96,13 +96,23 @@
     <!-- List (Unordered List) -->
     <dict>
       <key>begin</key>
-      <string>^[ ]{0,3}([*+-])(?=\s)</string>
+      <string>^[ ]{0,3}([*+-])([ ]\[([ xX✘✔])\])?(?=\s)</string>
       <key>captures</key>
       <dict>
         <key>1</key>
         <dict>
           <key>name</key>
           <string>punctuation.definition.list_item.markdown</string>
+        </dict>
+        <key>2</key>
+        <dict>
+          <key>name</key>
+          <string>markup.checkbox.markdown</string>
+        </dict>
+        <key>3</key>
+        <dict>
+          <key>name</key>
+          <string>markup.checkbox.checked_symbol.markdown</string>
         </dict>
       </dict>
       <key>end</key>
@@ -244,7 +254,7 @@
     <!-- List (Numbered) -->
     <dict>
       <key>begin</key>
-      <string>^[ ]{0,3}([0-9]+)(\.)(?=\s)</string>
+      <string>^[ ]{0,3}([0-9]+)(\.)([ ]\[([ xX✘✔])\])?(?=\s)</string>
       <key>captures</key>
       <dict>
         <key>1</key>
@@ -256,6 +266,16 @@
         <dict>
           <key>name</key>
           <string>punctuation.definition.list_item.markdown</string>
+        </dict>
+        <key>3</key>
+        <dict>
+          <key>name</key>
+          <string>markup.checkbox.markdown</string>
+        </dict>
+        <key>4</key>
+        <dict>
+          <key>name</key>
+          <string>markup.checkbox.checked_symbol.markdown</string>
         </dict>
       </dict>
       <key>end</key>
@@ -2008,9 +2028,32 @@
             <dict>
               <key>match</key>
               <string>(?x:
-                (?&lt;=[\+\-\*]{1,1})[ ][☐](?=\s)                          # after an unordered list
+                (?&lt;=[\+\-\*]{1,1})[ ]\[([ xX✘✔])\](?=\s)                             # after an unordered list
+                | (?&lt;=^\d\.|^\d\d\.|^\d\d\d\.|^\d\d\d\d.)[ \t]+\[([ xX✘✔])\](?=\s)   # after an ordered list
+              )</string>
+              <key>name</key>
+              <string>markup.checkbox.markdown</string>
+              <key>captures</key>
+              <dict>
+                <key>1</key>
+                <dict>
+                  <key>name</key>
+                  <string>markup.checkbox.checked_symbol.markdown</string>
+                </dict>
+                <key>2</key>
+                <dict>
+                  <key>name</key>
+                  <string>markup.checkbox.checked_symbol.markdown</string>
+                </dict>
+              </dict>
+            </dict>
+
+            <dict>
+              <key>match</key>
+              <string>(?x:
+                (?&lt;=[\+\-\*]{1,1})[ ][☐](?=\s)                             # after an unordered list
                 | (?&lt;=^\d\.|^\d\d\.|^\d\d\d\.|^\d\d\d\d.)[ \t]+[☐](?=\s)   # after an ordered list
-                | \G(?:[ \t]+)?([☐])(?=\s)                                 # as the bullet
+                | \G(?:[ \t]+)?([☐])(?=\s)                                    # as the bullet
               )</string>
               <key>name</key>
               <string>punctuation.definition.list_item.todo.pending.markdown</string>
@@ -2019,9 +2062,9 @@
             <dict>
               <key>match</key>
               <string>(?x:
-                (?&lt;=[\+\-\*]{1,1})[ ][✔](?=\s)                          # after an unordered list
+                (?&lt;=[\+\-\*]{1,1})[ ][✔](?=\s)                             # after an unordered list
                 | (?&lt;=^\d\.|^\d\d\.|^\d\d\d\.|^\d\d\d\d.)[ \t]+[✔](?=\s)   # after an ordered list
-                | \G(?:[ \t]+)?([✔])(?=\s)                                 # as the bullet
+                | \G(?:[ \t]+)?([✔])(?=\s)                                    # as the bullet
               )</string>
               <key>name</key>
               <string>punctuation.definition.list_item.todo.done.markdown</string>
@@ -2030,9 +2073,9 @@
             <dict>
               <key>match</key>
               <string>(?x:
-                (?&lt;=[\+\-\*]{1,1})[ ][✘](?=\s)                          # after an unordered list
+                (?&lt;=[\+\-\*]{1,1})[ ][✘](?=\s)                             # after an unordered list
                 | (?&lt;=^\d\.|^\d\d\.|^\d\d\d\.|^\d\d\d\d.)[ \t]+[✘](?=\s)   # after an ordered list
-                | \G(?:[ \t]+)?([✘])(?=\s)                                 # as the bullet
+                | \G(?:[ \t]+)?([✘])(?=\s)                                    # as the bullet
               )</string>
               <key>name</key>
               <string>punctuation.definition.list_item.todo.cancelled.markdown</string>

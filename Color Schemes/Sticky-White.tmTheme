@@ -807,6 +807,36 @@
 			</dict>
 		</dict>
 
+		<dict>
+			<key>name</key>
+			<string>Checkbox (Github style)</string>
+			<key>scope</key>
+			<string>markup.checkbox.markdown</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>normal</string>
+				<key>foreground</key>
+				<string>#33333355</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Checkbox Checked Sybmol (Github style)</string>
+			<key>scope</key>
+			<string>markup.checkbox.checked_symbol.markdown</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>bold</string>
+				<key>foreground</key>
+				<string>#1c801c</string>
+			</dict>
+		</dict>
+
+
+
 <!-- HTML ======================= -->
 
 		<dict>
