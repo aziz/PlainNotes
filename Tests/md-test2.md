@@ -200,6 +200,49 @@ this is a paragraph
 
 ### More Testing for nested
 
+☐ this is a list
+☐ another item
+  ☐ with nested
+  ☐ items
+    ☐ item
+    ☐ item
+  ☐ another
+
+☐ this is a list
+    ☐ with nested
+    ☐ items
+    ☐ another
+
+asdsadsadsadsas
+✘ this is a list
+✘ another item
+  ✘ with nested
+  ✘ items
+    ✘ item
+    ✘ item
+  ✘ another
+
+✘ this is a list
+    ✘ with nested
+    ✘ items
+    ✘ another
+
+# after paragraph
+asdsadsadsads
+✔ this is a list
+✔ another item
+  ✔ with nested
+  ✔ items
+    ✔ item
+    ✔ item
+  ✔ another
+
+✔ this is a list
+    ✔ with nested
+    ✔ items
+    ✔ another
+
+
  + ✔ sadsad
 
 0. normal list
@@ -581,10 +624,19 @@ Left         | Center        | Right
 
 - normal list
 ☐ pending todo
+
+sadasd
+
 ✔ done todo
+
+sdasdsdsd
 ✘ cancelled todo
 
+sads
+
 ☐ pending todo
+
+sadsa
 ☐ pending todo
 ✔ done todo
 - normal list
@@ -882,8 +934,7 @@ Footnotes[^1] have a label[^label] and a definition[^!DEF].
     > > > # very deeply nested 
     > >  
     >
-    
-    
+      
     >
     > `code` **bold** *italic* [Link]() [[internal link]] :tag:
     >
@@ -913,8 +964,8 @@ Footnotes[^1] have a label[^label] and a definition[^!DEF].
     | E::             | X==        |
     
     * This *is a list!*
-    * This is another list item. But this one spans *two* lines.
-    * Another list item with __inline__ formatting
+        * This is another list item. But this one spans *two* lines.
+        * Another list item with __inline__ formatting
     * This one is tricky
     
     1. This is a list item too
@@ -933,7 +984,7 @@ Footnotes[^1] have a label[^label] and a definition[^!DEF].
     - [✔] complete with special character
     - [ ] incompleted
     - [ ] last element
-
+    
     1. [x] complete with x
     2. [X] complete with X
     3. [✔] complete with special character
@@ -961,7 +1012,7 @@ Footnotes[^1] have a label[^label] and a definition[^!DEF].
         ☐ Green
         ☐ Green
     ☐ Green
-
+    
     ddsf
     
     ``` js
@@ -980,8 +1031,11 @@ Footnotes[^1] have a label[^label] and a definition[^!DEF].
     <span class="inline">
     test inside **span**  [link][]
     </span>
+    
     <div class="block">test inside **block**  [link][]</div>
+    
     [[internal link]]
+    
     :tag:
     :multiple:tags:after:eachother:
     at the end of sentense :tag:
@@ -997,6 +1051,7 @@ Footnotes[^1] have a label[^label] and a definition[^!DEF].
     [Resize](http://resizesafari.com "a Safari extension")
     [reference style][id]
     [test][1]
+    
 
 # Math
 

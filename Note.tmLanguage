@@ -116,117 +116,6 @@
       </array>
     </dict>
 
-    <!-- TODO List Pending -->
-    <dict>
-      <key>begin</key>
-      <string>^[ ]{0,3}(☐)(?=\s)</string>
-      <key>captures</key>
-      <dict>
-        <key>1</key>
-        <dict>
-          <key>name</key>
-          <string>punctuation.definition.list_item.todo.pending.markdown</string>
-        </dict>
-      </dict>
-      <key>end</key>
-      <string>^(?=\S)</string>
-      <key>name</key>
-      <string>markup.list.unnumbered.todo.markdown</string>
-      <key>patterns</key>
-      <array>
-        <dict>
-          <key>include</key>
-          <string>#block_quote</string>
-        </dict>
-        <dict>
-          <key>include</key>
-          <string>#block_raw</string>
-        </dict>
-        <dict>
-          <key>include</key>
-          <string>#fenced-code-blocks</string>
-        </dict>
-        <dict>
-          <key>include</key>
-          <string>#list-paragraph</string>
-        </dict>
-      </array>
-    </dict>
-
-    <!-- TODO List Done -->
-    <dict>
-      <key>begin</key>
-      <string>^[ ]{0,3}(✔)(?=\s)</string>
-      <key>captures</key>
-      <dict>
-        <key>1</key>
-        <dict>
-          <key>name</key>
-          <string>punctuation.definition.list_item.todo.done.markdown</string>
-        </dict>
-      </dict>
-      <key>end</key>
-      <string>^(?=\S)</string>
-      <key>name</key>
-      <string>markup.list.unnumbered.todo.markdown</string>
-      <key>patterns</key>
-      <array>
-        <dict>
-          <key>include</key>
-          <string>#block_quote</string>
-        </dict>
-        <dict>
-          <key>include</key>
-          <string>#block_raw</string>
-        </dict>
-        <dict>
-          <key>include</key>
-          <string>#fenced-code-blocks</string>
-        </dict>
-        <dict>
-          <key>include</key>
-          <string>#list-paragraph</string>
-        </dict>
-      </array>
-    </dict>
-
-    <!-- TODO List Cancelled -->
-    <dict>
-      <key>begin</key>
-      <string>^[ ]{0,3}(✘)(?=\s)</string>
-      <key>captures</key>
-      <dict>
-        <key>1</key>
-        <dict>
-          <key>name</key>
-          <string>punctuation.definition.list_item.todo.cancelled.markdown</string>
-        </dict>
-      </dict>
-      <key>end</key>
-      <string>^(?=\S)</string>
-      <key>name</key>
-      <string>markup.list.unnumbered.todo.markdown</string>
-      <key>patterns</key>
-      <array>
-        <dict>
-          <key>include</key>
-          <string>#block_quote</string>
-        </dict>
-        <dict>
-          <key>include</key>
-          <string>#block_raw</string>
-        </dict>
-        <dict>
-          <key>include</key>
-          <string>#fenced-code-blocks</string>
-        </dict>
-        <dict>
-          <key>include</key>
-          <string>#list-paragraph</string>
-        </dict>
-      </array>
-    </dict>
-
     <!-- List (Numbered) -->
     <dict>
       <key>begin</key>
@@ -258,6 +147,54 @@
       <string>^(?=\S)</string>
       <key>name</key>
       <string>markup.list.numbered.markdown</string>
+      <key>patterns</key>
+      <array>
+        <dict>
+          <key>include</key>
+          <string>#block_quote</string>
+        </dict>
+        <dict>
+          <key>include</key>
+          <string>#block_raw</string>
+        </dict>
+        <dict>
+          <key>include</key>
+          <string>#fenced-code-blocks</string>
+        </dict>
+        <dict>
+          <key>include</key>
+          <string>#list-paragraph</string>
+        </dict>
+      </array>
+    </dict>
+
+    <!-- TODO List  -->
+    <dict>
+      <key>begin</key>
+      <string>^[ ]{0,3}(?:(✘)|(✔)|(☐)){1}(?=\s)</string>
+      <key>captures</key>
+      <dict>
+        <key>1</key>
+        <dict>
+          <key>name</key>
+          <string>punctuation.definition.list_item.todo.cancelled.markdown</string>
+        </dict>
+        <key>2</key>
+        <dict>
+          <key>name</key>
+          <string>punctuation.definition.list_item.todo.done.markdown</string>
+        </dict>
+        <key>3</key>
+        <dict>
+          <key>name</key>
+          <string>punctuation.definition.list_item.todo.pending.markdown</string>
+        </dict>
+
+      </dict>
+      <key>end</key>
+      <string>^(?=\S)</string>
+      <key>name</key>
+      <string>markup.list.unnumbered.todo.markdown</string>
       <key>patterns</key>
       <array>
         <dict>
@@ -631,7 +568,7 @@
       <key>begin</key>
       <string>^(!!!)[ \t]+(\w+)(?:[ \t]+(\")(.+)(\"))?[ \t]*\n</string>
       <key>end</key>
-      <string>^$</string>
+      <string>^[ \t]{0,3}$</string>
       <key>name</key>
       <string>markup.admonition.markdown</string>
       <key>beginCaptures</key>
@@ -687,7 +624,8 @@
           <array>
 
             <!-- block qoutes -->
-<!--             <dict>
+            <!--
+            <dict>
               <key>begin</key>
               <string>\G[ ]{0,3}(&gt;)[ ]?</string>
               <key>beginCaptures</key>
@@ -713,9 +651,10 @@
                   <string>#block_quote</string>
                 </dict>
               </array>
-            </dict> -->
+            </dict>
+            -->
 
-            <!-- finding lists and todo items -->
+            <!-- lists and todo items -->
             <dict>
               <key>begin</key>
               <string>(?x)
@@ -724,7 +663,7 @@
                 \G[ ]{0,3}(?:(✘)|(✔)|(☐)){1}(?=\s)
               </string>
               <key>end</key>
-              <string>^([ ]{4,}|t)?$</string>
+              <string>(?&lt;=\n)</string>
               <key>name</key>
               <string>markup.list</string>
               <key>captures</key>
@@ -824,7 +763,7 @@
       <key>begin</key>
       <string>^(?=\S|[ ]{1,3})(?![=-]{3,}(?=$))</string>
       <key>end</key>
-      <string>^(?:\s*$|(?=[ ]{,3}&gt;)|(?=```|~~~)|(?=[ ]{0,3}([*+-])(?=\s)))|(?=[ \t]*\n)(?&lt;=^===|^====|=====|^---|^----|-----)[ \t]*\n|(?=^#)</string>
+      <string>^(?:\s*$|(?=[ ]{,3}&gt;)|(?=```|~~~)|(?=[ ]{0,3}([*+-✔✘☐])(?=\s)))|(?=[ \t]*\n)(?&lt;=^===|^====|=====|^---|^----|-----)[ \t]*\n|(?=^#)</string>
       <key>name</key>
       <string>meta.paragraph.markdown</string>
       <key>patterns</key>
