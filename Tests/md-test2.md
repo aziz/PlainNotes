@@ -256,6 +256,9 @@ asdsadsadsads
         + ✘ Yellow
         - ☐ Yellow 
     * sdf * + - 1. ✔ ✘ ☐
+    * sdf * ✘ ☐
+    * sdf * + ✔ ✘ ☐
+    * sdf * + - ☐ ✘ ☐
     * sdfsdf
     11. sdsa
     12. asdsad

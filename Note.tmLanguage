@@ -2085,8 +2085,8 @@
             <dict>
               <key>match</key>
               <string>(?x:
-                (?&lt;=[\+\-\*]{1,1})[ ][☐](?=\s)                             # after an unordered list
-                | (?&lt;=\d\.|\d\d\.|\d\d\d\.|\d\d\d\d.)[ \t]+[☐](?=\s)   # after an ordered list
+                (?&lt;=\G[\+\-\*]{1,1})[ ][☐](?=\s)                             # after an unordered list
+                | (?&lt;=\G\d\.|\G\d\d\.|\G\d\d\d\.|\G\d\d\d\d.)[ \t]+[☐](?=\s)   # after an ordered list
                 | \G(?:[ \t]+)?([☐])(?=\s)                                    # as the bullet
               )</string>
               <key>name</key>
@@ -2096,8 +2096,8 @@
             <dict>
               <key>match</key>
               <string>(?x:
-                (?&lt;=[\+\-\*]{1,1})[ ][✔](?=\s)                             # after an unordered list
-                | (?&lt;=\d\.|\d\d\.|\d\d\d\.|\d\d\d\d.)[ \t]+[✔](?=\s)   # after an ordered list
+                (?&lt;=\G[\+\-\*]{1,1})[ ][✔](?=\s)                             # after an unordered list
+                | (?&lt;=\G\d\.|\G\d\d\.|\G\d\d\d\.|\G\d\d\d\d.)[ \t]+[✔](?=\s)   # after an ordered list
                 | \G(?:[ \t]+)?([✔])(?=\s)                                    # as the bullet
               )</string>
               <key>name</key>
@@ -2107,8 +2107,8 @@
             <dict>
               <key>match</key>
               <string>(?x:
-                (?&lt;=[\+\-\*]{1,1})[ ][✘](?=\s)                             # after an unordered list
-                | (?&lt;=\d\.|\d\d\.|\d\d\d\.|\d\d\d\d.)[ \t]+[✘](?=\s)   # after an ordered list
+                (?&lt;=\G[\+\-\*]{1,1})[ ][✘](?=\s)                             # after an unordered list
+                | (?&lt;=\G\d\.|\G\d\d\.|\G\d\d\d\.|\G\d\d\d\d.)[ \t]+[✘](?=\s)   # after an ordered list
                 | \G(?:[ \t]+)?([✘])(?=\s)                                    # as the bullet
               )</string>
               <key>name</key>
