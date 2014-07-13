@@ -355,7 +355,7 @@
 			<key>name</key>
 			<string>Horizontal Rules</string>
 			<key>scope</key>
-			<string>meta.block-level meta.separator</string>
+			<string>meta.separator</string>
 			<key>settings</key>
 			<dict>
 				<key>background</key>
@@ -432,11 +432,11 @@
 			<key>name</key>
 			<string>Admonition</string>
 			<key>scope</key>
-			<string>markup.admonition.markdown</string>
+			<string>markup.admonition.body.markdown</string>
 			<key>settings</key>
 			<dict>
 				<key>background</key>
-				<string>#33333333</string>
+				<string>#E0BEF899</string>
 			</dict>
 		</dict>
 
@@ -448,7 +448,7 @@
 			<key>settings</key>
 			<dict>
 				<key>background</key>
-				<string>#33333355</string>
+				<string>#E0BEF8</string>
 			</dict>
 		</dict>
 
@@ -456,11 +456,11 @@
 			<key>name</key>
 			<string>Admonition Punctuation</string>
 			<key>scope</key>
-			<string>markup.admonition.markdown punctuation.definition.admonition.markdown</string>
+			<string>markup.admonition.markdown punctuation.definition.admonition.markdown, markup.admonition.markdown punctuation.definition.heading</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#33333366</string>
+				<string>#59009966</string>
 			</dict>
 		</dict>
 
@@ -468,11 +468,11 @@
 			<key>name</key>
 			<string>Admonition Section Type</string>
 			<key>scope</key>
-			<string>markup.admonition.markdown entity.name.section.markdown</string>
+			<string>markup.admonition.markdown entity.name.admonition.markdown</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#FFFFFF</string>
+				<string>#590099</string>
 				<key>fontStyle</key>
 				<string>bold</string>
 			</dict>
@@ -491,6 +491,7 @@
 				<string>bold</string>
 			</dict>
 		</dict>
+
 		<!-- HINT -->
 		<dict>
 			<key>name</key>
@@ -532,7 +533,7 @@
 			<key>name</key>
 			<string>Admonition Section Type (Hint)</string>
 			<key>scope</key>
-			<string>markup.admonition.markdown.hint entity.name.section.markdown</string>
+			<string>markup.admonition.markdown.hint entity.name.admonition.markdown</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -596,7 +597,7 @@
 			<key>name</key>
 			<string>Admonition Section Type (Warning)</string>
 			<key>scope</key>
-			<string>markup.admonition.markdown.warning entity.name.section.markdown</string>
+			<string>markup.admonition.markdown.warning entity.name.admonition.markdown</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -661,7 +662,7 @@
 			<key>name</key>
 			<string>Admonition Section Type (Danger)</string>
 			<key>scope</key>
-			<string>markup.admonition.markdown.danger entity.name.section.markdown</string>
+			<string>markup.admonition.markdown.danger entity.name.admonition.markdown</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -726,7 +727,7 @@
 			<key>name</key>
 			<string>Admonition Section Type (Attention)</string>
 			<key>scope</key>
-			<string>markup.admonition.markdown.attention entity.name.section.markdown</string>
+			<string>markup.admonition.markdown.attention entity.name.admonition.markdown</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>

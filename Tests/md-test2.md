@@ -248,6 +248,18 @@ This quote continues on.  Line breaking is OK in markdown
 > ✔ done todo
 > ✘ cancelled todo
 > ☐ pending todoa
+>
+> - [x] complete with x
+> - [X] complete with X
+> - [✔] complete with special character
+> - [ ] incompleted
+> - [ ] last element
+> 
+> 1. [ ] a task list item
+> 2. [ ] list syntax required
+> 3. [ ] normal **formatting**, @mentions, #1234 refs
+> 3. [ ] incomplete
+> 3. [x] completed
 > 
 > ---
 >
@@ -259,9 +271,9 @@ This quote continues on.  Line breaking is OK in markdown
 >
 
 >
->   >  
->   >   > # very deeply nested 
->   >  
+> >  
+> > > # very deeply nested 
+> >  
 >
 
 > This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
@@ -293,11 +305,11 @@ Below fenced code blocks _should_ be highlighted.
 
 * List item
 
-    ```js
-    for (var i = 0; i < 10; i++) {
-        console.log(i);
-    }
-    ```
+  ```js
+  for (var i = 0; i < 10; i++) {
+      console.log(i);
+  }
+  ```
 
 * List item
 
@@ -634,6 +646,7 @@ pending ☐ todo
 - invalid in [ ] between
 - invalid at end [ ]
 
+
 # Internal links
 
 [[internal link]]
@@ -796,14 +809,33 @@ test inside **block**  [link][]
 </ul>
 ```
 
+# Footnotes
+
+That's some text with a footnote.[^1]
+This line has a multiline footnote[^2]
+Footnotes[^1] have a label[^label] and a definition[^!DEF].
+
+[^1]: This is a footnote
+[^2]: The first paragraph of the definition.
+    Paragraph two of the definition.
+    
+    > A blockquote with
+    > multiple lines.
+
+        a code block
+    A final paragraph. of footnote
+[^label]: A footnote on "label"
+[^!DEF]: The definition of a footnote.
+
 # Admonition
 TODO:
-☐ block code
 ☐ Header
 ☐ lists
 ☐ quotes
 ☐ hr
+☐ tables
 ☐ fenced code
+☐ block code
 
 !!! note "note GREY"
     Any number of other indented markdown elements.
@@ -837,37 +869,52 @@ TODO:
 
 
 !!! note "optional explicit title within double quotes"
+    # Headers
+    ## Headers
+    ### Headers
+    #### Headers
+    ##### Headers
+    ###### Headers
+    
+    ----------------
+    
         This is code.
         Isn't it pretty!
-    # Headers
-    ----------------
-    ```js
-    for (var i = 0; i < 10; i++) {
-        console.log(i);
-    }
-    ```
+    
+    normal text  
+    
     | Unordered  List | Order List |
     |-----------------|------------|
     | C++             | D--        |
     | E::             | X==        |
+    
     * This *is a list!*
-    * This is another list item.
-      But this one spans *two* lines.
+      dsfdsf
+    * This is another list item. But this one spans *two* lines.
     * Another list item with __inline__ formatting
     * This one is tricky
     1. This is a list item too
     2. This list is numbered
-        3. This is a list item too
-        4. This is a list item too
-            5. This is a list item too
-            6. This is a list item too
-        7. This is a list item too
-        8. This is a list item too
+    3. This is a list item too
+    4. This is a list item too
+    5. This is a list item too
+    6. This is a list item too
+    7. This is a list item too
+    8. This is a list item too
     9. This is a list item too
     10. This is a list item too
-    > Here it is again
-    > Lah-di-dah
-    > I should really match headings in here too:
+    - [x] complete with x
+    - [X] complete with X
+    - [✔] complete with special character
+    - [ ] incompleted
+    - [ ] last element
+    
+    ``` js
+    for (var i = 0; i < 10; i++) {
+        console.log(i);
+    }
+    ```
+    
     <span class="inline">test inside **span**  [link][]</span>
     <span class="inline">
     test inside **span**  [link][]
@@ -900,26 +947,3 @@ An example of math within a paragraph --- \\({e}^{i\pi }+1=0\\)
 And an equation on it's own:
     
 \\[ {x}_{1,2}=\frac{-b\pm \sqrt{{b}^{2}-4ac}}{2a} \\]
-
-# Footnotes
-
-That's some text with a footnote.[^1]
-Footnotes[^1] have a label[^label] and a definition[^!DEF].
-
-[^1]: This is a footnote
-[^label]: A footnote on "label"
-[^!DEF]: The definition of a footnote.
-
-### Multi-line footnote
-
-[^1]: The first paragraph of the definition.
-        Paragraph two of the definition.
-
-        > A blockquote with
-        > multiple lines.
-
-            a code block
-
-        A final paragraph. of footnote
-
-
