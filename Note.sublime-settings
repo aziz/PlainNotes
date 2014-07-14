@@ -18,7 +18,6 @@
   "spell_check": false,
   "tab_completion": true,
 
-  "draw_white_space": "all",
   "trim_trailing_white_space_on_save": false,
   "trim_automatic_white_space": false,
 

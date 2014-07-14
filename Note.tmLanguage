@@ -624,7 +624,6 @@
           <array>
 
             <!-- block qoutes -->
-            <!--
             <dict>
               <key>begin</key>
               <string>\G[ ]{0,3}(&gt;)[ ]?</string>
@@ -637,22 +636,37 @@
                 </dict>
               </dict>
               <key>end</key>
-              <string>(?x)^([ ]{4,}|t)
-                (?= \s*$
-                | [ ]{,3}(?&lt;marker&gt;[-*_])([ ]{,2}\k&lt;marker&gt;){2,}[ \t]*+$
-                | [ ]{,3}&gt;
-                )</string>
+              <string>(?x)\G([ ]{4,}|\t)?
+              (?= \s*$
+              | [ ]{,3}(?&lt;marker&gt;[-*_])([ ]{,2}\k&lt;marker&gt;){2,}[ \t]*+$
+              | [ ]{,3}&gt;
+              )</string>
               <key>name</key>
               <string>markup.quote.markdown</string>
               <key>patterns</key>
               <array>
                 <dict>
                   <key>include</key>
-                  <string>#block_quote</string>
+                  <string>$self</string>
+                </dict>
+                <dict>
+                  <key>include</key>
+                  <string>#inline</string>
+                </dict>
+                <dict>
+                  <key>include</key>
+                  <string>#block_raw</string>
+                </dict>
+                <dict>
+                  <key>include</key>
+                  <string>#headings</string>
+                </dict>
+                <dict>
+                  <key>include</key>
+                  <string>#separator</string>
                 </dict>
               </array>
             </dict>
-            -->
 
             <!-- lists and todo items -->
             <dict>
@@ -905,6 +919,7 @@
             </dict>
           </array>
         </dict>
+
         <dict>
           <key>begin</key>
           <string>(?x)\G

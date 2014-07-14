@@ -946,6 +946,25 @@ Footnotes[^1] have a label[^label] and a definition[^!DEF].
     >     return shell_exec("echo $input | $markdown_script");
     >
     
+    > 1. numbered list 
+    > 2. numbered list another
+    > 
+    > ✔ done todo
+    > ✘ cancelled todo
+    > ☐ pending todoa
+    > 
+    > - [x] complete with x
+    > - [X] complete with X
+    > - [✔] complete with special character
+    > - [ ] incompleted
+    > - [ ] last element
+    > 
+    > 1. [ ] a task list item
+    > 2. [ ] list syntax required
+    > 3. [ ] normal **formatting**, @mentions, #1234 refs
+    > 3. [ ] incomplete
+    > 3. [x] completed
+    
     # Headers
     ## Headers
     ### Headers
