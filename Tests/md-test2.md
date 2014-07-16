@@ -870,24 +870,6 @@ test inside **block**  [link][]
 </ul>
 ```
 
-# Footnotes
-
-That's some text with a footnote.[^1]
-This line has a multiline footnote[^2]
-Footnotes[^1] have a label[^label] and a definition[^!DEF].
-
-[^1]: This is a footnote
-[^2]: The first paragraph of the definition.
-    Paragraph two of the definition.
-    
-    > A blockquote with
-    > multiple lines.
-
-        a code block
-    A final paragraph. of footnote
-[^label]: A footnote on "label"
-[^!DEF]: The definition of a footnote.
-
 # Admonition
 
 !!! note "note GREY"
@@ -919,11 +901,6 @@ Footnotes[^1] have a label[^label] and a definition[^!DEF].
 
 !!! ATTENTION
     Any number of other indented markdown elements.
-
-> do adsadasd
->
-> sdadasd
-> sadasdas
 
 !!! note "optional explicit title within double quotes"
     
@@ -1074,6 +1051,64 @@ Footnotes[^1] have a label[^label] and a definition[^!DEF].
     [reference style][id]
     [test][1]
     
+
+# Attribute Lists
+
+This is a paragraph.
+{: #an_id .a_class }
+
+A setext style header {: #setext}
+=================================
+
+### A hash style header ### {: #hash }
+
+[link](http://example.com){: class="foo bar" title="Some title!" }
+![img](url){: #id .class}
+![img][linkref]
+
+[linkref]: url "optional title" {: #id .class}
+
+{: #someid .someclass somekey='some value' }
+
+# Footnotes
+
+That's some text with a footnote.[^1]
+This line has a multiline footnote[^2]
+Footnotes[^1] have a label[^label] and a definition[^!DEF].
+
+[^1]: This is a footnote
+[^2]: The first paragraph of the definition.
+    Paragraph two of the definition.
+    
+    > A blockquote with
+    > multiple lines.
+
+        a code block
+    A final paragraph. of footnote
+[^label]: A footnote on "label"
+[^!DEF]: The definition of a footnote.
+
+Footnotes[^1] have a label[^@#$%] and the footnote's content.
+
+[^1]: This is a footnote content.
+[^@#$%]: A footnote on the label: "@#$%".
+A footnote label must start with a caret ^ and may contain any inline text (including spaces) between a set of square brackets []. Only the first caret has any special meaning.
+
+A footnote content must start with the label followed by a colon and at least one space. The label used to define the content must exactly match the label used in the body (including capitalization and whitespace). The content would then follow the label either on the same line or on the next line. The content may contain multiple lines, paragraphs, code blocks, blockquotes and most any other markdown syntax. The additional lines must be indented one level (four spaces or one tab).
+
+When working with multiple blocks, it may be helpful to start the content on a separate line from the label which defines the content. This way the entire block is indented consistently and any errors are more easily discernible by the author.
+
+[^1]: 
+    The first paragraph of the definition.
+
+    Paragraph two of the definition.
+
+    > A blockquote with
+    > multiple lines.
+
+        a code block
+
+    A final paragraph.
 
 # Math
 

@@ -9,7 +9,7 @@
     <string>note</string>
   </array>
 
-  <!-- PATTERNS ===== -->
+  <!-- PATTERNS --------------------------------- -->
   <key>patterns</key>
   <array>
 
@@ -396,11 +396,7 @@
       <array>
         <dict>
           <key>include</key>
-          <string>#inline</string>
-        </dict>
-        <dict>
-          <key>include</key>
-          <string>text.html.basic</string>
+          <string>#admonition</string>
         </dict>
       </array>
     </dict>
@@ -449,11 +445,7 @@
       <array>
         <dict>
           <key>include</key>
-          <string>#inline</string>
-        </dict>
-        <dict>
-          <key>include</key>
-          <string>text.html.basic</string>
+          <string>#admonition</string>
         </dict>
       </array>
     </dict>
@@ -502,11 +494,7 @@
       <array>
         <dict>
           <key>include</key>
-          <string>#inline</string>
-        </dict>
-        <dict>
-          <key>include</key>
-          <string>text.html.basic</string>
+          <string>#admonition</string>
         </dict>
       </array>
     </dict>
@@ -555,11 +543,7 @@
       <array>
         <dict>
           <key>include</key>
-          <string>#inline</string>
-        </dict>
-        <dict>
-          <key>include</key>
-          <string>text.html.basic</string>
+          <string>#admonition</string>
         </dict>
       </array>
     </dict>
@@ -608,167 +592,8 @@
       <array>
         <dict>
           <key>include</key>
-          <string>text.html.markdown.note.fenced</string>
+          <string>#admonition</string>
         </dict>
-        <dict>
-          <!-- Items inside admonition -->
-          <key>applyEndPatternLast</key>
-          <integer>1</integer>
-          <key>begin</key>
-          <string>\G([ ]{4}|\t)</string>
-          <key>end</key>
-          <string>(?&lt;=\n)</string>
-          <key>name</key>
-          <string>markup.admonition.body.markdown</string>
-          <key>patterns</key>
-          <array>
-
-            <!-- block qoutes -->
-            <dict>
-              <key>begin</key>
-              <string>\G[ ]{0,3}(&gt;)[ ]?</string>
-              <key>beginCaptures</key>
-              <dict>
-                <key>1</key>
-                <dict>
-                  <key>name</key>
-                  <string>punctuation.definition.blockquote.markdown</string>
-                </dict>
-              </dict>
-              <key>end</key>
-              <string>(?x)\G([ ]{4,}|\t)?
-              (?= \s*$
-              | [ ]{,3}(?&lt;marker&gt;[-*_])([ ]{,2}\k&lt;marker&gt;){2,}[ \t]*+$
-              | [ ]{,3}&gt;
-              )</string>
-              <key>name</key>
-              <string>markup.quote.markdown</string>
-              <key>patterns</key>
-              <array>
-                <dict>
-                  <key>include</key>
-                  <string>$self</string>
-                </dict>
-                <dict>
-                  <key>include</key>
-                  <string>#inline</string>
-                </dict>
-                <dict>
-                  <key>include</key>
-                  <string>#block_raw</string>
-                </dict>
-                <dict>
-                  <key>include</key>
-                  <string>#headings</string>
-                </dict>
-                <dict>
-                  <key>include</key>
-                  <string>#separator</string>
-                </dict>
-              </array>
-            </dict>
-
-            <!-- lists and todo items -->
-            <dict>
-              <key>begin</key>
-              <string>(?x)
-                \G[ ]{0,3}([*+-])([ ]\[([ xX✘✔])\])?(?=\s) |
-                \G[ ]{0,3}([0-9]+)(\.)([ ]\[([ xX✘✔])\])?(?=\s) |
-                \G[ ]{0,3}(?:(✘)|(✔)|(☐)){1}(?=\s)
-              </string>
-              <key>end</key>
-              <string>(?&lt;=\n)</string>
-              <key>name</key>
-              <string>markup.list</string>
-              <key>captures</key>
-              <dict>
-                <key>1</key>
-                <dict>
-                  <key>name</key>
-                  <string>punctuation.definition.list_item.markdown</string>
-                </dict>
-                <key>2</key>
-                <dict>
-                  <key>name</key>
-                  <string>markup.checkbox.markdown</string>
-                </dict>
-                <key>3</key>
-                <dict>
-                  <key>name</key>
-                  <string>markup.checkbox.checked_symbol.markdown</string>
-                </dict>
-                <key>4</key>
-                <dict>
-                  <key>name</key>
-                  <string>punctuation.definition.list_item.markdown punctuation.definition.list_item.number.markdown</string>
-                </dict>
-                <key>5</key>
-                <dict>
-                  <key>name</key>
-                  <string>punctuation.definition.list_item.markdown</string>
-                </dict>
-                <key>6</key>
-                <dict>
-                  <key>name</key>
-                  <string>markup.checkbox.markdown</string>
-                </dict>
-                <key>7</key>
-                <dict>
-                  <key>name</key>
-                  <string>markup.checkbox.checked_symbol.markdown</string>
-                </dict>
-                <key>8</key>
-                <dict>
-                  <key>name</key>
-                  <string>punctuation.definition.list_item.todo.cancelled.markdown</string>
-                </dic>
-                <key>9</key>
-                <dict>
-                  <key>name</key>
-                  <string>punctuation.definition.list_item.todo.done.markdown</string>
-                </dict>
-                <key>10</key>
-                <dict>
-                  <key>name</key>
-                  <string>punctuation.definition.list_item.todo.pending.markdown</string>
-                </dict>
-              </dict>
-              <key>patterns</key>
-              <array>
-                <dict>
-                  <key>include</key>
-                  <string>#list-paragraph</string>
-                </dict>
-              </array>
-            </dict>
-
-            <dict>
-              <key>include</key>
-              <string>#block_raw</string>
-            </dict>
-            <dict>
-              <key>include</key>
-              <string>#table</string>
-            </dict>
-            <dict>
-              <key>include</key>
-              <string>#headings</string>
-            </dict>
-            <dict>
-              <key>include</key>
-              <string>#separator</string>
-            </dict>
-            <dict>
-              <key>include</key>
-              <string>#inline</string>
-            </dict>
-            <dict>
-              <key>include</key>
-              <string>text.html.basic</string>
-            </dict>
-          </array>
-        </dict>
-
       </array>
     </dict>
 
@@ -782,14 +607,17 @@
       <string>meta.paragraph.markdown</string>
       <key>patterns</key>
       <array>
+
         <dict>
           <key>include</key>
           <string>#inline</string>
         </dict>
+
         <dict>
           <key>include</key>
           <string>text.html.basic</string>
         </dict>
+
         <dict>
           <key>captures</key>
           <dict>
@@ -804,6 +632,7 @@
           <key>name</key>
           <string>markup.heading.1.markdown.note</string>
         </dict>
+
         <dict>
           <key>captures</key>
           <dict>
@@ -831,7 +660,7 @@
 
   </array>
 
-  <!-- REPO ========= -->
+  <!-- REPOS ------------------------------------ -->
   <key>repository</key>
   <dict>
 
@@ -933,6 +762,73 @@
           <string>$|(?&lt;=\n)</string>
           <key>patterns</key>
           <array>
+
+            <dict>
+              <key>match</key>
+              <string>(?x:
+                 \G[ ]{,3}([*+-])[ ](\[([ xX✘✔])\])(.+)$          # after an unordered list
+                |\G[ ]{0,3}([0-9]+)(\.)[ ](\[([ xX✘✔])\])(.+)$    # after an ordered list
+              )</string>
+              <key>name</key>
+              <string>meta.paragraph.list.markdown</string>
+              <key>captures</key>
+              <dict>
+                <key>1</key>
+                <dict>
+                  <key>name</key>
+                  <string>punctuation.definition.list_item.markdown</string>
+                </dict>
+
+                <key>2</key>
+                <dict>
+                  <key>name</key>
+                  <string>markup.checkbox.markdown</string>
+                </dict>
+
+                <key>3</key>
+                <dict>
+                  <key>name</key>
+                  <string>markup.checkbox.checked_symbol.markdown</string>
+                </dict>
+
+                <key>4</key>
+                <dict>
+                  <key>name</key>
+                  <string>meta.paragraph.list.markdown</string>
+                </dict>
+
+                <key>5</key>
+                <dict>
+                  <key>name</key>
+                  <string>punctuation.definition.list_item.markdown punctuation.definition.list_item.number.markdown</string>
+                </dict>
+                <key>6</key>
+                <dict>
+                  <key>name</key>
+                  <string>punctuation.definition.list_item.markdown</string>
+                </dict>
+
+                <key>7</key>
+                <dict>
+                  <key>name</key>
+                  <string>markup.checkbox.markdown</string>
+                </dict>
+
+                <key>8</key>
+                <dict>
+                  <key>name</key>
+                  <string>markup.checkbox.checked_symbol.markdown</string>
+                </dict>
+
+                <key>9</key>
+                <dict>
+                  <key>name</key>
+                  <string>meta.paragraph.list.markdown</string>
+                </dict>
+
+              </dict>
+            </dict>
+
             <dict>
               <key>match</key>
               <string>\G[ ]{,3}([*+-])\s+(.+)$</string>
@@ -950,6 +846,7 @@
                 </dict>
               </dict>
             </dict>
+
             <dict>
               <key>match</key>
               <string>\G[ ]{,3}([✔])\s+(.+)$</string>
@@ -967,6 +864,7 @@
                 </dict>
               </dict>
             </dict>
+
             <dict>
               <key>match</key>
               <string>\G[ ]{,3}([✘])\s+(.+)$</string>
@@ -984,6 +882,7 @@
                 </dict>
               </dict>
             </dict>
+
             <dict>
               <key>match</key>
               <string>\G[ ]{,3}([☐])\s+(.+)$</string>
@@ -1001,6 +900,7 @@
                 </dict>
               </dict>
             </dict>
+
             <dict>
               <key>match</key>
               <string>\G[ ]{0,3}([0-9]+)(\.)\s+(.+)$</string>
@@ -2396,6 +2296,176 @@
           <string>#note-tag-begin</string>
         </dict>
 
+      </array>
+    </dict>
+
+    <!-- Admonition REPO -->
+    <key>admonition</key>
+    <dict>
+      <key>patterns</key>
+      <array>
+        <dict>
+          <key>include</key>
+          <string>text.html.markdown.note.fenced</string>
+        </dict>
+        <dict>
+          <!-- Items inside admonition -->
+          <key>applyEndPatternLast</key>
+          <integer>1</integer>
+          <key>begin</key>
+          <string>\G([ ]{4}|\t)</string>
+          <key>end</key>
+          <string>(?&lt;=\n)</string>
+          <key>name</key>
+          <string>markup.admonition.body.markdown</string>
+          <key>patterns</key>
+          <array>
+
+            <!-- block qoutes -->
+            <dict>
+              <key>begin</key>
+              <string>\G[ ]{0,3}(&gt;)[ ]?</string>
+              <key>beginCaptures</key>
+              <dict>
+                <key>1</key>
+                <dict>
+                  <key>name</key>
+                  <string>punctuation.definition.blockquote.markdown</string>
+                </dict>
+              </dict>
+              <key>end</key>
+              <string>(?x)\G([ ]{4,}|\t)?
+              (?= \s*$
+              | [ ]{,3}(?&lt;marker&gt;[-*_])([ ]{,2}\k&lt;marker&gt;){2,}[ \t]*+$
+              | [ ]{,3}&gt;
+              )</string>
+              <key>name</key>
+              <string>markup.quote.markdown</string>
+              <key>patterns</key>
+              <array>
+                <dict>
+                  <key>include</key>
+                  <string>$self</string>
+                </dict>
+                <dict>
+                  <key>include</key>
+                  <string>#inline</string>
+                </dict>
+                <dict>
+                  <key>include</key>
+                  <string>#block_raw</string>
+                </dict>
+                <dict>
+                  <key>include</key>
+                  <string>#headings</string>
+                </dict>
+                <dict>
+                  <key>include</key>
+                  <string>#separator</string>
+                </dict>
+              </array>
+            </dict>
+
+            <!-- lists and todo items -->
+            <dict>
+              <key>begin</key>
+              <string>(?x)
+                \G[ ]{0,3}([*+-])([ ]\[([ xX✘✔])\])?(?=\s) |
+                \G[ ]{0,3}([0-9]+)(\.)([ ]\[([ xX✘✔])\])?(?=\s) |
+                \G[ ]{0,3}(?:(✘)|(✔)|(☐)){1}(?=\s)
+              </string>
+              <key>end</key>
+              <string>(?&lt;=\n)</string>
+              <key>name</key>
+              <string>markup.list</string>
+              <key>captures</key>
+              <dict>
+                <key>1</key>
+                <dict>
+                  <key>name</key>
+                  <string>punctuation.definition.list_item.markdown</string>
+                </dict>
+                <key>2</key>
+                <dict>
+                  <key>name</key>
+                  <string>markup.checkbox.markdown</string>
+                </dict>
+                <key>3</key>
+                <dict>
+                  <key>name</key>
+                  <string>markup.checkbox.checked_symbol.markdown</string>
+                </dict>
+                <key>4</key>
+                <dict>
+                  <key>name</key>
+                  <string>punctuation.definition.list_item.markdown punctuation.definition.list_item.number.markdown</string>
+                </dict>
+                <key>5</key>
+                <dict>
+                  <key>name</key>
+                  <string>punctuation.definition.list_item.markdown</string>
+                </dict>
+                <key>6</key>
+                <dict>
+                  <key>name</key>
+                  <string>markup.checkbox.markdown</string>
+                </dict>
+                <key>7</key>
+                <dict>
+                  <key>name</key>
+                  <string>markup.checkbox.checked_symbol.markdown</string>
+                </dict>
+                <key>8</key>
+                <dict>
+                  <key>name</key>
+                  <string>punctuation.definition.list_item.todo.cancelled.markdown</string>
+                </dic>
+                <key>9</key>
+                <dict>
+                  <key>name</key>
+                  <string>punctuation.definition.list_item.todo.done.markdown</string>
+                </dict>
+                <key>10</key>
+                <dict>
+                  <key>name</key>
+                  <string>punctuation.definition.list_item.todo.pending.markdown</string>
+                </dict>
+              </dict>
+              <key>patterns</key>
+              <array>
+                <dict>
+                  <key>include</key>
+                  <string>#list-paragraph</string>
+                </dict>
+              </array>
+            </dict>
+
+            <dict>
+              <key>include</key>
+              <string>#block_raw</string>
+            </dict>
+            <dict>
+              <key>include</key>
+              <string>#table</string>
+            </dict>
+            <dict>
+              <key>include</key>
+              <string>#headings</string>
+            </dict>
+            <dict>
+              <key>include</key>
+              <string>#separator</string>
+            </dict>
+            <dict>
+              <key>include</key>
+              <string>#inline</string>
+            </dict>
+            <dict>
+              <key>include</key>
+              <string>text.html.basic</string>
+            </dict>
+          </array>
+        </dict>
       </array>
     </dict>
 
