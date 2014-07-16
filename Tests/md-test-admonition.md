@@ -1,16 +1,4 @@
 
-|                |    Purple    |   Blue  |  Yellow |   Red   |  Green  |
-|----------------|--------------|---------|---------|---------|---------|
-| Header         | #E0BEF8      | #BDE5F8 | #FEEFB3 | #FFBABA | #DFF2BF |
-| Text           | #590099      | #00529B | #9F6000 | #D8000C | #4F8A10 |
-| Body           | H99          |         |         |         |         |
-| Punc.          | T66          |         |         |         |         |
-| Section Type   | T            |         |         |         |         |
-| light stuff bg | H66          |         |         |         |         |
-| Fenced bg      | hsl(H,85,12) |         |         |         |         |
-| blockqoute     | H            |         |         |         |         |
-|                |              |         |         |         |         |
-
 !!! note "optional explicit title within double quotes"
     
     > do adsadasd
@@ -312,8 +300,6 @@
     [reference style][id]
     [test][1]
     
-
-
 
 !!! warning "optional explicit title within double quotes"
     
