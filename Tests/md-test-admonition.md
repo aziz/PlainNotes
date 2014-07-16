@@ -1,3 +1,34 @@
+# Admonition
+
+!!! note "note GREY"
+    Any number of other indented markdown elements.
+
+!!! important  "important GREY"  
+    Any number of other indented markdown elements.
+
+!!! hint "hint BLUE"
+    Any number of other indented markdown elements.
+
+!!! tip "tip BLUE"
+    Any number of other indented markdown elements.
+
+!!! caution "caution YELLOW"
+    Any number of other indented markdown elements.
+
+!!! warning "warning YELLOW"
+    Any number of other indented markdown elements.
+
+!!! danger "danger RED"
+    Any number of other indented markdown elements.
+
+!!! error "error RED"
+    Any number of other indented markdown elements.
+
+!!! attention "attention GREEN"
+    Any number of other indented markdown elements.
+
+!!! ATTENTION
+    Any number of other indented markdown elements.
 
 !!! note "optional explicit title within double quotes"
     
