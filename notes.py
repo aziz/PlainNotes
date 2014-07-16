@@ -156,6 +156,21 @@ def save_to_brain():
   dump(db, gz, -1)
   gz.close()
 
+def cleanup_brain():
+  print("Cleaning Up My Brain -----------------")
+  # print(db)
+  print(len(db))
+  to_delete = []
+  for nfile in db:
+    if not os.path.exists(os.path.join(root,nfile)):
+      print("✘" + nfile)
+      to_delete.append(nfile)
+  print(to_delete)
+  for x in to_delete:
+    db.pop(x, None)
+  print(len(db))
+  save_to_brain()
+
 def plugin_loaded():
   global db, root, db_file
   # creating root if it does not exist

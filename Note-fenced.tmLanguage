@@ -3,11 +3,7 @@
 <plist version="1.0">
 <dict>
   <key>name</key>
-  <string>Note Fenced</string>
-  <key>fileTypes</key>
-  <array>
-    <string>note</string>
-  </array>
+  <string>-</string>
 
   <!-- PATTERNS ===== -->
   <key>patterns</key>
@@ -1091,7 +1087,5 @@
 
   <key>scopeName</key>
   <string>text.html.markdown.note.fenced</string>
-  <key>uuid</key>
-  <string>8daa0019-2f48-4a5c-8410-f69d7e6b1830</string>
 </dict>
 </plist>
