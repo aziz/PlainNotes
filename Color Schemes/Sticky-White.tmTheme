@@ -425,9 +425,91 @@
 			</dict>
 		</dict>
 
+		<dict>
+			<key>name</key>
+			<string>Link (Internal)</string>
+			<key>scope</key>
+			<string>meta.link.internal.markdown.note</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>normal underline</string>
+				<key>foreground</key>
+				<string>#8224b3</string>
+			</dict>
+		</dict>
 
+		<dict>
+			<key>name</key>
+			<string>Tag BG</string>
+			<key>scope</key>
+			<string>meta.note-tag.markdown.note</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#f6f5f5CC</string>
+			</dict>
+		</dict>
 
-		<!-- Beginning of Admonition -->
+		<dict>
+			<key>name</key>
+			<string>Tag Title</string>
+			<key>scope</key>
+			<string>string.other.note-tag.title.markdown.note</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>normal</string>
+				<key>foreground</key>
+				<string>#333333</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Tag Punctuation</string>
+			<key>scope</key>
+			<string>punctuation.definition.note-tag.markdown.note</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>normal</string>
+				<key>foreground</key>
+				<string>#33333355</string>
+				<key>background</key>
+				<string>#f6f5f5CC</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Checkbox (Github style)</string>
+			<key>scope</key>
+			<string>markup.checkbox.markdown</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>normal</string>
+				<key>foreground</key>
+				<string>#33333355</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Checkbox Checked Sybmol (Github style)</string>
+			<key>scope</key>
+			<string>markup.checkbox.checked_symbol.markdown</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>bold</string>
+				<key>foreground</key>
+				<string>#1c801c</string>
+			</dict>
+		</dict>
+
+		<!-- Admonition ======================= -->
 		<dict>
 			<key>name</key>
 			<string>Admonition Header</string>
@@ -885,93 +967,6 @@
 				<string>#B2D476</string>
 			</dict>
 		</dict>
-
-		<!-- End of Admonition -->
-		<dict>
-			<key>name</key>
-			<string>Link (Internal)</string>
-			<key>scope</key>
-			<string>meta.link.internal.markdown.note</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string>normal underline</string>
-				<key>foreground</key>
-				<string>#8224b3</string>
-			</dict>
-		</dict>
-
-		<dict>
-			<key>name</key>
-			<string>Tag BG</string>
-			<key>scope</key>
-			<string>meta.note-tag.markdown.note</string>
-			<key>settings</key>
-			<dict>
-				<key>background</key>
-				<string>#f6f5f5CC</string>
-			</dict>
-		</dict>
-
-		<dict>
-			<key>name</key>
-			<string>Tag Title</string>
-			<key>scope</key>
-			<string>string.other.note-tag.title.markdown.note</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string>normal</string>
-				<key>foreground</key>
-				<string>#333333</string>
-			</dict>
-		</dict>
-
-		<dict>
-			<key>name</key>
-			<string>Tag Punctuation</string>
-			<key>scope</key>
-			<string>punctuation.definition.note-tag.markdown.note</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string>normal</string>
-				<key>foreground</key>
-				<string>#33333355</string>
-				<key>background</key>
-				<string>#f6f5f5CC</string>
-			</dict>
-		</dict>
-
-		<dict>
-			<key>name</key>
-			<string>Checkbox (Github style)</string>
-			<key>scope</key>
-			<string>markup.checkbox.markdown</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string>normal</string>
-				<key>foreground</key>
-				<string>#33333355</string>
-			</dict>
-		</dict>
-
-		<dict>
-			<key>name</key>
-			<string>Checkbox Checked Sybmol (Github style)</string>
-			<key>scope</key>
-			<string>markup.checkbox.checked_symbol.markdown</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string>bold</string>
-				<key>foreground</key>
-				<string>#1c801c</string>
-			</dict>
-		</dict>
-
-
 
 <!-- HTML ======================= -->
 
