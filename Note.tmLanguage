@@ -9,7 +9,7 @@
     <string>note</string>
   </array>
 
-  <!-- PATTERNS --------------------------------- -->
+  <!-- PATTERNS -->
   <key>patterns</key>
   <array>
 
@@ -660,7 +660,7 @@
 
   </array>
 
-  <!-- REPOS ------------------------------------ -->
+  <!-- REPOS -->
   <key>repository</key>
   <dict>
 
@@ -2419,7 +2419,7 @@
                 <dict>
                   <key>name</key>
                   <string>punctuation.definition.list_item.todo.cancelled.markdown</string>
-                </dic>
+                </dict>
                 <key>9</key>
                 <dict>
                   <key>name</key>
