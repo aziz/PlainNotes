@@ -2363,6 +2363,72 @@
                   <key>include</key>
                   <string>#separator</string>
                 </dict>
+
+                <dict>
+                  <key>begin</key>
+                  <string>(?x)
+                    \G[ ]{0,3}([*+-])([ ]\[([ xX✘✔])\])?(?=\s) |
+                    \G[ ]{0,3}([0-9]+)(\.)([ ]\[([ xX✘✔])\])?(?=\s) |
+                    \G[ ]{0,3}(?:(✘)|(✔)|(☐)){1}(?=\s)
+                  </string>
+                  <key>end</key>
+                  <string>(?&lt;=\n)</string>
+                  <key>name</key>
+                  <string>markup.list</string>
+                  <key>captures</key>
+                  <dict>
+                    <key>1</key>
+                    <dict>
+                      <key>name</key>
+                      <string>punctuation.definition.list_item.markdown</string>
+                    </dict>
+                    <key>2</key>
+                    <dict>
+                      <key>name</key>
+                      <string>markup.checkbox.markdown</string>
+                    </dict>
+                    <key>3</key>
+                    <dict>
+                      <key>name</key>
+                      <string>markup.checkbox.checked_symbol.markdown</string>
+                    </dict>
+                    <key>4</key>
+                    <dict>
+                      <key>name</key>
+                      <string>punctuation.definition.list_item.markdown punctuation.definition.list_item.number.markdown</string>
+                    </dict>
+                    <key>5</key>
+                    <dict>
+                      <key>name</key>
+                      <string>punctuation.definition.list_item.markdown</string>
+                    </dict>
+                    <key>6</key>
+                    <dict>
+                      <key>name</key>
+                      <string>markup.checkbox.markdown</string>
+                    </dict>
+                    <key>7</key>
+                    <dict>
+                      <key>name</key>
+                      <string>markup.checkbox.checked_symbol.markdown</string>
+                    </dict>
+                    <key>8</key>
+                    <dict>
+                      <key>name</key>
+                      <string>punctuation.definition.list_item.todo.cancelled.markdown</string>
+                    </dict>
+                    <key>9</key>
+                    <dict>
+                      <key>name</key>
+                      <string>punctuation.definition.list_item.todo.done.markdown</string>
+                    </dict>
+                    <key>10</key>
+                    <dict>
+                      <key>name</key>
+                      <string>punctuation.definition.list_item.todo.pending.markdown</string>
+                    </dict>
+                  </dict>
+                </dict>
               </array>
             </dict>
 
