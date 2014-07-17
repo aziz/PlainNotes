@@ -13,16 +13,16 @@
 			<dict>
 				<key>background</key>
 				<string>#fbfafa</string>
-				<key>foreground</key>
-				<string>#333333</string>
 				<key>caret</key>
 				<string>#F92672</string>
-				<key>lineHighlight</key>
-				<string>#00000022</string>
+				<key>foreground</key>
+				<string>#333333</string>
 				<key>gutterForeground</key>
 				<string>#33333355</string>
 				<key>invisibles</key>
 				<string>#33333355</string>
+				<key>lineHighlight</key>
+				<string>#00000022</string>
 				<key>selection</key>
 				<string>#33333355</string>
 				<key>selectionBorder</key>
@@ -115,10 +115,10 @@
 			<string>markup.strikethrough markup.raw, markup.strikethrough meta.link, markup.strikethrough meta.image, markup.strikethrough meta.image.reference, markup.strikethrough meta.image punctuation.definition, markup.strikethrough meta.image markup.underline.link.image, markup.strikethrough meta.image string.other.link.description</string>
 			<key>settings</key>
 			<dict>
-				<key>foreground</key>
-				<string>#33333366</string>
 				<key>background</key>
 				<string>#fbfafa</string>
+				<key>foreground</key>
+				<string>#33333366</string>
 			</dict>
 		</dict>
 		<dict>
@@ -210,22 +210,9 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>Link Punctuations</string>
-			<key>scope</key>
-			<string>meta.link punctuation.definition</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string>normal</string>
-				<key>foreground</key>
-				<string>#33333355</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
 			<string>Reference Definition</string>
 			<key>scope</key>
-			<string>meta.link.reference.def</string>
+			<string>meta.link.reference.def,meta.abbreviation.def</string>
 			<key>settings</key>
 			<dict>
 				<key>background</key>
@@ -249,7 +236,7 @@
 			<key>name</key>
 			<string>Reference Definition Reference</string>
 			<key>scope</key>
-			<string>meta.link.reference.def constant.other.reference.link</string>
+			<string>meta.link.reference.def constant.other.reference.link,meta.abbreviation.def meta.abbreviation.constant</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
@@ -260,9 +247,9 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>Reference Definition Punctuation</string>
+			<string>Punctuations (link, link reference and abbr)</string>
 			<key>scope</key>
-			<string>meta.link.reference.def punctuation.separator.key-value</string>
+			<string>meta.link punctuation.definition,meta.link.reference.def punctuation.separator.key-value, punctuation.definition.abbreviation</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -276,10 +263,10 @@
 			<string>meta.image</string>
 			<key>settings</key>
 			<dict>
-				<key>foreground</key>
-				<string>#1a1a1a66</string>
 				<key>background</key>
 				<string>#f6f5f5</string>
+				<key>foreground</key>
+				<string>#1a1a1a66</string>
 			</dict>
 		</dict>
 		<dict>
@@ -364,7 +351,6 @@
 				<string>#33333366</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Table</string>
@@ -376,7 +362,6 @@
 				<string>#3333331A</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Table Punctuations</string>
@@ -388,7 +373,6 @@
 				<string>#33333355</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Todo: Pending</string>
@@ -400,7 +384,6 @@
 				<string>#33333399</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Todo: Done</string>
@@ -412,7 +395,6 @@
 				<string>#1c801c</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Todo: Cancelled</string>
@@ -424,7 +406,6 @@
 				<string>#992222</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Link (Internal)</string>
@@ -438,7 +419,6 @@
 				<string>#8224b3</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Tag BG</string>
@@ -450,7 +430,6 @@
 				<string>#f6f5f5CC</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Tag Title</string>
@@ -464,7 +443,6 @@
 				<string>#333333</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Tag Punctuation</string>
@@ -472,15 +450,14 @@
 			<string>punctuation.definition.note-tag.markdown.note</string>
 			<key>settings</key>
 			<dict>
+				<key>background</key>
+				<string>#f6f5f5CC</string>
 				<key>fontStyle</key>
 				<string>normal</string>
 				<key>foreground</key>
 				<string>#33333355</string>
-				<key>background</key>
-				<string>#f6f5f5CC</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Checkbox (Github style)</string>
@@ -494,7 +471,6 @@
 				<string>#33333355</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Checkbox Checked Sybmol (Github style)</string>
@@ -508,8 +484,6 @@
 				<string>#1c801c</string>
 			</dict>
 		</dict>
-
-		<!-- Admonition ======================= -->
 		<dict>
 			<key>name</key>
 			<string>Admonition Header</string>
@@ -521,7 +495,6 @@
 				<string>#E0BEF8</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Admonition Body</string>
@@ -533,7 +506,6 @@
 				<string>#E0BEF899</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Admonition Punctuation</string>
@@ -545,7 +517,6 @@
 				<string>#59009966</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Admonition Section Type</string>
@@ -553,13 +524,12 @@
 			<string>markup.admonition.markdown entity.name.admonition.markdown</string>
 			<key>settings</key>
 			<dict>
-				<key>foreground</key>
-				<string>#590099</string>
 				<key>fontStyle</key>
 				<string>bold</string>
+				<key>foreground</key>
+				<string>#590099</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Admonition Section Title</string>
@@ -567,13 +537,12 @@
 			<string>markup.admonition.markdown string.other.admonition.title.markdown</string>
 			<key>settings</key>
 			<dict>
-				<key>foreground</key>
-				<string>#333333</string>
 				<key>fontStyle</key>
 				<string>bold</string>
+				<key>foreground</key>
+				<string>#333333</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Admonition H1, H2, Table BG and Code bg </string>
@@ -585,19 +554,17 @@
 				<string>#E0BEF866</string>
 			</dict>
 		</dict>
-
 		<dict>
-				<key>name</key>
-				<string>Admonition Fenced BG</string>
-				<key>scope</key>
-				<string>markup.admonition.markdown markup.raw.block.fenced meta.language</string>
-				<key>settings</key>
-				<dict>
-					<key>background</key>
-					<string>#220438</string>
-				</dict>
+			<key>name</key>
+			<string>Admonition Fenced BG</string>
+			<key>scope</key>
+			<string>markup.admonition.markdown markup.raw.block.fenced meta.language</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#220438</string>
+			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Admonition Blockquote</string>
@@ -611,8 +578,6 @@
 				<string>#E0BEF8</string>
 			</dict>
 		</dict>
-
-		<!-- HINT -->
 		<dict>
 			<key>name</key>
 			<string>Admonition (Hint)</string>
@@ -624,7 +589,6 @@
 				<string>#8CD2F399</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Admonition Header (Hint)</string>
@@ -636,7 +600,6 @@
 				<string>#8CD2F3</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Admonition Punctuation (Hint)</string>
@@ -648,7 +611,6 @@
 				<string>#00529B77</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Admonition Section Type (Hint)</string>
@@ -656,13 +618,12 @@
 			<string>markup.admonition.markdown.hint entity.name.admonition.markdown</string>
 			<key>settings</key>
 			<dict>
-				<key>foreground</key>
-				<string>#00529B</string>
 				<key>fontStyle</key>
 				<string>bold</string>
+				<key>foreground</key>
+				<string>#00529B</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Admonition (Hint) H1, H2, Table BG and Code bg </string>
@@ -674,19 +635,17 @@
 				<string>#8CD2F366</string>
 			</dict>
 		</dict>
-
 		<dict>
-				<key>name</key>
-				<string>Admonition (Hint) Fenced BG</string>
-				<key>scope</key>
-				<string>markup.admonition.markdown.hint markup.raw.block.fenced meta.language</string>
-				<key>settings</key>
-				<dict>
-					<key>background</key>
-					<string>#052839</string>
-				</dict>
+			<key>name</key>
+			<string>Admonition (Hint) Fenced BG</string>
+			<key>scope</key>
+			<string>markup.admonition.markdown.hint markup.raw.block.fenced meta.language</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#052839</string>
+			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Admonition (Hint) Blockquote</string>
@@ -700,8 +659,6 @@
 				<string>#8CD2F3</string>
 			</dict>
 		</dict>
-
-		<!-- Warning -->
 		<dict>
 			<key>name</key>
 			<string>Admonition (Warning)</string>
@@ -713,7 +670,6 @@
 				<string>#FDEA9B99</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Admonition Header (Warning)</string>
@@ -725,7 +681,6 @@
 				<string>#FDEA9B</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Admonition Punctuation (Warning)</string>
@@ -737,7 +692,6 @@
 				<string>#9F600077</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Admonition Section Type (Warning)</string>
@@ -745,13 +699,12 @@
 			<string>markup.admonition.markdown.warning entity.name.admonition.markdown</string>
 			<key>settings</key>
 			<dict>
-				<key>foreground</key>
-				<string>#9F6000</string>
 				<key>fontStyle</key>
 				<string>bold</string>
+				<key>foreground</key>
+				<string>#9F6000</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Admonition (Warning) H1, H2, Table BG and Code bg </string>
@@ -763,19 +716,17 @@
 				<string>#FDEA9B66</string>
 			</dict>
 		</dict>
-
 		<dict>
-				<key>name</key>
-				<string>Admonition (Warning) Fenced BG</string>
-				<key>scope</key>
-				<string>markup.admonition.markdown.warning markup.raw.block.fenced meta.language</string>
-				<key>settings</key>
-				<dict>
-					<key>background</key>
-					<string>#392E05</string>
-				</dict>
+			<key>name</key>
+			<string>Admonition (Warning) Fenced BG</string>
+			<key>scope</key>
+			<string>markup.admonition.markdown.warning markup.raw.block.fenced meta.language</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#392E05</string>
+			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Admonition (Warning) Blockquote</string>
@@ -789,8 +740,6 @@
 				<string>#D3BA54</string>
 			</dict>
 		</dict>
-
-		<!-- DANGER -->
 		<dict>
 			<key>name</key>
 			<string>Admonition (Danger)</string>
@@ -802,7 +751,6 @@
 				<string>#FFBABA99</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Admonition Header (Danger)</string>
@@ -814,7 +762,6 @@
 				<string>#FFBABA</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Admonition Punctuation (Danger)</string>
@@ -826,7 +773,6 @@
 				<string>#D8000C77</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Admonition Section Type (Danger)</string>
@@ -834,13 +780,12 @@
 			<string>markup.admonition.markdown.danger entity.name.admonition.markdown</string>
 			<key>settings</key>
 			<dict>
-				<key>foreground</key>
-				<string>#D8000C</string>
 				<key>fontStyle</key>
 				<string>bold</string>
+				<key>foreground</key>
+				<string>#D8000C</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Admonition (Danger) H1, H2, Table BG and Code bg </string>
@@ -852,19 +797,17 @@
 				<string>#FFBABA66</string>
 			</dict>
 		</dict>
-
 		<dict>
-				<key>name</key>
-				<string>Admonition (Danger) Fenced BG</string>
-				<key>scope</key>
-				<string>markup.admonition.markdown.danger markup.raw.block.fenced meta.language</string>
-				<key>settings</key>
-				<dict>
-					<key>background</key>
-					<string>#390505</string>
-				</dict>
+			<key>name</key>
+			<string>Admonition (Danger) Fenced BG</string>
+			<key>scope</key>
+			<string>markup.admonition.markdown.danger markup.raw.block.fenced meta.language</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#390505</string>
+			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Admonition (Danger) Blockquote</string>
@@ -878,8 +821,6 @@
 				<string>#FFBABA</string>
 			</dict>
 		</dict>
-
-		<!-- ATTENTION -->
 		<dict>
 			<key>name</key>
 			<string>Admonition (Attention)</string>
@@ -891,7 +832,6 @@
 				<string>#DFF2BF99</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Admonition Header (Attention)</string>
@@ -903,7 +843,6 @@
 				<string>#B2D476</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Admonition Punctuation (Attention)</string>
@@ -915,7 +854,6 @@
 				<string>#4F8A1077</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Admonition Section Type (Attention)</string>
@@ -923,13 +861,12 @@
 			<string>markup.admonition.markdown.attention entity.name.admonition.markdown</string>
 			<key>settings</key>
 			<dict>
-				<key>foreground</key>
-				<string>#4F8A10</string>
 				<key>fontStyle</key>
 				<string>bold</string>
+				<key>foreground</key>
+				<string>#4F8A10</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Admonition (Attention) H1, H2, Table BG and Code bg </string>
@@ -941,19 +878,17 @@
 				<string>#DFF2BF66</string>
 			</dict>
 		</dict>
-
 		<dict>
-				<key>name</key>
-				<string>Admonition (Attention) Fenced BG</string>
-				<key>scope</key>
-				<string>markup.admonition.markdown.attention markup.raw.block.fenced meta.language</string>
-				<key>settings</key>
-				<dict>
-					<key>background</key>
-					<string>#263905</string>
-				</dict>
+			<key>name</key>
+			<string>Admonition (Attention) Fenced BG</string>
+			<key>scope</key>
+			<string>markup.admonition.markdown.attention markup.raw.block.fenced meta.language</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#263905</string>
+			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Admonition (Attention) Blockquote</string>
@@ -967,9 +902,6 @@
 				<string>#B2D476</string>
 			</dict>
 		</dict>
-
-<!-- HTML ======================= -->
-
 		<dict>
 			<key>name</key>
 			<string>Comment</string>
@@ -983,7 +915,6 @@
 				<string>#33333355</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>HTML Tag Inline</string>
@@ -997,7 +928,6 @@
 				<string>#33333366</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>HTML Tag Block</string>
@@ -1011,7 +941,6 @@
 				<string>#333333AA</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>HTML Tag Inline Punctuations</string>
@@ -1025,7 +954,6 @@
 				<string>#33333366</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>HTML Tag Block Punctuations</string>
@@ -1039,7 +967,6 @@
 				<string>#333333AA</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>HTML Tag Name</string>
@@ -1053,7 +980,6 @@
 				<string>#F92672</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>HTML Tag Attribute</string>
@@ -1067,7 +993,6 @@
 				<string>#F9267299</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>HTML Tag Attribute Values</string>
@@ -1081,7 +1006,6 @@
 				<string>#333333</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Disabled Markdown</string>
@@ -1093,8 +1017,6 @@
 				<string>#33333333</string>
 			</dict>
 		</dict>
-
-<!-- FENCED ======================= -->
 		<dict>
 			<key>name</key>
 			<string>Fenced Code Block with Syntax Highlighting</string>
@@ -1102,13 +1024,12 @@
 			<string>markup.raw.block.fenced meta.language</string>
 			<key>settings</key>
 			<dict>
-				<key>foreground</key>
-				<string>#F8F8F2</string>
 				<key>background</key>
 				<string>#272822</string>
+				<key>foreground</key>
+				<string>#F8F8F2</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Fenced Code Block Punctuations and language name</string>
@@ -1120,11 +1041,6 @@
 				<string>#5e5e59</string>
 			</dict>
 		</dict>
-
-<!-- ========================= -->
-<!-- SCOPE FOR FENCED LANGUGES -->
-<!-- ========================= -->
-
 		<dict>
 			<key>name</key>
 			<string>CODE: Comment</string>
@@ -1158,7 +1074,6 @@
 				<string>#AE81FF</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>CODE: Built-in constant</string>
@@ -1396,7 +1311,6 @@
 				<string>#CFCFC2</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>CODE: diff.header</string>
@@ -1441,21 +1355,9 @@
 				<string>#E6DB74</string>
 			</dict>
 		</dict>
-
-<!-- 		<dict>
-			<key>name</key>
-			<string>DEBUG: list</string>
-			<key>scope</key>
-			<string>markup.raw.yaml.front-matter</string>
-			<key>settings</key>
-			<dict>
-				<key>background</key>
-				<string>#FF000088</string>
-			</dict>
-		</dict> -->
-
 	</array>
 	<key>uuid</key>
 	<string>07379361-ce49-4e6c-a03f-26378a7a2131</string>
 </dict>
 </plist>
+

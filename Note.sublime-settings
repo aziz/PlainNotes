@@ -2,9 +2,9 @@
   "color_scheme": "Packages/PlainNotes/Color Schemes/Sticky-Yellow.tmTheme",
   "enable_table_editor": true,
 
-  "line_numbers": true,
+  "line_numbers": false,
   "gutter": false,
-  "margin": 22,
+  "margin": 20,
   "highlight_line": false,
   "rulers": [],
   "draw_indent_guides": false,
@@ -21,9 +21,4 @@
 
   "trim_trailing_white_space_on_save": false,
   "trim_automatic_white_space": false,
-
-  // "detect_indentation": false,
-  // "indent_subsequent_lines": false,
-  // "auto_indent": false,
-  // "smart_indent": false,
 }
