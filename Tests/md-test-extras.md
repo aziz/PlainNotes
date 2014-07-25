@@ -126,21 +126,46 @@ example: this is HTML (right after paragraph)
 
 # Attribute Lists
 
+{: #someid .someclass somekey='some value' }
+{: #an_id .a_class }
+{: #someid }
+{: #some_id }
+{: #some-id }
+{: .someclass }
+{: somekey='some value' }
+{: somekey="some value" somekey="some value" }
+{: #an_id somekey="some value" somekey="some value" #sad .a_class somekey="some value" somekey="some value" }
+
 This is a paragraph.
 {: #an_id .a_class }
 
-A setext style header {: #setext}
-=================================
+- list
+- list
+{: #someid .someclass somekey='some value' }
 
-### A hash style header ### {: #hash }
+
+A setext style header {: #setext }
+==================================
+
+
+A setext style header {: #setext2 }
+-----------------------------------
+
+
+### A hash style header ### {: #hash3 }
 
 [link](http://example.com){: class="foo bar" title="Some title!" }
+
+[linkref][linkref]
+
 ![img](url){: #id .class}
 ![img][linkref]
 
-[linkref]: url "optional title" {: #id .class}
+[linkref]: http://alaki.com "optional title" {: #id .class}
 
-{: #someid .someclass somekey='some value' }
+![img][linkref]
+
+[linkref]: http://alaki.com "optional title"
 
 # Footnotes
 

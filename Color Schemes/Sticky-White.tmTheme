@@ -249,7 +249,7 @@
 			<key>name</key>
 			<string>Punctuations (link, link reference and abbr)</string>
 			<key>scope</key>
-			<string>meta.link punctuation.definition,meta.link.reference.def punctuation.separator.key-value, punctuation.definition.abbreviation</string>
+			<string>meta.link punctuation.definition,meta.link.reference.def punctuation.separator.key-value, punctuation.definition.abbreviation, punctuation.definition.attr_list.markdown</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -1353,6 +1353,19 @@
 			<dict>
 				<key>foreground</key>
 				<string>#E6DB74</string>
+			</dict>
+		</dict>
+
+
+		<dict>
+			<key>name</key>
+			<string>temp</string>
+			<key>scope</key>
+			<string>meta.attr_list.markdown</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#F92672</string>
 			</dict>
 		</dict>
 	</array>
