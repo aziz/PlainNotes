@@ -1,4 +1,5 @@
 {
   "root": "~/Dropbox/Notes/",
-  "note_file_extensions": ["note", "md"]
+  "note_file_extensions": ["md","note"],
+  "note_yaml" : "categories: \n"
 }

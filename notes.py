@@ -1,5 +1,5 @@
 import sublime, sublime_plugin
-import os, fnmatch, re
+import os, fnmatch, re, time
 
 from gzip import GzipFile
 from pickle import load, dump
@@ -68,21 +68,33 @@ class NotesNewCommand(sublime_plugin.ApplicationCommand):
       self.create_note(title)
 
   def create_note(self, title):
-    file = os.path.join(self.notes_dir, title + ".note")
+    filename = title.split("/")
+    if len(filename) > 1:
+      title = filename[len(filename)-1]
+      directory = self.notes_dir +"/"+ filename[0]
+      tag = filename[0]
+    else:
+      title = filename[0]
+      directory = self.notes_dir
+      tag = ""
+    if not os.path.exists(directory):
+      os.makedirs(directory)
+
+    file = os.path.join(directory, title + ".md")
     if not os.path.exists(file):
       open(file, 'w+').close()
     view = sublime.active_window().open_file(file)
     self.insert_title_scheduled = False
-    self.insert_title(title, view)
+    self.insert_title(title, tag, view)
 
-  def insert_title(self, title, view):
+  def insert_title(self, title, tag, view):
     if view.is_loading():
       if not self.insert_title_scheduled:
         self.insert_title_scheduled = True
-        sublime.set_timeout(lambda: self.insert_title(title, view), 100)
+        sublime.set_timeout(lambda: self.insert_title(title, tag, view), 100)
       return
     else:
-      view.run_command("note_insert_title", {"title": title})
+      view.run_command("note_insert_title", {"title": title, "tag" : tag})
 
 
 class NotesEvents(sublime_plugin.EventListener):
@@ -98,7 +110,12 @@ class NotesEvents(sublime_plugin.EventListener):
 
 class NoteInsertTitleCommand(sublime_plugin.TextCommand):
   def run(self, edit, **kwargs):
-    header = "# " + kwargs["title"].capitalize() + "\n"
+    header = "---\n"
+    header = header + "title: " + kwargs["title"].capitalize() + "\n"
+    header = header + "date: " + time.strftime("%Y-%m-%d %H:%M:%S") + "\n"
+    header = header + "tags: " + kwargs["tag"] + "\n"
+    header = header + settings().get("note_yaml")
+    header = header + "---\n"
     self.view.insert(edit, 0, header)
 
 
