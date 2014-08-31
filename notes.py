@@ -28,7 +28,10 @@ class NotesListCommand(sublime_plugin.ApplicationCommand):
        for name in files:
          for ext in settings().get("note_file_extensions"):
            if (not relpath.startswith(".brain")) and fnmatch.fnmatch(name, "*." + ext):
-             note_files.append((re.sub('\.' + ext + '$', '', name),
+             title = re.sub('\.' + ext + '$', '', name)
+             tag = re.sub(root, '', path)
+             tag = re.sub('/', '', tag)
+             note_files.append((re.sub('\.' + ext + '$', '', tag + ": " + title),
                         os.path.join(path, name),
                         os.path.getmtime(os.path.join(path, name))
                        ))
@@ -114,7 +117,8 @@ class NoteInsertTitleCommand(sublime_plugin.TextCommand):
     header = header + "title: " + kwargs["title"].capitalize() + "\n"
     header = header + "date: " + time.strftime("%Y-%m-%d %H:%M:%S") + "\n"
     header = header + "tags: " + kwargs["tag"] + "\n"
-    header = header + settings().get("note_yaml")
+    for yaml_el in settings().get("note_yaml"):
+      header = header + yaml_el + ":\n"
     header = header + "---\n"
     self.view.insert(edit, 0, header)
 
