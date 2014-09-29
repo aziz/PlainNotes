@@ -51,7 +51,7 @@
                         },
                         {
                             "command": "open_file",
-                            "args": {"file": "${packages}/User/Default.sublime-keymap", },
+                            "args": {"file": "${packages}/User/Default.sublime-keymap" },
                             "caption": "Key Bindings – User"
                         },
                         { "caption": "-" }
