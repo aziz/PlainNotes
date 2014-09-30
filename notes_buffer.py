@@ -40,12 +40,14 @@ class NotesBufferRefreshCommand(sublime_plugin.TextCommand):
             if  not (relpath.startswith(".")):
                 line_str = '{0}▣ {1}'.format(indent, os.path.relpath(root, path))
                 lines.append( (line_str, root) )
-            if  not (relpath.startswith(".brain")):
+            if  (not relpath.startswith(".brain")):
                 subindent = ' ' * TAB_SIZE * (level + 1)
                 for f in files:
-                    line_str = '{0}≡ {1}'.format(subindent, re.sub('\.note$', '', f))
-                    line_path = os.path.normpath(os.path.join(root, f))
-                    lines.append( (line_str, line_path)  )
+                    for ext in settings().get("note_file_extensions"): # display only files with given extension
+                        if fnmatch.fnmatch(f, "*." + ext):
+                            line_str = '{0}≡ {1}'.format(subindent, re.sub('\.note$', '', f))
+                            line_path = os.path.normpath(os.path.join(root, f))
+                            lines.append( (line_str, line_path)  )
         return lines
 
 
