@@ -23,7 +23,7 @@ Most of PlainNotes commands are accessible from the SublimeText main menu. You s
 
 #### Starting a new note (`super+F4`)
 - **Command palette**: Open command palette and search for `Notes: new` command (typing `nn` will probably find it for you).
-    + To save note in a subfolder of the root directory use `/`: <subfolder name>/<note name>.
+    + To save note in a subfolder of the root directory use `/`: `"subfolder name"/"note name"`.
 - **Shortcut**: By default pressing <kbd>super+F4</kbd> will create a new note. For customizing the shortcut see [Keyboard Shortcuts]() section. 
 
 #### Opening an existing note (`F4`)
