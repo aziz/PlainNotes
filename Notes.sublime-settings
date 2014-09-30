@@ -1,5 +1,7 @@
 {
   "root": "~/Dropbox/Notes/",
+  "enable_yaml": false,
+  "note_save_extension": "note",
   "note_file_extensions": ["md","note"],
   "note_yaml" : ["categories"]
 }

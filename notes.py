@@ -83,7 +83,8 @@ class NotesNewCommand(sublime_plugin.ApplicationCommand):
     if not os.path.exists(directory):
       os.makedirs(directory)
 
-    file = os.path.join(directory, title + ".md")
+    ext = "." + settings().get("note_save_extension")
+    file = os.path.join(directory, title + ext)
     if not os.path.exists(file):
       open(file, 'w+').close()
     view = sublime.active_window().open_file(file)
@@ -113,13 +114,14 @@ class NotesEvents(sublime_plugin.EventListener):
 
 class NoteInsertTitleCommand(sublime_plugin.TextCommand):
   def run(self, edit, **kwargs):
-    header = "---\n"
-    header = header + "title: " + kwargs["title"].capitalize() + "\n"
-    header = header + "date: " + time.strftime("%Y-%m-%d %H:%M:%S") + "\n"
-    header = header + "tags: " + kwargs["tag"] + "\n"
-    for yaml_el in settings().get("note_yaml"):
-      header = header + yaml_el + ":\n"
-    header = header + "---\n"
+    if settings().get("enable_yaml"):
+      header = "---\n"
+      header = header + "title: " + kwargs["title"].capitalize() + "\n"
+      header = header + "date: " + time.strftime("%Y-%m-%d %H:%M:%S") + "\n"
+      header = header + "tags: " + kwargs["tag"] + "\n"
+      for yaml_el in settings().get("note_yaml"):
+        header = header + yaml_el + ":\n"
+      header = header + "---\n"
     self.view.insert(edit, 0, header)
 
 
