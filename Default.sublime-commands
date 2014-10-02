@@ -2,5 +2,6 @@
 { "caption": "Notes: List…", "command": "notes_list"},
 { "caption": "Notes: New…", "command": "notes_new"},
 { "caption": "Notes: Index", "command": "notes_buffer"},
+{ "caption": "Notes: Rename...", "command": "notes_rename"},
 { "caption": "Note: Change Color…", "command": "note_change_color"}
 ]
