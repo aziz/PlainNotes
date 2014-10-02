@@ -29,7 +29,7 @@ class NotesListCommand(sublime_plugin.ApplicationCommand):
          for ext in settings().get("note_file_extensions"):
            if (not relpath.startswith(".brain")) and fnmatch.fnmatch(name, "*." + ext):
              title = re.sub('\.' + ext + '$', '', name)
-             tag = re.sub(root, '', path)
+             tag = path.replace(root, '')
              tag = re.sub('/', '', tag)
              note_files.append((re.sub('\.' + ext + '$', '', tag + ": " + title),
                         os.path.join(path, name),
