@@ -82,6 +82,7 @@ class NotesRenameCommand(sublime_plugin.ApplicationCommand):
      self.window.show_input_panel("New Name:", "", self.rename_file, None, None)
 
   def rename_file(self, title):
+    global db
     filename = title.split("/")
     if len(filename) > 1:
       title = filename[len(filename)-1]
@@ -101,9 +102,19 @@ class NotesRenameCommand(sublime_plugin.ApplicationCommand):
     if not os.path.isfile(fname):
       os.rename(self.file_path,fname)
       sublime.run_command("notes_open", {"file_path": fname})
+
+      # update color scheme db 
+      f_id = file_id(fname)
+      print(f_id)
+      if not db.get(f_id):
+        db[f_id] = {}
+      db[f_id]["color_scheme"] = db[file_id(self.file_path)]["color_scheme"]  
+      save_to_brain()
+
     else:
       sublime.error_message("Note already exists!")
       self.window.show_input_panel("New Name:", "", self.rename_file, None, None)
+
 
 
 class NotesOpenCommand(sublime_plugin.ApplicationCommand):
@@ -114,7 +125,7 @@ class NotesOpenCommand(sublime_plugin.ApplicationCommand):
   def async_open(self, file_path):
     view = sublime.active_window().open_file(file_path, sublime.ENCODED_POSITION)
     f_id = file_id(file_path)
-    if db.get(f_id) and db[f_id]["color_scheme"]:
+    if db.get(f_id) and os.path.isfile(db[f_id]["color_scheme"]):
       view.settings().set("color_scheme", db[f_id]["color_scheme"])
       view.settings().set("is_note", True)
 
@@ -281,6 +292,7 @@ def plugin_loaded():
   try:
     gz = GzipFile(db_file, 'rb')
     db = load(gz)
+    cleanup_brain()
     gz.close()
   except:
     db = {}
