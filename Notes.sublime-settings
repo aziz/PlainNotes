@@ -3,5 +3,10 @@
   "enable_yaml": false,
   "note_save_extension": "note",
   "note_file_extensions": ["md","note"],
-  "note_yaml" : ["categories"]
+  "note_yaml" : ["categories"],
+  "list_options" : {
+  	"display_modified_date": true,
+  	"display_folder": false,
+  	"display_full_path": false
+  }
 }

@@ -1,5 +1,6 @@
 import sublime, sublime_plugin
 import os, fnmatch, re, time
+import helpers
 
 from gzip import GzipFile
 from pickle import load, dump
@@ -15,11 +16,31 @@ def file_id(path):
 class NotesListCommand(sublime_plugin.ApplicationCommand):
 
   def run(self):
-     root = os.path.normpath(os.path.expanduser(settings().get("root")))
-     window = sublime.active_window()
-     self.notes_dir = os.path.expanduser(root)
-     self.file_list = self.find_notes(root)
-     window.show_quick_panel([f[0] for f in self.file_list], self.open_note)
+    root = os.path.normpath(os.path.expanduser(settings().get("root")))
+    window = sublime.active_window()
+    self.notes_dir = os.path.expanduser(root)
+    self.file_list = self.find_notes(root)
+
+    # list display options
+    try:
+      display_modified_date = settings().get("list_options").get("display_modified_date")
+      display_folder = settings().get("list_options").get("display_folder") 
+      display_full_path = settings().get("list_options").get("display_full_path") 
+    except:
+      display_modified_date = True
+      display_folder = True
+      display_full_path = False
+    
+    indices = [0]
+    if display_modified_date == True:
+      indices.append(3)
+    if display_folder == True:
+      indices.append(2)
+    if display_full_path == True:
+      indices.append(1)
+
+    window.show_quick_panel( helpers.return_sublist(self.file_list, indices ), self.open_note)
+
 
   def find_notes(self, root):
      note_files = []
@@ -32,12 +53,15 @@ class NotesListCommand(sublime_plugin.ApplicationCommand):
              tag = path.replace(root, '').replace(os.path.sep, '')
              if not tag == '':
               tag = tag + ': '
-             note_files.append((re.sub('\.' + ext + '$', '', tag + title),
+             modified_str = time.strftime("Last modified: %d/%m/%Y %H:%M", time.gmtime(os.path.getmtime(os.path.join(path, name))));
+             #created_str = time.strftime("Created: %d/%m/%Y %H:%M", time.gmtime(os.path.getctime(os.path.join(path, name))));
+             note_files.append([re.sub('\.' + ext + '$', '', tag + title),
                         os.path.join(path, name),
-                        os.path.getmtime(os.path.join(path, name)),
-                        tag
-                       ))
-     note_files.sort(key=lambda item: item[2], reverse=True)
+                        tag,
+                        modified_str
+                       ])
+             
+     note_files.sort(key=lambda item:  os.path.getmtime(item[1]), reverse=True)
      return note_files
 
   def open_note(self, index):

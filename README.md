@@ -45,10 +45,23 @@ Open command palette and search for `Note: Change Color…`. it will give you a 
 Color of the note is remembered by PlainNotes and whenever you open that file, PlainNotes will set the color-scheme automatically.
 
 #### Change note file extension
-You can change the note file extension in settings. To do so, go to `Preferences -> Package Settings -> PlainNotes -> Settings - User` and modify `"note_save_extension":`
+You can change the note file extension in settings. To do so, go to `Preferences -> Package Settings -> PlainNotes -> Settings - User` and modify `"note_save_extension":`. The default note type is `.note` which has the possibility of setting different note colors and some special markup.
 
 ### Add yaml front matter to notes
 go to `Preferences -> Package Settings -> PlainNotes -> Settings - User` and modify `"enable_yaml"`
+
+By default, the following yaml is added:
+```
+title:
+date:
+tags:
+```
+
+to add more yaml you can add them in the settings by modifying `note_yaml:`:
+
+```
+ "note_yaml" : ["categories"]
+```
 
 ## License
 
