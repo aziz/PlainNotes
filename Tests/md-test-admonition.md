@@ -1,30 +1,30 @@
 # Admonition
 
-!!! note "note GREY"
+!!! NOTE "note GREY"
     Any number of other indented markdown elements.
 
-!!! important  "important GREY"  
+!!! IMPORTANT  "important GREY"  
     Any number of other indented markdown elements.
 
-!!! hint "hint BLUE"
+!!! HINT "hint BLUE"
     Any number of other indented markdown elements.
 
-!!! tip "tip BLUE"
+!!! TIP "tip BLUE"
     Any number of other indented markdown elements.
 
-!!! caution "caution YELLOW"
+!!! CAUTION "caution YELLOW"
     Any number of other indented markdown elements.
 
-!!! warning "warning YELLOW"
+!!! WARNING "warning YELLOW"
     Any number of other indented markdown elements.
 
-!!! danger "danger RED"
+!!! DANGER "danger RED"
     Any number of other indented markdown elements.
 
-!!! error "error RED"
+!!! ERROR "error RED"
     Any number of other indented markdown elements.
 
-!!! attention "attention GREEN"
+!!! ATTENTION "attention GREEN"
     Any number of other indented markdown elements.
 
 !!! ATTENTION

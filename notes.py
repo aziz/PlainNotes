@@ -24,13 +24,13 @@ class NotesListCommand(sublime_plugin.ApplicationCommand):
     # list display options
     try:
       display_modified_date = settings().get("list_options").get("display_modified_date")
-      display_folder = settings().get("list_options").get("display_folder") 
-      display_full_path = settings().get("list_options").get("display_full_path") 
+      display_folder = settings().get("list_options").get("display_folder")
+      display_full_path = settings().get("list_options").get("display_full_path")
     except:
       display_modified_date = True
       display_folder = True
       display_full_path = False
-    
+
     indices = [0]
     if display_modified_date == True:
       indices.append(3)
@@ -60,7 +60,7 @@ class NotesListCommand(sublime_plugin.ApplicationCommand):
                         tag,
                         modified_str
                        ])
-             
+
      note_files.sort(key=lambda item:  os.path.getmtime(item[1]), reverse=True)
      return note_files
 
@@ -127,12 +127,12 @@ class NotesRenameCommand(sublime_plugin.ApplicationCommand):
       os.rename(self.file_path,fname)
       sublime.run_command("notes_open", {"file_path": fname})
 
-      # update color scheme db 
+      # update color scheme db
       f_id = file_id(fname)
-      print(f_id)
+      # print(f_id)
       if not db.get(f_id):
         db[f_id] = {}
-      db[f_id]["color_scheme"] = db[file_id(self.file_path)]["color_scheme"]  
+      db[f_id]["color_scheme"] = db[file_id(self.file_path)]["color_scheme"]
       save_to_brain()
 
     else:
@@ -256,7 +256,7 @@ class NoteChangeColorCommand(sublime_plugin.WindowCommand):
       path = path[0]
     except:
       path = os.path.join("Packages" , "PlainNotes", "Color Schemes", "Sticky-" + self.colors[index] + ".tmTheme")
-    
+
     self.window.active_view().settings().set("color_scheme", path)
 
   def is_enabled(self):
@@ -279,25 +279,25 @@ class NoteRenameCommand(sublime_plugin.WindowCommand):
     pass
 
 def save_to_brain():
-  print("SAVING TO DISK-----------------")
-  print(db)
+  # print("SAVING TO DISK-----------------")
+  # print(db)
   gz = GzipFile(db_file, 'wb')
   dump(db, gz, -1)
   gz.close()
 
 def cleanup_brain():
-  print("Cleaning Up My Brain -----------------")
+  # print("Cleaning Up My Brain -----------------")
   # print(db)
-  print(len(db))
+  # print(len(db))
   to_delete = []
   for nfile in db:
     if not os.path.exists(os.path.join(root,nfile)):
-      print("✘" + nfile)
+      # print("✘" + nfile)
       to_delete.append(nfile)
-  print(to_delete)
+  # print(to_delete)
   for x in to_delete:
     db.pop(x, None)
-  print(len(db))
+  # print(len(db))
   save_to_brain()
 
 def plugin_loaded():
