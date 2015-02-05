@@ -1,14 +1,24 @@
 [
-{ "keys": ["f4"],  "command": "notes_list" },
+// General Keymaps
+{ "keys": ["f4"],       "command": "notes_list"   },
 { "keys": ["ctrl+f4"],  "command": "notes_buffer" },
-{ "keys": ["super+f4"],  "command": "notes_new" },
+{ "keys": ["super+f4"], "command": "notes_new"    },
+{ "keys": ["f1"],       "command": "jotter"       },
 
+// Notes: Index keymaps
 { "keys": ["enter"], "command": "notes_buffer_open", "context":
   [{ "key": "selector", "operator": "equal", "operand": "text.notes_buffer" }]
 },
 
+// Notes: Jotter keymaps
+{ "keys": ["escape"], "command": "save_jot_and_hide_panel", "context":
+  [
+    { "key": "panel_visible", "operator": "equal", "operand": true },
+    { "key": "panel", "operator": "equal", "operand": "output.jotter" }
+  ]
+},
 
-
+// Note Extra Features: TODO and HEADING FOLDING
 { "keys": ["tab"], "command": "note_smart_folding", "context":
   [{ "key": "selector", "operator": "equal", "operand": "(markup.heading.1.markdown.note | markup.heading.2.markdown.note | markup.heading.3.markdown.note| markup.heading.4.markdown.note| markup.heading.5.markdown.note| markup.heading.6.markdown.note)" }]
 },
