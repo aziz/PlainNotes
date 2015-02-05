@@ -1,11 +1,12 @@
 
 # [PlainNotes](https://github.com/aziz/PlainNotes)
-Simple and pleasant note taking for SublimeText.
+Simple and pleasant authoring and note taking for SublimeText.
 
 With PlainNotes you can:
 - Organize notes and thoughts
 - Maintain todo-lists
 - Write documents
+- and probably more
 
 PlainNotes stores and organizes all your notes in a folder and make them accessible with a single shortcut or mouse click.
 It also provides you with an enhanced version of Markdown markup and some good looking color schemes for note taking.
@@ -31,13 +32,30 @@ Most of PlainNotes commands are accessible from the SublimeText main menu. You s
 The *Latest Notes quick panel* is sorting files based on their last-edit time, so the note that you have been working on recently should be on top of the list. 
 - **Shortcut**: By default pressing <kbd>F4</kbd> will open the *Latest Notes quick panel*. For customizing the shortcut see [Keyboard Shortcuts]() section.
 
+#### Jotter (`F1`)
+Jotter will let you jot down your thoughts and ideas quickly without disturbing your work-flow. It opens a *Note Panel* at the bottom of the editor which is ready to take your note. When you press <kbd>ESC</kbd> it automatically closes the panel and saves your note with a time stamp in your *Inbox*. 
+
+It can be accessed by pressing <kbd>F1</kbd> (that can be customized in your Key-bindings if it conflicts with your other key-bindings) or through `Notes: Jotter` in command palette.
+The default color scheme of the jotter panel can be customized in user settings (`Preferences -> Package Settings -> PlainNotes -> Settings - User`): 
+
+```json
+{ "jotter_color_scheme": "Packages/PlainNotes/Color Schemes/Sticky-Yellow.tmTheme" }
+```
+
+#### Inbox
+Inbox is where all your quick notes from *Jotter* live. You can view inbox through `Notes: Inbox` in command palette or via the Notes main menu. 
+The date and time format of the note headers in inbox can be customized in user settings (`Preferences -> Package Settings -> PlainNotes -> Settings - User`): 
+
+```json
+{
+    "jotter_date_format": "%-d %-b %Y",
+    "jotter_time_format": "%-I:%M %p"
+}
+```
+
 #### Notes Index Card (`ctrl+F4`)
 Pressing <kbd>ctrl+F4</kbd> or selecting `Notes: Index` from the command palette will give you the *Notes Index Card* with the list of all notes sorted alphabetically.  
 Pressing <kbd>Enter</kbd> on any note will open it in a new tab.
-
-<p align="center">
-<img src="http://cl.ly/image/1u0o1x0a2J3c/plainnotes-index.png" width="515" height="437">
-</p>
 
  
 #### Change note color
@@ -47,23 +65,23 @@ Color of the note is remembered by PlainNotes and whenever you open that file, P
 #### Change note file extension
 You can change the note file extension in settings. To do so, go to `Preferences -> Package Settings -> PlainNotes -> Settings - User` and modify `"note_save_extension":`. The default note type is `.note` which has the possibility of setting different note colors and some special markup.
 
-### Add yaml front matter to notes
-go to `Preferences -> Package Settings -> PlainNotes -> Settings - User` and modify `"enable_yaml"`
+#### Add yaml front matter to notes
+Go to `Preferences -> Package Settings -> PlainNotes -> Settings - User` and modify `"enable_yaml"`
 
-By default, the following yaml is added:
-```
+By default, the following yaml items are added:
+```yaml
 title:
 date:
 tags:
 ```
 
-to add more yaml you can add them in the settings by modifying `note_yaml:`:
+To add more yaml items you can add them to the settings by modifying `note_yaml:`:
 
-```
- "note_yaml" : ["categories"]
+```json
+{ "note_yaml" : ["categories"] }
 ```
 
 ## License
 
-Copyright 2014 [Allen Bargi](https://twitter.com/aziz). Licensed under the MIT License
+Copyright 2014-2015 [Allen Bargi](https://twitter.com/aziz). Licensed under the MIT License
 
