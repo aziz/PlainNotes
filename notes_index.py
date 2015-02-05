@@ -4,8 +4,14 @@ import os, fnmatch, re
 TAB_SIZE = 2
 COL_WIDTH = 30
 
+
 def settings():
     return sublime.load_settings('Notes.sublime-settings')
+
+
+def get_root():
+    return os.path.normpath(os.path.expanduser(settings().get("root")))
+
 
 class NotesBufferCommand(sublime_plugin.WindowCommand):
     def run(self):
@@ -17,13 +23,14 @@ class NotesBufferCommand(sublime_plugin.WindowCommand):
         self.window.focus_view(view)
         view.run_command('notes_buffer_refresh')
 
+
 class NotesBufferRefreshCommand(sublime_plugin.TextCommand):
 
     def run(self, edit):
         v = self.view
         v.set_read_only(False)
         v.erase(edit, sublime.Region(0, self.view.size()))
-        root = os.path.normpath(os.path.expanduser(settings().get("root")))
+        root = get_root()
         lines = self.list_files(root)
 
         v.settings().set('notes_buffer_files', lines)
@@ -37,17 +44,17 @@ class NotesBufferRefreshCommand(sublime_plugin.TextCommand):
             level = root.replace(path, '').count(os.sep) - 1
             indent = ' ' * TAB_SIZE * (level)
             relpath = os.path.relpath(root, path)
-            if  not (relpath.startswith(".")):
+            if not relpath.startswith("."):
                 line_str = '{0}▣ {1}'.format(indent, os.path.relpath(root, path))
-                lines.append( (line_str, root) )
-            if  (not relpath.startswith(".brain")):
+                lines.append((line_str, root))
+            if not relpath.startswith(".brain"):
                 subindent = ' ' * TAB_SIZE * (level + 1)
                 for f in files:
-                    for ext in settings().get("note_file_extensions"): # display only files with given extension
+                    for ext in settings().get("note_file_extensions"):  # display only files with given extension
                         if fnmatch.fnmatch(f, "*." + ext):
-                            line_str = '{0}≡ {1}'.format(subindent, re.sub('\.note$', '', f))
+                            line_str = '{0}≡ {1}'.format(subindent, re.sub(r'\.note$', '', f))
                             line_path = os.path.normpath(os.path.join(root, f))
-                            lines.append( (line_str, line_path)  )
+                            lines.append((line_str, line_path))
         return lines
 
 
