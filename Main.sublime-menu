@@ -69,6 +69,8 @@
         { "caption": "-" , "id": "open" },
         { "caption": "New…", "command": "notes_new"},
         { "caption": "Recent notes…", "command": "notes_list"},
+        { "caption": "Jotter", "command": "jotter"},
+        { "caption": "Inbox", "command": "open_inbox"},
         { "caption": "Index", "command": "notes_buffer"},
         { "caption": "-" , "id": "note" },
         { "caption": "Change Color…", "command": "note_change_color"},
@@ -78,5 +80,4 @@
         { "caption": "-" , "id": "end" }
     ]
 }
-
 ]
