@@ -20,6 +20,10 @@ It's been designed with these ground rules in mind:
 </p>
 
 ## Usage
+
+**Note:** Although PlainNotes works under SublimeText 2, some features might not be available. We're not actively testing it 
+under SublimeText 2 but will do our best to make it compatible and usable. We appreciate bug reports and pull requests. 
+
 Most of PlainNotes commands are accessible from the SublimeText main menu. You should have a menu item called `Notes` right after `Help`. Although, there are faster and easier ways of running those commnads that are mentioned below.
 
 #### Starting a new note (`super+F4`)

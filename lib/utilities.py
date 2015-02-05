@@ -1,4 +1,7 @@
-"""Some utility functions for working with sublime.
+# -*- coding: utf-8 -*-
+
+"""
+Some utility functions for working with sublime.
 """
 
 

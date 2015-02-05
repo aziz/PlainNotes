@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import sublime, sublime_plugin
 import os, fnmatch, re
 
@@ -17,7 +19,7 @@ class NotesBufferCommand(sublime_plugin.WindowCommand):
     def run(self):
         view = self.window.new_file()
         view.set_scratch(True)
-        view.set_name("✎ Notes Index")
+        view.set_name(u"✎ Notes Index")
         view.set_syntax_file('Packages/PlainNotes/Notes Index.hidden-tmLanguage')
         view.settings().set('color_scheme', 'Packages/PlainNotes/Color Schemes/Notes-Index.hidden-tmTheme')
         self.window.focus_view(view)
@@ -35,7 +37,7 @@ class NotesBufferRefreshCommand(sublime_plugin.TextCommand):
 
         v.settings().set('notes_buffer_files', lines)
 
-        v.insert(edit, 0, "\n".join([f[0] for f in lines]))
+        v.insert(edit, 0, u"\n".join([f[0] for f in lines]))
         v.set_read_only(True)
 
     def list_files(self, path):
@@ -45,14 +47,14 @@ class NotesBufferRefreshCommand(sublime_plugin.TextCommand):
             indent = ' ' * TAB_SIZE * (level)
             relpath = os.path.relpath(root, path)
             if not relpath.startswith("."):
-                line_str = '{0}▣ {1}'.format(indent, os.path.relpath(root, path))
+                line_str = u'{0}▣ {1}'.format(indent, os.path.relpath(root, path))
                 lines.append((line_str, root))
             if not relpath.startswith(".brain"):
                 subindent = ' ' * TAB_SIZE * (level + 1)
                 for f in files:
                     for ext in settings().get("note_file_extensions"):  # display only files with given extension
                         if fnmatch.fnmatch(f, "*." + ext):
-                            line_str = '{0}≡ {1}'.format(subindent, re.sub(r'\.note$', '', f))
+                            line_str = u'{0}≡ {1}'.format(subindent, re.sub(r'\.note$', '', f))
                             line_path = os.path.normpath(os.path.join(root, f))
                             lines.append((line_str, line_path))
         return lines

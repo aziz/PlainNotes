@@ -1,5 +1,11 @@
+# -*- coding: utf-8 -*-
+
 import sublime, sublime_plugin
 import os, time
+
+ST3 = int(sublime.version()) >= 3000
+if not ST3:
+    from codecs import open
 
 
 def settings():
@@ -15,11 +21,10 @@ class JotterCommand(sublime_plugin.TextCommand):
         window = self.view.window()
         output = self.view.window().get_output_panel("jotter")
         self.view.window().run_command("show_panel", {"panel": "output.jotter"})
-        print(settings().get("jotter_color_scheme"))
         output.settings().set("color_scheme", settings().get("jotter_color_scheme"))
         output.settings().set("is_jott", True)
         output.set_syntax_file("Packages/PlainNotes/Note.tmLanguage")
-        sublime.status_message("    ✎ Jot down your note and press ESC when done. It will be saved to your 'Inbox'")
+        sublime.status_message(u"    ✎ Jot down your note and press ESC when done. It will be saved to your 'Inbox'")
         output.set_read_only(False)
         window.focus_view(output)
 
@@ -39,7 +44,7 @@ class SaveJotAndHidePanelCommand(sublime_plugin.TextCommand):
             w.run_command("hide_panel", {"cancel": True})
             return
 
-        jot = '# ' + time.strftime(settings().get("jotter_date_format")) + ' — ' + time.strftime(settings().get("jotter_time_format")) + u'\n' + text.rstrip(u'\r\n') + u'\n\n'
+        jot = '# ' + time.strftime(settings().get("jotter_date_format")) + u' — ' + time.strftime(settings().get("jotter_time_format")) + u'\n' + text.rstrip(u'\r\n') + u'\n\n'
 
         with open(os.path.join(get_root(), ".brain", "Inbox.note"), mode='r+', encoding='utf-8') as f:
             content = f.read()

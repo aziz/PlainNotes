@@ -1,9 +1,14 @@
+# -*- coding: utf-8 -*-
+
 import sublime, sublime_plugin
 import os, fnmatch, re, time, helpers
 from gzip import GzipFile
 from pickle import load, dump
 
 ST3 = int(sublime.version()) >= 3000
+
+if not ST3:
+    from codecs import open
 
 
 def settings():
@@ -229,8 +234,10 @@ class NoteChangeColorCommand(sublime_plugin.WindowCommand):
         self.window = sublime.active_window()
         self.original_cs = self.window.active_view().settings().get("color_scheme")
         current_color = os.path.basename(self.original_cs).replace("Sticky-","").replace(".tmTheme", "")
-        # show_quick_panel(items, on_done, <flags>, <selected_index>, <on_highlighted>)
-        self.window.show_quick_panel(self.colors, self.on_select, 0, self.colors.index(current_color), self.on_highlight)
+        if ST3:
+            self.window.show_quick_panel(self.colors, self.on_select, 0, self.colors.index(current_color), self.on_highlight)
+        else:
+            self.window.show_quick_panel(self.colors, self.on_select, 0, self.colors.index(current_color))
 
     def on_select(self, index):
         global db

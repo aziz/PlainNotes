@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 # Helper functions
 
 def return_sublist(main_list, indices ):

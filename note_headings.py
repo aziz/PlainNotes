@@ -1,4 +1,7 @@
-"""This is borrowed from [SmartMarkdown plugin](https://github.com/demon386/SmartMarkdown)
+# -*- coding: utf-8 -*-
+
+"""
+This is borrowed from [SmartMarkdown plugin](https://github.com/demon386/SmartMarkdown)
 Smart folding is a feature borrowed from [Org-mode](http://org-mode.org).
 It enables folding / unfolding the headlines by simply pressing TAB on headlines.
 Global headline folding / unfolding is recommended to be trigged by Shift + TAB,

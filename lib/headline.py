@@ -1,4 +1,7 @@
-"""Some utility functions for working with headline of Markdown.
+# -*- coding: utf-8 -*-
+
+"""
+Some utility functions for working with headline of Markdown.
 
 Terminologies
 - Headline :: The headline entity OR the text of the headline
