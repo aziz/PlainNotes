@@ -1,6 +1,6 @@
 {
   "color_scheme": "Packages/PlainNotes/Color Schemes/Sticky-Yellow.tmTheme",
-  "spelling_selector": "text - meta.definition.language.raw.block.fenced - markup.raw.block.fenced variable - markup.raw.block.fenced keyword",
+  "spelling_selector": "text - meta.definition.language.raw.block.fenced - markup.raw.block.fenced variable - markup.raw.block.fenced keyword - markup.underline.link.markdown",
   "enable_table_editor": true,
 
   "line_numbers": false,
