@@ -23,7 +23,7 @@
   [{ "key": "selector", "operator": "equal", "operand": "(markup.heading.1.markdown.note | markup.heading.2.markdown.note | markup.heading.3.markdown.note| markup.heading.4.markdown.note| markup.heading.5.markdown.note| markup.heading.6.markdown.note)" }]
 },
 
-{ "keys": ["super+ctrl+alt+-"], "command": "note_global_folding", "context":
+{ "keys": ["shift+tab"], "command": "note_global_folding", "context":
   [{ "key": "selector", "operator": "equal", "operand": "text.html.markdown.note" } ]
 },
 
