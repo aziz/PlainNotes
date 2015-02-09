@@ -1427,9 +1427,9 @@
     <key>heading1</key>
     <dict>
       <key>begin</key>
-      <string>\G(#{1})(?!#)\s*(?=\S)</string>
+      <string>\G(#{1})(?!#)[ \t]*(?=\S)</string>
       <key>end</key>
-      <string>\s*(#*)$\n?</string>
+      <string>[ \t]*(#*)\n?$</string>
       <key>captures</key>
       <dict>
         <key>1</key>
@@ -1455,7 +1455,7 @@
       <key>begin</key>
       <string>\G(#{2})(?!#)\s*(?=\S)</string>
       <key>end</key>
-      <string>\s*(#*)$\n?</string>
+      <string>[ \t]*(#*)$\n?</string>
       <key>captures</key>
       <dict>
         <key>1</key>
@@ -1481,7 +1481,7 @@
       <key>begin</key>
       <string>\G(#{3})(?!#)\s*(?=\S)</string>
       <key>end</key>
-      <string>\s*(#*)$\n?</string>
+      <string>[ \t]*(#*)$\n?</string>
       <key>captures</key>
       <dict>
         <key>1</key>
@@ -1507,7 +1507,7 @@
       <key>begin</key>
       <string>\G(#{4})(?!#)\s*(?=\S)</string>
       <key>end</key>
-      <string>\s*(#*)$\n?</string>
+      <string>[ \t]*(#*)$\n?</string>
       <key>captures</key>
       <dict>
         <key>1</key>
@@ -1533,7 +1533,7 @@
       <key>begin</key>
       <string>\G(#{5})(?!#)\s*(?=\S)</string>
       <key>end</key>
-      <string>\s*(#*)$\n?</string>
+      <string>[ \t]*(#*)$\n?</string>
       <key>captures</key>
       <dict>
         <key>1</key>
@@ -1559,7 +1559,7 @@
       <key>begin</key>
       <string>\G(#{6})(?!#)\s*(?=\S)</string>
       <key>end</key>
-      <string>\s*(#*)$\n?</string>
+      <string>[ \t]*(#*)$\n?</string>
       <key>captures</key>
       <dict>
         <key>1</key>
