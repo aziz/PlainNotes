@@ -4,6 +4,9 @@
   { "caption": "Notes: Jotter", "command": "jotter"},
   { "caption": "Notes: Inbox", "command": "open_inbox"},
   { "caption": "Notes: Index", "command": "notes_buffer"},
-  { "caption": "Notes: Rename…", "command": "notes_rename"},
-  { "caption": "Notes: Change Color…", "command": "note_change_color"}
+  { "caption": "Notes: Rename", "command": "note_rename"},
+  { "caption": "Notes: Archive", "command": "note_archive"},
+  { "caption": "Notes: Delete", "command": "note_remove"},
+  { "caption": "Notes: Change Color…", "command": "note_change_color"},
+  { "caption": "Notes: Unarchive…", "command": "note_unarchive"}
 ]

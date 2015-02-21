@@ -72,11 +72,12 @@
         { "caption": "Jotter", "command": "jotter"},
         { "caption": "Inbox", "command": "open_inbox"},
         { "caption": "Index", "command": "notes_buffer"},
+        { "caption": "Unarchive…", "command": "note_unarchive"},
         { "caption": "-" , "id": "note" },
         { "caption": "Change Color…", "command": "note_change_color"},
-        // { "caption": "Archive…", "command": "note_archive"},
-        // { "caption": "Delete…", "command": "note_remove"},
-        { "caption": "Rename…", "command": "notes_rename"},
+        { "caption": "Archive…", "command": "note_archive"},
+        { "caption": "Rename…", "command": "note_rename"},
+        { "caption": "Delete…", "command": "note_remove"},
         { "caption": "-" , "id": "end" }
     ]
 }
