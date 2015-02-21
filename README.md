@@ -66,6 +66,18 @@ Pressing <kbd>Enter</kbd> on any note will open it in a new tab.
 Open command palette and search for `Note: Change Color…`. it will give you a list of 10 different colors that is shown in the above image. Pressing up and down will give you a preview.  
 Color of the note is remembered by PlainNotes and whenever you open that file, PlainNotes will set the color-scheme automatically.
 
+#### Archive note
+Open command palette and search for `Note: Archive`. This will move the note into an archive folder than can be specified in the settings -- The default archive directory is `.archive`. Archiving a note hides it from the Index and List.
+
+#### Unarchive notes
+Open command palette and search for `Note: Unarchive...`. This will open a list of archived notes sorted by modification date. Selecting one from the list will unarchive that note.
+
+#### Delete note
+Open a note and then open command palette and search for `Note: Delete`. 
+
+#### Rename note
+Open a note and then open command palette and search for `Note: Rename`. 
+
 #### Change note file extension
 You can change the note file extension in settings. To do so, go to `Preferences -> Package Settings -> PlainNotes -> Settings - User` and modify `"note_save_extension":`. The default note type is `.note` which has the possibility of setting different note colors and some special markup.
 
