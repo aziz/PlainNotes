@@ -79,7 +79,7 @@ Open a note and then open command palette and search for `Note: Delete`.
 Open a note and then open command palette and search for `Note: Rename`. 
 
 #### Change note file extension
-You can change the note file extension in settings. To do so, go to `Preferences -> Package Settings -> PlainNotes -> Settings - User` and modify `"note_save_extension":`. The default note type is `.note` which has the possibility of setting different note colors and some special markup.
+You can change the note file extension in settings. To do so, go to `Preferences -> Package Settings -> PlainNotes -> Settings - User` and modify `"note_save_extension":`. The default note type is `.note` which has the possibility of setting different note colors and some special markup. Alternatively you can use any note extension you want such as markdown `.md`.
 
 #### Add yaml front matter to notes
 Go to `Preferences -> Package Settings -> PlainNotes -> Settings - User` and modify `"enable_yaml"`
@@ -96,6 +96,7 @@ To add more yaml items you can add them to the settings by modifying `note_yaml:
 ```json
 { "note_yaml" : ["categories"] }
 ```
+
 
 ## License
 
