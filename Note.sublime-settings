@@ -1,26 +1,15 @@
 {
   "color_scheme": "Packages/PlainNotes/Color Schemes/Sticky-Yellow.tmTheme",
-  "spelling_selector": "text - meta.definition.language.raw.block.fenced - markup.raw.block.fenced variable - markup.raw.block.fenced keyword - markup.underline.link.markdown",
+  "spelling_selector": "text - meta.definition.language.raw.block.fenced - markup.raw.block.fenced variable - markup.raw.block.fenced keyword - markup.underline.link",
   "enable_table_editor": true,
-
   "line_numbers": false,
   "gutter": false,
   "margin": 20,
-  "highlight_line": false,
-  "rulers": [],
   "draw_indent_guides": false,
-  "indent_guide_options": [],
   "auto_match_enabled": true,
-
   "tab_size": 4,
   "translate_tabs_to_spaces": true,
-
-  "word_wrap": false,
-  "wrap_width": 0,
-
-  "spell_check": false,
   "tab_completion": true,
-
   "trim_trailing_white_space_on_save": false,
   "trim_automatic_white_space": false
 }
