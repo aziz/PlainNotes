@@ -268,7 +268,7 @@ class NoteUnarchiveCommand(sublime_plugin.ApplicationCommand):
         if rlist:
             window.show_quick_panel( rlist, self.unarchive_note)
         else:
-            window.show_quick_panel( ['There are no note to unarchive.'],[])
+            window.show_quick_panel( ['There are no notes to unarchive.'],[])
 
 
     def unarchive_note(self,index):
