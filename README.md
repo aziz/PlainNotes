@@ -1,5 +1,7 @@
 
 # [PlainNotes](https://github.com/aziz/PlainNotes)
+
+[![Join the chat at https://gitter.im/aziz/PlainNotes](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/aziz/PlainNotes?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Simple and pleasant authoring and note taking for SublimeText.
 
 With PlainNotes you can:
