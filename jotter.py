@@ -58,5 +58,5 @@ class OpenInboxCommand(sublime_plugin.ApplicationCommand):
     def run(self):
         root = get_root()
         inbox = os.path.join(root, '.brain', 'Inbox.note')
-        sublime.active_window().run_command("open_file", {"file": inbox})
+        sublime.active_window().open_file(inbox)
 

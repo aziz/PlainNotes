@@ -63,7 +63,7 @@
 },
 {
     "caption": "Notes",
-    "mnemonic": "n",
+    "mnemonic": "N",
     "id": "notes",
     "children": [
         { "caption": "-" , "id": "open" },
