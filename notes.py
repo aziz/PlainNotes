@@ -2,6 +2,7 @@
 
 import sublime, sublime_plugin
 import os, fnmatch, re, time, helpers
+import copy
 from gzip import GzipFile
 from pickle import load, dump
 
@@ -16,7 +17,11 @@ def settings():
 
 
 def get_root():
-    return os.path.normpath(os.path.expanduser(settings().get("root")))
+    project_settings = sublime.active_window().active_view().settings().get('PlainNotes')
+    if project_settings:
+        return os.path.normpath(os.path.expanduser(project_settings.get('root',settings().get("root"))))
+    else:
+        return os.path.normpath(os.path.expanduser(settings().get("root")))
 
 
 def file_id(path):
@@ -130,7 +135,7 @@ class NotesNewCommand(sublime_plugin.ApplicationCommand):
         filename = title.split("/")
         if len(filename) > 1:
             title = filename[len(filename)-1]
-            directory = self.notes_dir + os.path.sep + filename[0]
+            directory = os.path.join(self.notes_dir,filename[0])
             tag = filename[0]
         else:
             title = filename[0]
@@ -232,6 +237,7 @@ class NoteArchiveCommand(sublime_plugin.WindowCommand):
         window = sublime.active_window()
         self.notes_dir = os.path.expanduser(root)
         self.archive_note()
+        sublime.status_message("    Note Archived.")
 
     def archive_note(self):
         file_path = self.window.active_view().file_name()
@@ -259,8 +265,7 @@ class NoteArchiveCommand(sublime_plugin.WindowCommand):
 class NoteUnarchiveCommand(sublime_plugin.ApplicationCommand):
 
     def run(self):
-        root = settings().get("root")
-        self.notes_dir = os.path.expanduser(root)
+        self.notes_dir = get_root()
         archive_dir = os.path.join(self.notes_dir ,settings().get("archive_dir"))
         self.file_list = find_notes(self, archive_dir,[])
         rlist = setup_notes_list(self.file_list)
