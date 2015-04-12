@@ -52,8 +52,8 @@ The date and time format of the note headers in inbox can be customized in user 
 
 ```json
 {
-    "jotter_date_format": "%-d %-b %Y",
-    "jotter_time_format": "%-I:%M %p"
+    "jotter_date_format": "%d %b %Y",
+    "jotter_time_format": "%I:%M %p"
 }
 ```
 
@@ -95,6 +95,20 @@ To add more yaml items you can add them to the settings by modifying `note_yaml:
 
 ```json
 { "note_yaml" : ["categories"] }
+```
+
+## Per-project notes
+
+To have a different notes directory for a project, add the following in your `.sublime-project` file:
+
+```
+"settings":
+    {
+        "PlainNotes": 
+        {
+            "root": "path/to/notes/dir"
+        }
+    }
 ```
 
 
