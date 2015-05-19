@@ -144,7 +144,11 @@ class NotesNewCommand(sublime_plugin.ApplicationCommand):
         if not os.path.exists(directory):
             os.makedirs(directory)
 
-        ext = "." + settings().get("note_save_extension")
+        if any(title.endswith("." + ext) for ext in settings().get("note_file_extensions")):
+            ext = ""
+        else:
+            ext = "." + settings().get("note_save_extension")
+
         file = os.path.join(directory, title + ext)
         if not os.path.exists(file):
             open(file, 'w+').close()
@@ -332,7 +336,11 @@ class NoteRenameCommand(sublime_plugin.WindowCommand):
         if not os.path.exists(directory):
             os.makedirs(directory)
 
-        ext = "." + settings().get("note_save_extension")
+        if any(title.endswith("." + ext) for ext in settings().get("note_file_extensions")):
+            ext = ""
+        else:
+            ext = "." + settings().get("note_save_extension")
+
         new_file_path = os.path.join(directory, title + ext)
         # pardir = os.path.abspath(os.path.join(self.file_path, '..'))
         if not os.path.isfile(new_file_path):
