@@ -122,7 +122,7 @@ class NotesOpenCommand(sublime_plugin.ApplicationCommand):
 class NotesNewCommand(sublime_plugin.ApplicationCommand):
 
     def run(self, title=None):
-        root = settings().get("root")
+        root = get_root()
         self.notes_dir = os.path.expanduser(root)
 
         self.window = sublime.active_window()
