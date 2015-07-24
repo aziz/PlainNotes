@@ -93,7 +93,7 @@ class NotesListCommand(sublime_plugin.ApplicationCommand):
     def run(self):
         exclude = set([settings().get("archive_dir"),'.brain'])
         root = get_root()
-        self.notes_dir = os.path.expanduser(root)
+        self.notes_dir = root
         self.file_list = find_notes(self, root, exclude)
         rlist = setup_notes_list(self.file_list)
         window = sublime.active_window()
@@ -122,9 +122,7 @@ class NotesOpenCommand(sublime_plugin.ApplicationCommand):
 class NotesNewCommand(sublime_plugin.ApplicationCommand):
 
     def run(self, title=None):
-        root = get_root()
-        self.notes_dir = os.path.expanduser(root)
-
+        self.notes_dir = get_root()
         self.window = sublime.active_window()
         if title is None:
             self.window.show_input_panel("Title", "", self.create_note, None, None)
@@ -135,7 +133,7 @@ class NotesNewCommand(sublime_plugin.ApplicationCommand):
         filename = title.split("/")
         if len(filename) > 1:
             title = filename[len(filename)-1]
-            directory = os.path.join(self.notes_dir,filename[0])
+            directory = os.path.join(self.notes_dir, filename[0])
             tag = filename[0]
         else:
             title = filename[0]
@@ -167,6 +165,7 @@ class NotesNewCommand(sublime_plugin.ApplicationCommand):
 
 
 class NotesEvents(sublime_plugin.EventListener):
+
     def on_load_async(self, view):
         if view.settings().get("is_note") or not view.file_name():
             return
@@ -178,6 +177,7 @@ class NotesEvents(sublime_plugin.EventListener):
 
 
 class NoteInsertTitleCommand(sublime_plugin.TextCommand):
+
     def run(self, edit, **kwargs):
         if settings().get("enable_yaml"):
             header = "---\n"
@@ -187,7 +187,7 @@ class NoteInsertTitleCommand(sublime_plugin.TextCommand):
             for yaml_el in settings().get("note_yaml"):
                 header = header + yaml_el + ":\n"
             header = header + "---\n"
-        self.view.insert(edit, 0, header)
+            self.view.insert(edit, 0, header)
 
 
 class NoteChangeColorCommand(sublime_plugin.WindowCommand):
@@ -237,16 +237,15 @@ class NoteChangeColorCommand(sublime_plugin.WindowCommand):
 class NoteArchiveCommand(sublime_plugin.WindowCommand):
 
     def run(self):
-        root = get_root()
         window = sublime.active_window()
-        self.notes_dir = os.path.expanduser(root)
+        self.notes_dir = get_root()
         self.archive_note()
         sublime.status_message("    Note Archived.")
 
     def archive_note(self):
         file_path = self.window.active_view().file_name()
         f_id = file_id(file_path)
-        archive_dir = os.path.join(self.notes_dir,settings().get("archive_dir"))
+        archive_dir = os.path.join(self.notes_dir, settings().get("archive_dir"))
         new_file_path = os.path.join(archive_dir, f_id)
 
         if not os.path.exists(archive_dir):
@@ -278,7 +277,6 @@ class NoteUnarchiveCommand(sublime_plugin.ApplicationCommand):
             window.show_quick_panel( rlist, self.unarchive_note)
         else:
             window.show_quick_panel( ['There are no notes to unarchive.'],[])
-
 
     def unarchive_note(self,index):
         if index == -1:
