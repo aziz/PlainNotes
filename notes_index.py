@@ -50,7 +50,7 @@ class NotesBufferRefreshCommand(sublime_plugin.TextCommand):
                 line_str = u'{0}▣ {1}'.format(indent, os.path.relpath(root, path))
                 lines.append((line_str, root))
             if not relpath.startswith(".brain"):
-                subindent = ' ' * TAB_SIZE * (level + 1)
+                subindent = 'Archive - ' * (level + 1)
                 for f in files:
                     for ext in settings().get("note_file_extensions"):  # display only files with given extension
                         if fnmatch.fnmatch(f, "*." + ext):
