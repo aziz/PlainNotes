@@ -12,7 +12,11 @@ def settings():
 
 
 def get_root():
-    return os.path.normpath(os.path.expanduser(settings().get("root")))
+    project_settings = sublime.active_window().active_view().settings().get('PlainNotes')
+    if project_settings:
+        return os.path.normpath(os.path.expanduser(project_settings.get('root',settings().get("root"))))
+    else:
+        return os.path.normpath(os.path.expanduser(settings().get("root")))
 
 
 class NotesBufferCommand(sublime_plugin.WindowCommand):
@@ -48,6 +52,9 @@ class NotesBufferRefreshCommand(sublime_plugin.TextCommand):
             relpath = os.path.relpath(root, path)
             if not relpath.startswith("."):
                 line_str = u'{0}▣ {1}'.format(indent, os.path.relpath(root, path))
+                lines.append((line_str, root))
+            if relpath.startswith(settings().get("archive_dir")):
+                line_str = u'{0}▣ {1}'.format(indent, 'Archive')
                 lines.append((line_str, root))
             if not relpath.startswith(".brain"):
                 subindent = ' ' * TAB_SIZE * (level + 1)
