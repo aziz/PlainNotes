@@ -97,6 +97,9 @@ To add more yaml items you can add them to the settings by modifying `note_yaml:
 { "note_yaml" : ["categories"] }
 ```
 
+#### Other features
+- open urls: place cursor on the link then `alt + click` to open a url in the browser.
+
 ## Per-project notes
 
 To have a different notes directory for a project, add the following in your `.sublime-project` file:
