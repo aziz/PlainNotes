@@ -1,28 +1,16 @@
-
-# Notes Management
-## Settings and Customizations
-#### Notes file extension
-#### Notes root folder
-#### Keyboard Shortcuts
-#### Customizing default color for Note files
-
-# Note Writing
-
-
----
-
-#### Deleting notes
-#### Renaming notes
-#### Archiving notes
-
 ## Markup
 #### Note Markdown
-#### tasks
+###### Strikethrough
+###### URLS
+#### fenced code block
+#### tasks (Tasklists Github Style)
 #### internal links
 #### tags
 #### tables
-
-
+#### ✔ admonitions
+#### Abbreviations
+#### Attribute Lists
+#### TODO: footnotes, math
 
 ## Headings
 - ✔ folding/unfolding headings local and global tab/shift+tab
@@ -35,12 +23,3 @@
 - ✔ create a new task command+enter
 - ✔ toggle done
 - ✔ mark as cancelled
-
-## Ground Rules
-- Plain Text is the holy grails
-- Plain Text shouldn't be that plain
-- Simple and Sexy is Sublime
-
-- We're standing on the shoulders of giants
-- You can leave us whenever you want
-- Writing is your job, organizing is computer's job
