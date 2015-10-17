@@ -1991,12 +1991,12 @@
         <key>1</key>
         <dict>
           <key>name</key>
-          <string>string.other.note-tag.title.markdown.note</string>
+          <string>string.other.note_tag.title.markdown.note</string>
         </dict>
         <key>2</key>
         <dict>
           <key>name</key>
-          <string>punctuation.definition.note-tag.markdown.note</string>
+          <string>punctuation.definition.note_tag.markdown.note</string>
         </dict>
       </dict>
       <key>match</key>
@@ -2005,7 +2005,7 @@
         (:(?=([^: ]+:)*\s))   # the end dot
       </string>
       <key>name</key>
-      <string>meta.note-tag.markdown.note</string>
+      <string>meta.note_tag.markdown.note</string>
     </dict>
 
     <key>note-tag-begin</key>
@@ -2013,7 +2013,7 @@
       <key>match</key>
       <string>:(?=((?:\w|[+-]\w)[^: ]*:){1,}\s)</string>
       <key>name</key>
-      <string>punctuation.definition.note-tag.markdown.note</string>
+      <string>punctuation.definition.note_tag.markdown.note</string>
     </dict>
 
     <key>list-paragraph</key>

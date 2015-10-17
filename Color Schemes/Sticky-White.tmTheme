@@ -18,7 +18,7 @@
 				<key>foreground</key>
 				<string>#333333</string>
 				<key>gutterForeground</key>
-				<string>#33333355</string>
+				<string>#33333322</string>
 				<key>invisibles</key>
 				<string>#33333355</string>
 				<key>lineHighlight</key>
@@ -423,7 +423,7 @@
 			<key>name</key>
 			<string>Tag BG</string>
 			<key>scope</key>
-			<string>meta.note-tag.markdown.note</string>
+			<string>meta.note_tag.markdown.note</string>
 			<key>settings</key>
 			<dict>
 				<key>background</key>
@@ -434,7 +434,7 @@
 			<key>name</key>
 			<string>Tag Title</string>
 			<key>scope</key>
-			<string>string.other.note-tag.title.markdown.note</string>
+			<string>string.other.note_tag.title.markdown.note</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
@@ -447,7 +447,7 @@
 			<key>name</key>
 			<string>Tag Punctuation</string>
 			<key>scope</key>
-			<string>punctuation.definition.note-tag.markdown.note</string>
+			<string>punctuation.definition.note_tag.markdown.note</string>
 			<key>settings</key>
 			<dict>
 				<key>background</key>

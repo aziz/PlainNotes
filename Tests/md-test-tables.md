@@ -44,14 +44,12 @@
 | Anna      |  32 | 123456789 |
 | Alexander |  28_| 987654321 |
 
-
 |    Name   |   Phone   | Age |             Position             |
 |-----------|-----------|-----|----------------------------------|
 | Anna      | 123456789 |  32 | Senior Software                  |
 |           |           |     | Engineer_                        |
 |-----------|-----------|-----|----------------------------------|
 | Alexander | 987654321 |  28 | Senior Software Testing Engineer |
-
 
 | column 1 | column 2 | column 3 |
 | <<<<<<<< | >>>>>>>> | ######## |
@@ -78,7 +76,6 @@
 | C++             | D--        |
 | E::             | X==        |
 |                 |            |
-
 
 ### Supported Syntaxes
 

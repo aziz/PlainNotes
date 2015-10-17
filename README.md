@@ -26,9 +26,7 @@ not be available. We're not actively testing it under SublimeText 2 but will
 do our best to make it compatible and usable. We appreciate bug reports and
 pull requests.
 
-## Usage
-
-### Organizing notes
+## Organizing notes
 
 Most of PlainNotes commands are accessible from the SublimeText main menu. You
 should have a menu item called `Notes` right after `Help`. Although, there are
@@ -143,7 +141,7 @@ To add more yaml items you can add them to the settings by modifying `note_yaml:
 #### Other features
 - open urls: place cursor on the link then `alt + click` to open a url in the browser.
 
-## Per-project notes
+#### Per-project notes
 
 To have a different notes directory for a project, add the following in your
 `.sublime-project` file:
@@ -156,8 +154,11 @@ To have a different notes directory for a project, add the following in your
 }
 ```
 
-### Authoring notes
-PlainNotes provides an enhanced version of Markdown. It means that you can write your notes in plain markdown without learning anything new. In addition, it gives you some extra markups to improve the look and feel of your documents, since markdown sometime feels too simple to format a real document. 
+## Authoring notes
+PlainNotes provides an enhanced version of Markdown. It means that you can
+write your notes in plain markdown without learning anything new. In addition,
+it gives you some extra markups to improve the look and feel of your
+documents, since markdown sometime feels too simple to format a real document.
 
 If you are new to markdown here is a cheat-sheet:
 
@@ -178,28 +179,35 @@ If you are new to markdown here is a cheat-sheet:
 ### Extra Markup
 
 #### Admonitions
-When writing a note, you might need to distinguish a block or section by giving it a special title and box. These sections might appear several times in your document. Some examples would be *Note*, *Tip* or *Caution* blocks in an article.
+When writing a note, you might need to distinguish a block or section by
+giving it a special title and box. These sections might appear several times
+in your document. Some examples would be *Note*, *Tip* or *Caution* blocks in
+an article.
 
 ![PlainNotes Admonitions](https://cloud.githubusercontent.com/assets/3202/10559318/3d5e5420-74ee-11e5-89b9-0eca42750aca.png)
 
 Here is how to create an admonition block
-    
+
     !!! ADMONITION_TYPE "Optional title in quotes"
         Any number of other indented markdown elements.
 
-By default admonitions block have a purplish background color (that might be different based on the color scheme), but giving it a specific type from table below can change the color. Predefined admonition types are listed in table below and are shown in image above. Note that admonition types can be lower-case, upper-case or title-case.
+By default admonitions block have a purplish background color (that might be
+different based on the color scheme), but giving it a specific type from table
+below can change the color. Predefined admonition types are listed in table
+below and are shown in image above. Note that admonition types can be lower-
+case, upper-case or title-case.
 
 | Predefined Admonition Type | Block Color |
 |----------------------------|-------------|
-| hint or tip                | bluish      |
-| warning or caution         | yellowish   |
-| danger or error            | reddish     |
-| attention                  | greenish    |
+| `hint` or `tip`            | bluish      |
+| `warning` or `caution`     | yellowish   |
+| `danger` or `error`        | reddish     |
+| `attention`                | greenish    |
 
-Admonition blocks can have any PlainNotes enhanced markdown inside them and they customize the look and feel so that everything looks sublime.
+Admonition blocks can have any PlainNotes enhanced markdown inside them and
+they customize the look and feel so that everything looks sublime.
 
 ![PlainNotes admonition block with content](https://cloud.githubusercontent.com/assets/3202/10559414/c9a61ff6-74f0-11e5-8209-1c881ebd8506.png)
-
 
 ## License
 
