@@ -139,7 +139,8 @@ To add more yaml items you can add them to the settings by modifying `note_yaml:
 ```
 
 #### Other features
-- open urls: place cursor on the link then `alt + click` to open a url in the browser.
+- **Open URLs**: place cursor on the link then press `enter` to open a url in
+  the browser.
 
 #### Per-project notes
 
@@ -162,19 +163,19 @@ documents, since markdown sometime feels too simple to format a real document.
 
 If you are new to markdown here is a cheat-sheet:
 
-| Markup      | Markdown Syntax                         |
-| :-------    | :-------------------------------------- |
-| Italic      | `_italic_` or `*italic*`                |
-| Bold        | `**bold**` or `**bold**`                |
-| Images      | `![Image Title](http://url_to.image)`   |
-| Links       | `[Link Text](http://link.url)`          |
-| Inline Code | `` `code` ``                            |
-| Quotes      | `> Here is a quote block`               |
-| Separators  | `----` or `*****`                       |
-| Heading 1   | `# Heading 1`                           |
-| Heading 2   | `## Heading 2`                          |
-| Heading 3   | `### Heading 3`                         |
-| Heading 4   | `#### Heading 4`                        |
+|    Markup   |            Markdown Syntax            |
+|-------------|---------------------------------------|
+| Italic      | `_italic_` or `*italic*`              |
+| Bold        | `**bold**` or `**bold**`              |
+| Images      | `![Image Title](http://url_to.image)` |
+| Links       | `[Link Text](http://link.url)`        |
+| Inline Code | `` `code` ``                          |
+| Quotes      | `> Here is a quote block`             |
+| Separators  | `----` or `*****`                     |
+| Heading 1   | `# Heading 1`                         |
+| Heading 2   | `## Heading 2`                        |
+| Heading 3   | `### Heading 3`                       |
+| Heading 4   | `#### Heading 4`                      |
 
 ### Extra Markup
 
@@ -184,12 +185,12 @@ giving it a special title and box. These sections might appear several times
 in your document. Some examples would be *Note*, *Tip* or *Caution* blocks in
 an article.
 
-![PlainNotes Admonitions](https://cloud.githubusercontent.com/assets/3202/10559318/3d5e5420-74ee-11e5-89b9-0eca42750aca.png)
-
 Here is how to create an admonition block
 
     !!! ADMONITION_TYPE "Optional title in quotes"
         Any number of other indented markdown elements.
+
+<img width="640" src="https://cloud.githubusercontent.com/assets/3202/10559318/3d5e5420-74ee-11e5-89b9-0eca42750aca.png" >
 
 By default admonitions block have a purplish background color (that might be
 different based on the color scheme), but giving it a specific type from table
@@ -207,7 +208,7 @@ case, upper-case or title-case.
 Admonition blocks can have any PlainNotes enhanced markdown inside them and
 they customize the look and feel so that everything looks sublime.
 
-![PlainNotes admonition block with content](https://cloud.githubusercontent.com/assets/3202/10559414/c9a61ff6-74f0-11e5-8209-1c881ebd8506.png)
+<img align="center" width="380" src="https://cloud.githubusercontent.com/assets/3202/10559414/c9a61ff6-74f0-11e5-8209-1c881ebd8506.png" >
 
 ## License
 

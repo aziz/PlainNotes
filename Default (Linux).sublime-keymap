@@ -10,6 +10,10 @@
   [{ "key": "selector", "operator": "equal", "operand": "text.notes_buffer" }]
 },
 
+{ "keys": ["enter"], "command": "note_open_url", "context":
+  [{ "key": "selector", "operator": "equal", "operand": "text.html.markdown.note markup.underline.link.markdown" }]
+},
+
 // Notes: Jotter keymaps
 { "keys": ["escape"], "command": "save_jot_and_hide_panel", "context":
   [
