@@ -11,6 +11,7 @@ ST3 = int(sublime.version()) >= 3000
 if not ST3:
     from codecs import open
 
+
 def settings():
     return sublime.load_settings('Notes.sublime-settings')
 
@@ -18,7 +19,7 @@ def settings():
 def get_root():
     project_settings = sublime.active_window().active_view().settings().get('PlainNotes')
     if project_settings:
-        return os.path.normpath(os.path.expanduser(project_settings.get('root',settings().get("root"))))
+        return os.path.normpath(os.path.expanduser(project_settings.get('root', settings().get("root"))))
     else:
         return os.path.normpath(os.path.expanduser(settings().get("root")))
 
@@ -28,24 +29,24 @@ def file_id(path):
 
 
 def find_notes(self, root, exclude):
- note_files = []
- for path, subdirs, files in os.walk(root, topdown=True):
-    if exclude:
-        subdirs[:] = [d for d in subdirs if d not in exclude]
-    relpath = os.path.relpath(path, root)
-    for name in files:
-        for ext in settings().get("note_file_extensions"):
-            if (not relpath.startswith(".brain")) and fnmatch.fnmatch(name, "*." + ext):
-                title = re.sub('\.' + ext + '$', '', name)
-                tag = path.replace(root, '').replace(os.path.sep, '')
-                if not tag == '':
-                   tag = tag + ': '
-                modified_str = time.strftime("Last modified: %d/%m/%Y %H:%M", time.gmtime(os.path.getmtime(os.path.join(path, name))));
-                #created_str = time.strftime("Created: %d/%m/%Y %H:%M", time.gmtime(os.path.getctime(os.path.join(path, name))));
-                note_files.append([re.sub('\.' + ext + '$', '', tag + title), os.path.join(path, name), tag, modified_str])
+    note_files = []
+    for path, subdirs, files in os.walk(root, topdown=True):
+        if exclude:
+            subdirs[:] = [d for d in subdirs if d not in exclude]
+        relpath = os.path.relpath(path, root)
+        for name in files:
+            for ext in settings().get("note_file_extensions"):
+                if (not relpath.startswith(".brain")) and fnmatch.fnmatch(name, "*." + ext):
+                    title = re.sub('\.' + ext + '$', '', name)
+                    tag = path.replace(root, '').replace(os.path.sep, '')
+                    if not tag == '':
+                        tag = tag + ': '
+                    modified_str = time.strftime("Last modified: %d/%m/%Y %H:%M", time.gmtime(os.path.getmtime(os.path.join(path, name))))
+                    # created_str = time.strftime("Created: %d/%m/%Y %H:%M", time.gmtime(os.path.getctime(os.path.join(path, name))));
+                    note_files.append([re.sub('\.' + ext + '$', '', tag + title), os.path.join(path, name), tag, modified_str])
 
- note_files.sort(key=lambda item:  os.path.getmtime(item[1]), reverse=True)
- return note_files
+    note_files.sort(key=lambda item: os.path.getmtime(item[1]), reverse=True)
+    return note_files
 
 
 def setup_notes_list(file_list):
@@ -60,11 +61,11 @@ def setup_notes_list(file_list):
         display_full_path = False
 
     indices = [0]
-    if display_modified_date == True:
+    if display_modified_date:
         indices.append(3)
-    if display_folder == True:
+    if display_folder:
         indices.append(2)
-    if display_full_path == True:
+    if display_full_path:
         indices.append(1)
 
     return helpers.return_sublist(file_list, indices)
@@ -90,25 +91,25 @@ def update_color(old_file_path, new_file_path):
 class NotesListCommand(sublime_plugin.ApplicationCommand):
 
     def run(self):
-        exclude = set([settings().get("archive_dir"),'.brain'])
+        exclude = set([settings().get("archive_dir"), '.brain'])
         root = get_root()
         self.notes_dir = root
         self.file_list = find_notes(self, root, exclude)
         rlist = setup_notes_list(self.file_list)
         window = sublime.active_window()
-        window.show_quick_panel( rlist, self.open_note)
+        window.show_quick_panel(rlist, self.open_note)
 
     def open_note(self, index):
-         if index == -1:
-             return
-         file_path = self.file_list[index][1]
-         sublime.run_command("notes_open", {"file_path": file_path})
+        if index == -1:
+            return
+        file_path = self.file_list[index][1]
+        sublime.run_command("notes_open", {"file_path": file_path})
 
 
 class NotesOpenCommand(sublime_plugin.ApplicationCommand):
 
     def run(self, file_path):
-        sublime.set_timeout(lambda: self.async_open(file_path) , 0)
+        sublime.set_timeout(lambda: self.async_open(file_path), 0)
 
     def async_open(self, file_path):
         view = sublime.active_window().open_file(file_path, sublime.ENCODED_POSITION)
@@ -131,7 +132,7 @@ class NotesNewCommand(sublime_plugin.ApplicationCommand):
     def create_note(self, title):
         filename = title.split("/")
         if len(filename) > 1:
-            title = filename[len(filename)-1]
+            title = filename[len(filename) - 1]
             directory = os.path.join(self.notes_dir, filename[0])
             tag = filename[0]
         else:
@@ -160,7 +161,7 @@ class NotesNewCommand(sublime_plugin.ApplicationCommand):
                 sublime.set_timeout(lambda: self.insert_title(title, tag, view), 100)
             return
         else:
-            view.run_command("note_insert_title", {"title": title, "tag" : tag})
+            view.run_command("note_insert_title", {"title": title, "tag": tag})
 
 
 class NotesEvents(sublime_plugin.EventListener):
@@ -195,7 +196,7 @@ class NoteChangeColorCommand(sublime_plugin.WindowCommand):
         self.colors = ["Orange", "Yellow", "Green", "GreenLight", "Blue", "BlueLight", "Purple", "Pink", "Gray", "White"]
         self.window = sublime.active_window()
         self.original_cs = self.window.active_view().settings().get("color_scheme")
-        current_color = os.path.basename(self.original_cs).replace("Sticky-","").replace(".tmTheme", "")
+        current_color = os.path.basename(self.original_cs).replace("Sticky-", "").replace(".tmTheme", "")
         if ST3:
             self.window.show_quick_panel(self.colors, self.on_select, 0, self.colors.index(current_color), self.on_highlight)
         else:
@@ -210,7 +211,7 @@ class NoteChangeColorCommand(sublime_plugin.WindowCommand):
                 path = sublime.find_resources("Sticky-" + self.colors[index] + ".tmTheme")
                 path = path[0]
             except:
-                path = os.path.join("Packages" , "PlainNotes", "Color Schemes", "Sticky-" + self.colors[index] + ".tmTheme")
+                path = os.path.join("Packages", "PlainNotes", "Color Schemes", "Sticky-" + self.colors[index] + ".tmTheme")
 
             view = self.window.active_view()
             view.settings().set("color_scheme", path)
@@ -250,7 +251,7 @@ class NoteArchiveCommand(sublime_plugin.WindowCommand):
         if not os.path.exists(archive_dir):
             os.makedirs(archive_dir)
         if not os.path.isfile(new_file_path):
-            os.renames(file_path,new_file_path)
+            os.renames(file_path, new_file_path)
             self.window.run_command("close_file")
 
             # update color scheme db
@@ -268,24 +269,24 @@ class NoteUnarchiveCommand(sublime_plugin.ApplicationCommand):
 
     def run(self):
         self.notes_dir = get_root()
-        archive_dir = os.path.join(self.notes_dir ,settings().get("archive_dir"))
-        self.file_list = find_notes(self, archive_dir,[])
+        archive_dir = os.path.join(self.notes_dir, settings().get("archive_dir"))
+        self.file_list = find_notes(self, archive_dir, [])
         rlist = setup_notes_list(self.file_list)
         window = sublime.active_window()
         if rlist:
-            window.show_quick_panel( rlist, self.unarchive_note)
+            window.show_quick_panel(rlist, self.unarchive_note)
         else:
-            window.show_quick_panel( ['There are no notes to unarchive.'],[])
+            window.show_quick_panel(['There are no notes to unarchive.'], [])
 
-    def unarchive_note(self,index):
+    def unarchive_note(self, index):
         if index == -1:
-             return
+            return
         file_path = self.file_list[index][1]
-        new_file_path = file_path.replace(os.path.sep+settings().get("archive_dir"),'')
+        new_file_path = file_path.replace(os.path.sep + settings().get("archive_dir"), '')
         # print(file_path)
         # print(new_file_path)
         if not os.path.isfile(new_file_path):
-            os.renames(file_path,new_file_path)
+            os.renames(file_path, new_file_path)
 
             # update color scheme db
             update_color(file_path, new_file_path)
@@ -323,7 +324,7 @@ class NoteRenameCommand(sublime_plugin.WindowCommand):
         self.file_path = self.window.active_view().file_name()
         filename = title.split("/")
         if len(filename) > 1:
-            title = filename[len(filename)-1]
+            title = filename[len(filename) - 1]
             directory = self.notes_dir + os.path.sep + filename[0]
             tag = filename[0]
         else:
@@ -341,7 +342,7 @@ class NoteRenameCommand(sublime_plugin.WindowCommand):
         new_file_path = os.path.join(directory, title + ext)
         # pardir = os.path.abspath(os.path.join(self.file_path, '..'))
         if not os.path.isfile(new_file_path):
-            os.rename(self.file_path,new_file_path)
+            os.rename(self.file_path, new_file_path)
             self.window.run_command("close_file")
             sublime.run_command("notes_open", {"file_path": new_file_path})
 
@@ -374,7 +375,7 @@ def cleanup_brain():
     # print(len(db))
     to_delete = []
     for nfile in db:
-        if not os.path.exists(os.path.join(root,nfile)):
+        if not os.path.exists(os.path.join(root, nfile)):
             # print("✘" + nfile)
             to_delete.append(nfile)
     # print(to_delete)
