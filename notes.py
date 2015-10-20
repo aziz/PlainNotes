@@ -3,8 +3,7 @@
 import sublime, sublime_plugin
 import os, fnmatch, re, time, helpers
 import copy
-from gzip import GzipFile
-from pickle import load, dump
+import json
 
 ST3 = int(sublime.version()) >= 3000
 
@@ -364,9 +363,8 @@ class NoteRenameCommand(sublime_plugin.WindowCommand):
 def save_to_brain():
     # print("SAVING TO DISK-----------------")
     # print(db)
-    gz = GzipFile(db_file, 'wb')
-    dump(db, gz, -1)
-    gz.close()
+    with open(db_json_file, 'w', encoding='utf-8') as f:
+        json.dump(db, f, indent=4, sort_keys=True)
 
 
 def cleanup_brain():
@@ -386,13 +384,13 @@ def cleanup_brain():
 
 
 def plugin_loaded():
-    global db, root, db_file
+    global db, root, db_json_file
     # creating directory structure and files in root
     db = {}
     root = get_root()
     brain = os.path.join(root, '.brain')
     inbox = os.path.join(root, '.brain', 'Inbox.note')
-    db_file = os.path.join(root, '.brain', 'brain.bin.gz')
+    db_json_file = os.path.join(root, '.brain', 'brain.json')
 
     if not os.path.exists(brain):
         os.makedirs(brain)
@@ -400,10 +398,9 @@ def plugin_loaded():
         open(inbox, mode='a', encoding='utf-8').close()
 
     try:
-        gz = GzipFile(db_file, 'rb')
-        db = load(gz)
+        with open(db_json_file, 'r') as f:
+            db = json.load(f)
         cleanup_brain()
-        gz.close()
     except:
         db = {}
 
