@@ -141,6 +141,7 @@ To add more yaml items you can add them to the settings by modifying `note_yaml:
 #### Other features
 - **Open URLs**: place cursor on the link then press `enter` to open a url in
   the browser.
+- **Preview images inline**: place cursor on a markdown image with inline image url and press `enter` to a preview popup of that image. You should have ST 3070 or newer for this feature to work.
 
 #### Per-project notes
 
