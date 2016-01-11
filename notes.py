@@ -302,6 +302,9 @@ class NoteRemoveCommand(sublime_plugin.WindowCommand):
         f_path = self.window.active_view().file_name()
         delete = sublime.ok_cancel_dialog('Are you sure you want to delete this note?', 'Yes')
         if delete:
+            # Set the view to scratch and close it so ST doesn't prompt again.
+            self.window.active_view().set_scratch(True)
+            self.window.run_command("close_file")
             os.remove(f_path)
 
     def is_enabled(self):
