@@ -167,7 +167,7 @@ If you are new to markdown here is a cheat-sheet:
 |    Markup   |            Markdown Syntax            |
 |-------------|---------------------------------------|
 | Italic      | `_italic_` or `*italic*`              |
-| Bold        | `**bold**` or `**bold**`              |
+| Bold        | `__bold__` or `**bold**`              |
 | Images      | `![Image Title](http://url_to.image)` |
 | Links       | `[Link Text](http://link.url)`        |
 | Inline Code | `` `code` ``                          |
