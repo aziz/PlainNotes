@@ -230,7 +230,7 @@ class NoteChangeColorCommand(sublime_plugin.WindowCommand):
         self.window.active_view().settings().set("color_scheme", path)
 
     def is_enabled(self):
-        return self.window.active_view().settings().get("syntax").endswith("Note.tmLanguage")
+        return self.window.active_view().settings().get("syntax").endswith("Note.tmLanguage") or self.window.active_view().settings().get("syntax").endswith("Note.sublime-syntax")
 
 
 class NoteArchiveCommand(sublime_plugin.WindowCommand):
