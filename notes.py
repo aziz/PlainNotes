@@ -113,9 +113,9 @@ class NotesOpenCommand(sublime_plugin.ApplicationCommand):
     def async_open(self, file_path):
         view = sublime.active_window().open_file(file_path, sublime.ENCODED_POSITION)
         f_id = file_id(file_path)
-        if db.get(f_id) and os.path.isfile(db[f_id]["color_scheme"]):
+        view.settings().set("is_note", True)
+        if db.get(f_id):
             view.settings().set("color_scheme", db[f_id]["color_scheme"])
-            view.settings().set("is_note", True)
 
 
 class NotesNewCommand(sublime_plugin.ApplicationCommand):
@@ -230,7 +230,8 @@ class NoteChangeColorCommand(sublime_plugin.WindowCommand):
         self.window.active_view().settings().set("color_scheme", path)
 
     def is_enabled(self):
-        return self.window.active_view().settings().get("syntax").endswith("Note.tmLanguage")
+        syntax = self.window.active_view().settings().get("syntax")
+        return syntax.endswith("Note.tmLanguage") or syntax.endswith("Note.sublime-syntax")
 
 
 class NoteArchiveCommand(sublime_plugin.WindowCommand):
