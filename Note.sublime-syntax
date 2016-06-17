@@ -715,7 +715,7 @@ contexts:
     - match: " {2,}$"
       scope: meta.dummy.line-break
   link-email:
-    - match: '(<)?((?:mailto:)?[-.\w]+@[-a-z0-9]+(\.[-a-z0-9]+)*\.[a-z]+)(>)?'
+    - match: '(<)?((?:mailto:)?[-+.\w]+@[-a-z0-9]+(\.[-a-z0-9]+)*\.[a-z]+)(>)?'
       scope: meta.link.email.lt-gt.markdown
       captures:
         1: punctuation.definition.link.markdown
