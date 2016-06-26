@@ -7,6 +7,10 @@ import struct
 
 ST3072 = int(sublime.version()) >= 3072
 
+def is_enabled_for_view(view):
+    valid_syntax = ['Note.tmLanguage', 'Note.sublime-syntax']
+    syntax = view.settings().get("syntax")
+    return any(syntax.endswith(s) for s in valid_syntax)
 
 class NoteOpenUrlCommand(sublime_plugin.TextCommand):
 
@@ -18,7 +22,7 @@ class NoteOpenUrlCommand(sublime_plugin.TextCommand):
         webbrowser.open_new_tab(url)
 
     def is_enabled(self):
-        return 'Note.tmLanguage' in self.view.settings().get("syntax")
+        return is_enabled_for_view(self.view)
 
 if ST3072:
     class NotePreviewImageCommand(sublime_plugin.TextCommand):
@@ -118,4 +122,4 @@ if ST3072:
             return content_type, width, height
 
         def is_enabled(self):
-            return 'Note.tmLanguage' in self.view.settings().get("syntax")
+            return is_enabled_for_view(self.view)

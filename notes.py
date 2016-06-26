@@ -150,6 +150,14 @@ class NotesNewCommand(sublime_plugin.ApplicationCommand):
         if not os.path.exists(file):
             open(file, 'w+').close()
         view = sublime.active_window().open_file(file)
+        color_scheme = settings().get("note_color_scheme")
+        if color_scheme:
+            view.settings().set("color_scheme", color_scheme)
+            f_id = file_id(file)
+            if not db.get(f_id):
+                db[f_id] = {}
+            db[f_id]["color_scheme"] = color_scheme
+            save_to_brain()
         self.insert_title_scheduled = False
         self.insert_title(title, tag, view)
 
