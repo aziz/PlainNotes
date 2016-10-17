@@ -174,6 +174,7 @@ class NotesNewCommand(sublime_plugin.ApplicationCommand):
 class NotesEvents(sublime_plugin.EventListener):
 
     def on_load_async(self, view):
+        global root
         if view.settings().get("is_note") or not view.file_name():
             return
         if os.path.realpath(view.file_name()).startswith(root):
