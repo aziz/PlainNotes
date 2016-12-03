@@ -203,10 +203,10 @@ class CSColorExtractor():
         return output
 
 
-def plugin_loaded():
-    settings = sublime.load_settings('Preferences.sublime-settings')
-    color_scheme_path = settings.get('color_scheme')
-    color_extractor = CSColorExtractor(color_scheme_path)
+# def plugin_loaded():
+    # settings = sublime.load_settings('Preferences.sublime-settings')
+    # color_scheme_path = settings.get('color_scheme')
+    # color_extractor = CSColorExtractor(color_scheme_path)
     # print(color_extractor.palette)
     # print(color_extractor.css())
     # print(color_extractor.colors)
