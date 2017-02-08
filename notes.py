@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 
 import sublime, sublime_plugin
-import os, fnmatch, re, time, helpers
+import os, fnmatch, re, time
 import copy
 import json
+
+from .lib import helpers
 
 ST3 = int(sublime.version()) >= 3000
 
