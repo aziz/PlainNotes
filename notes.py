@@ -28,6 +28,13 @@ def get_root():
 def file_id(path):
     return os.path.relpath(path, root)
 
+def brain_dir():
+    brain_settings = settings().get("jotter_dir")
+    if brain_settings:
+        return brain_settings
+    else:
+        return ".brain"
+
 
 def find_notes(self, root, exclude):
     note_files = []
@@ -37,7 +44,7 @@ def find_notes(self, root, exclude):
         relpath = os.path.relpath(path, root)
         for name in files:
             for ext in settings().get("note_file_extensions"):
-                if (not relpath.startswith(".brain")) and fnmatch.fnmatch(name, "*." + ext):
+                if (not relpath.startswith(brain_dir())) and fnmatch.fnmatch(name, "*." + ext):
                     title = re.sub('\.' + ext + '$', '', name)
                     tag = path.replace(root, '').replace(os.path.sep, '')
                     if not tag == '':
@@ -92,7 +99,7 @@ def update_color(old_file_path, new_file_path):
 class NotesListCommand(sublime_plugin.ApplicationCommand):
 
     def run(self):
-        exclude = set([settings().get("archive_dir"), '.brain'])
+        exclude = set([settings().get("archive_dir"), brain_dir()])
         root = get_root()
         self.notes_dir = root
         self.file_list = find_notes(self, root, exclude)
@@ -403,9 +410,9 @@ def plugin_loaded():
     # creating directory structure and files in root
     db = {}
     root = get_root()
-    brain = os.path.join(root, '.brain')
-    inbox = os.path.join(root, '.brain', 'Inbox.note')
-    db_json_file = os.path.join(root, '.brain', 'brain.json')
+    brain = os.path.join(root, brain_dir())
+    inbox = os.path.join(root, brain_dir(), 'Inbox.note')
+    db_json_file = os.path.join(root, brain_dir(), 'brain.json')
 
     if not os.path.exists(brain):
         os.makedirs(brain)

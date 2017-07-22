@@ -15,6 +15,13 @@ def settings():
 def get_root():
     return os.path.normpath(os.path.expanduser(settings().get("root")))
 
+def brain_dir():
+    brain_settings = settings().get("jotter_dir")
+    if brain_settings:
+        return brain_settings
+    else:
+        return ".brain"
+
 
 class JotterCommand(sublime_plugin.TextCommand):
     def run(self, edit):
@@ -46,7 +53,7 @@ class SaveJotAndHidePanelCommand(sublime_plugin.TextCommand):
 
         jot = '# ' + time.strftime(settings().get("jotter_date_format")) + u' — ' + time.strftime(settings().get("jotter_time_format")) + u'\n' + text.rstrip(u'\r\n') + u'\n\n'
 
-        with open(os.path.join(get_root(), ".brain", "Inbox.note"), mode='r+', encoding='utf-8') as f:
+        with open(os.path.join(get_root(), brain_dir(), "Inbox.note"), mode='r+', encoding='utf-8') as f:
             content = f.read()
             f.seek(0, 0)
             f.write(jot + content)
@@ -57,6 +64,6 @@ class SaveJotAndHidePanelCommand(sublime_plugin.TextCommand):
 class OpenInboxCommand(sublime_plugin.ApplicationCommand):
     def run(self):
         root = get_root()
-        inbox = os.path.join(root, '.brain', 'Inbox.note')
+        inbox = os.path.join(root, brain_dir(), 'Inbox.note')
         sublime.active_window().open_file(inbox)
 

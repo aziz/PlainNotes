@@ -18,6 +18,13 @@ def get_root():
     else:
         return os.path.normpath(os.path.expanduser(settings().get("root")))
 
+def brain_dir():
+    brain_settings = settings().get("jotter_dir")
+    if brain_settings:
+        return brain_settings
+    else:
+        return ".brain"
+
 
 class NotesBufferCommand(sublime_plugin.WindowCommand):
     def run(self):
@@ -56,7 +63,7 @@ class NotesBufferRefreshCommand(sublime_plugin.TextCommand):
             if relpath.startswith(settings().get("archive_dir")):
                 line_str = u'{0}▣ {1}'.format(indent, 'Archive')
                 lines.append((line_str, root))
-            if not relpath.startswith(".brain"):
+            if not relpath.startswith(brain_dir()):
                 subindent = ' ' * TAB_SIZE * (level + 1)
                 for f in files:
                     for ext in settings().get("note_file_extensions"):  # display only files with given extension
