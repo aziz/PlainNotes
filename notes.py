@@ -210,7 +210,7 @@ class NoteInsertTitleCommand(sublime_plugin.TextCommand):
 class NoteChangeColorCommand(sublime_plugin.WindowCommand):
 
     def run(self):
-        self.colors = ["Orange", "Yellow", "Green", "GreenLight", "Blue", "BlueLight", "Purple", "Pink", "Gray", "White"]
+        self.colors = ["Orange", "Yellow", "Green", "GreenLight", "Blue", "BlueLight", "Purple", "Pink", "Gray", "White", "Dark"]
         self.window = sublime.active_window()
         self.original_cs = self.window.active_view().settings().get("color_scheme")
         current_color = os.path.basename(self.original_cs).replace("Sticky-", "").replace(".tmTheme", "")
