@@ -214,6 +214,8 @@ class NoteChangeColorCommand(sublime_plugin.WindowCommand):
         self.window = sublime.active_window()
         self.original_cs = self.window.active_view().settings().get("color_scheme")
         current_color = os.path.basename(self.original_cs).replace("Sticky-", "").replace(".tmTheme", "")
+        if not current_color in self.colors:
+            current_color = "Yellow"
         if ST3:
             self.window.show_quick_panel(self.colors, self.on_select, 0, self.colors.index(current_color), self.on_highlight)
         else:
