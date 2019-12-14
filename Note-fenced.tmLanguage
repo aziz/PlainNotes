@@ -1036,6 +1036,10 @@
         </dict>
         <dict>
           <key>include</key>
+          <string>#fenced-stata</string>
+        </dict>
+        <dict>
+          <key>include</key>
           <string>#fenced-shell</string>
         </dict>
         <dict>
