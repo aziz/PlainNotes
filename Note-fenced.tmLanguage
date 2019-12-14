@@ -291,6 +291,36 @@
         </array>
     </dict>
 
+    <key>fenced-stata</key>
+    <dict>
+        <key>begin</key>
+        <string>((?:^|\G)\s*[`~]{3,})\s*(s|stata|{s}|{s(\s|\,).*}|{stata}|{stata(\s|\,).*})\s*$</string>
+        <key>end</key>
+        <string>^(\1)[ \t]*(\n|$)</string>
+        <key>name</key>
+        <string>markup.raw.block.markdown markup.raw.block.fenced.markdown meta.language.stata</string>
+        <key>captures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.raw.block.fenced.markdown</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>meta.definition.language.raw.block.fenced.markdown</string>
+          </dict>
+        </dict>
+        <key>patterns</key>
+        <array>
+            <dict>
+                <key>include</key>
+                <string>source.stata</string>
+            </dict>
+        </array>
+    </dict>
+
     <key>fenced-shell</key>
     <dict>
         <key>begin</key>
@@ -624,7 +654,7 @@
     <key>fenced-r</key>
     <dict>
         <key>begin</key>
-        <string>((?:^|\G)\s*[`~]{3,})\s*(r)\s*$</string>
+        <string>((?:^|\G)\s*[`~]{3,})\s*(r|{r}|{r(\s|\,).*})\s*$</string>
         <key>end</key>
         <string>^(\1)[ \t]*(\n|$)</string>
         <key>name</key>
@@ -1003,6 +1033,10 @@
         <dict>
           <key>include</key>
           <string>#fenced-sql</string>
+        </dict>
+        <dict>
+          <key>include</key>
+          <string>#fenced-stata</string>
         </dict>
         <dict>
           <key>include</key>

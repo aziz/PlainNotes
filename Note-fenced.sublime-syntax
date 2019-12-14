@@ -33,6 +33,7 @@ contexts:
     - include: fenced-scss
     - include: fenced-shell
     - include: fenced-sql
+    - include: fenced-stata
     - include: fenced-tex
     - include: fenced-xml
     - include: fenced-yaml
@@ -296,12 +297,13 @@ contexts:
           pop: true
         - include: scope:source.python
   fenced-r:
-    - match: '((?:^|\G)\s*[`~]{3,})\s*(r)\s*$'
+    - match: '((?:^|\G)\s*[`~]{3,})\s*(r|{r}|{r(\s|\,).*})\s*$'
       captures:
         1: punctuation.definition.raw.block.fenced.markdown
         2: meta.definition.language.raw.block.fenced.markdown
       push:
         - meta_scope: markup.raw.block.markdown markup.raw.block.fenced.markdown meta.language.r
+        - meta_content_scope: source.r
         - match: '^(\1)[ \t]*(\n|$)'
           captures:
             1: punctuation.definition.raw.block.fenced.markdown
@@ -399,6 +401,20 @@ contexts:
             2: meta.definition.language.raw.block.fenced.markdown
           pop: true
         - include: scope:source.sql
+  fenced-stata:
+    - match: '((?:^|\G)\s*[`~]{3,})\s*(s|stata|{s}|{s(\s|\,).*}|{stata}|{stata(\s|\,).*})\s*$'
+      captures:
+        1: punctuation.definition.raw.block.fenced.markdown
+        2: meta.definition.language.raw.block.fenced.markdown
+      push:
+        - meta_scope: markup.raw.block.markdown markup.raw.block.fenced.markdown meta.language.stata 
+        - meta_content_scope: source.stata
+        - match: '^(\1)[ \t]*(\n|$)'
+          captures:
+            1: punctuation.definition.raw.block.fenced.markdown
+            2: meta.definition.language.raw.block.fenced.markdown
+          pop: true
+        - include: scope:source.stata
   fenced-tex:
     - match: '((?:^|\G)\s*[`~]{3,})\s*(tex)\s*$'
       captures:
