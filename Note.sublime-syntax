@@ -136,7 +136,7 @@ contexts:
         11: string.other.link.description.title.markdown
         12: punctuation.definition.string.begin.markdown
         13: punctuation.definition.string.end.markdown
-    - match: '^(!!!)[ \t]+(hint|tip|HINT|TIP|Hint|Tip)(?:[ \t]+(\")(.+)(\"))?[ \t]*\n'
+    - match: '^(!!!)[ \t]+(?i:(hint|tip|HINT|TIP|Hint|Tip))(?:[ \t]+(\")(.+)(\"))?[ \t]*\n'
       captures:
         0: markup.admonition.header.markdown
         1: punctuation.definition.admonition.markdown
@@ -149,7 +149,7 @@ contexts:
         - match: ^$
           pop: true
         - include: admonition
-    - match: '^(!!!)[ \t]+(warning|caution|Warning|Caution|WARNING|CAUTION)(?:[ \t]+(\")(.+)(\"))?[ \t]*\n'
+    - match: '^(!!!)[ \t]+(?i:(warning|caution|Warning|Caution|WARNING|CAUTION))(?:[ \t]+(\")(.+)(\"))?[ \t]*\n'
       captures:
         0: markup.admonition.header.markdown
         1: punctuation.definition.admonition.markdown
@@ -162,7 +162,7 @@ contexts:
         - match: ^$
           pop: true
         - include: admonition
-    - match: '^(!!!)[ \t]+(danger|error|Danger|Error|DANGER|ERROR)(?:[ \t]+(\")(.+)(\"))?[ \t]*\n'
+    - match: '^(!!!)[ \t]+(?i:(danger|error|Danger|Error|DANGER|ERROR))(?:[ \t]+(\")(.+)(\"))?[ \t]*\n'
       captures:
         0: markup.admonition.header.markdown
         1: punctuation.definition.admonition.markdown
@@ -175,7 +175,7 @@ contexts:
         - match: ^$
           pop: true
         - include: admonition
-    - match: '^(!!!)[ \t]+(attention|Attention|ATTENTION)(?:[ \t]+(\")(.+)(\"))?[ \t]*\n'
+    - match: '^(!!!)[ \t]+(?i:(attention|Attention|ATTENTION))(?:[ \t]+(\")(.+)(\"))?[ \t]*\n'
       captures:
         0: markup.admonition.header.markdown
         1: punctuation.definition.admonition.markdown
