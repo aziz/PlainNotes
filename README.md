@@ -13,7 +13,7 @@ accessible with a single shortcut or mouse click. It also provides you with an
 enhanced version of Markdown markup and some good looking color schemes for
 note taking.
 It's been designed with these ground rules in mind:
- - Plain text is the holy grail
+ - Plain text is the holy potato
  - Plain text shouldn't be that plain
  - Simple and Sexy is Sublime
 
